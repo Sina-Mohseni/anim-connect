@@ -1,0 +1,32 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.log
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (si utilisation d'outils de build futurs)
+node_modules/
+package-lock.json
+
+# Build / dist (si utilisation de bundler futur)
+dist/
+build/
+
+# Fichiers temporaires
+tmp/
+temp/
+*.tmp
+
+# Environnement (si ajout de variables d'env plus tard)
+.env
+.env.local
+
+# Fichiers de test
+coverage/
+.nyc_output/

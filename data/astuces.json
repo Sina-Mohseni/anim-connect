@@ -1,0 +1,348 @@
+{
+  "astuces": [
+    {
+      "id": "astuce_001",
+      "titre": "Capter l'attention en 3 secondes",
+      "slug": "capter-attention-3-secondes",
+      "categorie": "gestion_groupe",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2"],
+      "contexte": "Les enfants sont agités, dispersés, tu dois lancer une activité ou donner une consigne.",
+
+      "problematique": "Comment obtenir le silence et l'attention rapidement sans crier ?",
+
+      "solutions": [
+        "Le signal secret : établis un code (main levée, clap-clap, chanson courte). Entraîne-le régulièrement.",
+        "Le chuchotement magique : parle de plus en plus bas. Les enfants se taisent pour t'entendre.",
+        "Le compte à rebours : '5...4...3...2...1... et tout le monde est assis et silencieux !'",
+        "La statue : 'Quand je dis STOP, tout le monde devient une statue !'",
+        "Le regard bienveillant : attends en silence, regarde calmement. Ça fonctionne souvent."
+      ],
+
+      "conseils_application": [
+        "Choisis UNE technique et reste cohérent",
+        "Entraîne le signal dès le premier jour",
+        "Ne crie jamais : ça fatigue ta voix et habitue les enfants au bruit",
+        "Valorise ceux qui répondent rapidement au signal"
+      ],
+
+      "erreurs_a_eviter": [
+        "Changer de technique tout le temps",
+        "Utiliser le signal trop souvent (ça perd de l'efficacité)",
+        "Crier pour obtenir le silence"
+      ],
+
+      "difficulte": "facile",
+      "temps_mise_en_place_min": 5,
+
+      "tags": ["silence", "attention", "consigne", "gestion_groupe", "outil_quotidien"]
+    },
+
+    {
+      "id": "astuce_002",
+      "titre": "Transitions fluides entre activités",
+      "slug": "transitions-fluides",
+      "categorie": "transitions",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2"],
+      "contexte": "Entre deux activités, c'est souvent le chaos : enfants qui courent, matériel qui traîne, temps perdu.",
+
+      "problematique": "Comment passer d'une activité à une autre sans perdre 10 minutes et l'attention du groupe ?",
+
+      "solutions": [
+        "La chanson de transition : une comptine courte pour ranger, se déplacer, s'installer.",
+        "Le jeu du silence : 'On va dans la salle d'à côté en mode ninjas, sans faire de bruit'.",
+        "Le responsable du jour : un enfant donne le signal de départ, vérifie que tout est rangé.",
+        "Le timer visuel : sablier ou minuteur ('On a 3 minutes pour ranger').",
+        "Rituel corporel : 's'étirer comme un chat', 'secouer ses mains' avant de changer d'activité."
+      ],
+
+      "conseils_application": [
+        "Anticipe : annonce la fin de l'activité 5 min avant ('Encore 2 tours de jeu puis on range')",
+        "Ritualise : toujours la même chanson = rangement, ça rassure",
+        "Valorise la coopération : 'Waouh, vous avez rangé en 2 minutes !'"
+      ],
+
+      "erreurs_a_eviter": [
+        "Arrêter brutalement une activité sans prévenir",
+        "Laisser traîner le matériel (ça devient dangereux et bordélique)",
+        "Compter sur la spontanéité des enfants pour ranger"
+      ],
+
+      "difficulte": "facile",
+      "temps_mise_en_place_min": 3,
+
+      "tags": ["transition", "rangement", "organisation", "routine", "fluidite"]
+    },
+
+    {
+      "id": "astuce_003",
+      "titre": "Adapter une activité pour différents niveaux (multi-âges)",
+      "slug": "adapter-multi-ages",
+      "categorie": "adaptation_niveaux",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2"],
+      "contexte": "Tu as un groupe mélangé : MS, GS, CP par exemple. L'activité prévue semble trop facile pour les uns, trop dure pour les autres.",
+
+      "problematique": "Comment proposer la même activité à des niveaux différents sans frustrer personne ?",
+
+      "solutions": [
+        "Différenciation par consigne : même jeu, objectifs différents (ex: les petits cherchent des formes, les grands des mots).",
+        "Différenciation par rôle : dans un jeu coopératif, donne des responsabilités adaptées à chacun.",
+        "Niveau de difficulté progressif : tout le monde commence facile, puis complexifie pour ceux qui sont prêts.",
+        "Binômes mixtes : associe un plus grand avec un plus petit pour de l'entraide.",
+        "Variantes en parallèle : même thème, mais version simplifiée pour les petits, version élaborée pour les grands."
+      ],
+
+      "conseils_application": [
+        "Observe ton groupe : repère qui a besoin de challenge, qui a besoin de soutien",
+        "Prépare 2-3 variantes AVANT l'activité (pas d'improvisation stressante)",
+        "Valorise les réussites de chacun, quel que soit le niveau"
+      ],
+
+      "erreurs_a_eviter": [
+        "Proposer une consigne unique et rigide",
+        "Stigmatiser ('Toi tu fais la version facile')",
+        "Abandonner l'activité parce que ça ne marche pas pour tout le monde"
+      ],
+
+      "difficulte": "moyen",
+      "temps_mise_en_place_min": 10,
+
+      "tags": ["multi-ages", "differenciation", "adaptation", "inclusion", "niveaux_mixtes"]
+    },
+
+    {
+      "id": "astuce_004",
+      "titre": "Gérer un conflit entre enfants rapidement",
+      "slug": "gerer-conflit-enfants",
+      "categorie": "gestion_groupe",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2"],
+      "contexte": "Deux enfants se disputent un jouet, ou se sont bousculés. L'ambiance monte, il faut intervenir.",
+
+      "problematique": "Comment désamorcer le conflit sans prendre 20 minutes ni être injuste ?",
+
+      "solutions": [
+        "Stop & Respire : 'On arrête tout. On respire tous les deux. Maintenant on parle.'",
+        "La méthode DESC : Décrire les faits, Exprimer le ressenti de chacun, Suggérer une solution, Conclure.",
+        "Le message 'je' : apprendre aux enfants à dire 'Je n'aime pas quand tu...' au lieu de 'T'es méchant'.",
+        "Le choix : 'Soit vous jouez ensemble, soit on range le jouet et vous faites autre chose'.",
+        "L'isolement temporaire : si ça dégénère, séparer les deux enfants 2 min, puis revenir discuter calmement."
+      ],
+
+      "conseils_application": [
+        "Reste calme et neutre : ne prends pas parti sans avoir écouté les deux versions",
+        "Écoute chacun séparément si besoin",
+        "Fais reformuler : 'Redis-moi ce qui s'est passé avec tes mots à toi'",
+        "Valorise quand ils trouvent eux-mêmes une solution"
+      ],
+
+      "erreurs_a_eviter": [
+        "Crier ou punir sans comprendre",
+        "Minimiser ('C'est pas grave, allez jouez') alors qu'un enfant est blessé émotionnellement",
+        "Toujours imposer TOI la solution (les enfants n'apprennent pas à gérer seuls)"
+      ],
+
+      "difficulte": "moyen",
+      "temps_mise_en_place_min": 5,
+
+      "tags": ["conflit", "mediation", "resolution_probleme", "emotions", "communication"]
+    },
+
+    {
+      "id": "astuce_005",
+      "titre": "Improviser une activité en 2 minutes (plan B d'urgence)",
+      "slug": "improviser-plan-b-urgence",
+      "categorie": "mode_urgence",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2"],
+      "contexte": "Il pleut, l'activité prévue tombe à l'eau (littéralement), ou elle a duré 5 minutes au lieu de 30. Tu dois meubler.",
+
+      "problematique": "Qu'est-ce que je fais MAINTENANT avec 15 enfants qui s'impatientent ?",
+
+      "solutions": [
+        "Jacques a dit : universel, fonctionne de 3 à 10 ans, zéro matériel.",
+        "1, 2, 3 soleil : idem, défouloir mais canalisé.",
+        "Histoire collective : 'On va inventer une histoire ensemble. Je commence : Il était une fois...'",
+        "Devine l'animal : mime, devinettes, sons.",
+        "Jeu du chef d'orchestre : un enfant sort, on désigne un chef qui fait des gestes, tout le monde imite, l'enfant revient et doit deviner qui est le chef.",
+        "Relaxation guidée : si ambiance trop agitée, retour au calme avec 'Fermez les yeux, imaginez...'."
+      ],
+
+      "conseils_application": [
+        "Garde toujours 3-4 jeux 'sans matériel' dans ta tête",
+        "Adapte la durée : un Jacques a dit peut durer 5 ou 25 minutes",
+        "Rebondis : si un jeu marche bien, enchaîne sur une variante"
+      ],
+
+      "erreurs_a_eviter": [
+        "Paniquer (les enfants le sentent)",
+        "Proposer un jeu que tu ne maîtrises pas (risque de chaos)",
+        "Laisser un temps mort trop long (l'agitation monte)"
+      ],
+
+      "difficulte": "facile",
+      "temps_mise_en_place_min": 0,
+
+      "tags": ["improvisation", "plan_B", "urgence", "sans_materiel", "rapide"]
+    },
+
+    {
+      "id": "astuce_006",
+      "titre": "Expliquer les règles d'un jeu clairement",
+      "slug": "expliquer-regles-jeu-clairement",
+      "categorie": "animation_jeux",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2"],
+      "contexte": "Tu veux lancer un nouveau jeu. Si les règles sont mal comprises, c'est le bazar assuré.",
+
+      "problematique": "Comment expliquer des règles pour que tout le monde comprenne du premier coup ?",
+
+      "solutions": [
+        "Règle des 3C : Court, Clair, Concret.",
+        "Explique en faisant une démo : montre avec 2-3 enfants volontaires.",
+        "Utilise un support visuel si possible (dessins, gestes).",
+        "Vérifie la compréhension : 'Qui peut me redire la règle ?'",
+        "Commence par une version simplifiée, complexifie ensuite."
+      ],
+
+      "conseils_application": [
+        "Regroupe les enfants près de toi (pas de cris de loin)",
+        "Évite les phrases trop longues",
+        "Fais reformuler par un enfant (pas toujours le même !)",
+        "Autorise 1-2 tours 'd'essai' sans élimination pour ancrer les règles"
+      ],
+
+      "erreurs_a_eviter": [
+        "Expliquer trop vite, trop longtemps",
+        "Donner toutes les variantes d'un coup (surcharge)",
+        "Lancer le jeu sans vérifier que c'est compris"
+      ],
+
+      "difficulte": "facile",
+      "temps_mise_en_place_min": 3,
+
+      "tags": ["explication", "regles", "jeux", "comprehension", "clarté"]
+    },
+
+    {
+      "id": "astuce_007",
+      "titre": "Gérer l'enfant qui ne veut pas participer",
+      "slug": "enfant-ne-veut-pas-participer",
+      "categorie": "gestion_groupe",
+      "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2"],
+      "contexte": "Un enfant refuse de participer à l'activité. Il reste en retrait, dit 'non', croise les bras.",
+
+      "problematique": "Comment réagir sans forcer ni laisser faire systématiquement ?",
+
+      "solutions": [
+        "Comprendre la cause : timidité ? fatigue ? peur de l'échec ? pas d'intérêt ?",
+        "Proposer un rôle passif pour commencer : 'Tu peux observer et rejoindre quand tu veux'.",
+        "Valoriser un petit pas : 'Tu veux juste tenir le matériel pour nous ?'",
+        "Respecter le refus si ce n'est pas systématique.",
+        "Discuter à part, calmement : 'Qu'est-ce qui te gêne dans cette activité ?'"
+      ],
+
+      "conseils_application": [
+        "Ne prends pas le refus personnellement",
+        "Observe si c'est récurrent ou ponctuel",
+        "Informe les parents si c'est systématique (peut cacher autre chose)",
+        "Propose des alternatives douces (regarder, aider, participer à moitié)"
+      ],
+
+      "erreurs_a_eviter": [
+        "Forcer ('Allez, tu participes point final !')",
+        "Ignorer complètement",
+        "Stigmatiser devant les autres ('Eh ben lui il boude encore')"
+      ],
+
+      "difficulte": "moyen",
+      "temps_mise_en_place_min": 5,
+
+      "tags": ["refus", "non-participation", "bienveillance", "individuel", "ecoute"]
+    },
+
+    {
+      "id": "astuce_008",
+      "titre": "Utiliser la météo intérieure pour gérer les émotions",
+      "slug": "meteo-interieure-emotions",
+      "categorie": "emotions",
+      "niveaux": ["MS", "GS", "CP", "CE1", "CE2"],
+      "contexte": "Un enfant arrive énervé, triste, ou tu sens une tension dans le groupe.",
+
+      "problematique": "Comment permettre aux enfants d'exprimer leurs émotions de manière simple et visuelle ?",
+
+      "solutions": [
+        "La météo intérieure : demande 'Comment tu te sens ? Soleil, nuage, pluie, orage ?'",
+        "Affichage visuel : un tableau avec des smileys ou dessins météo, chaque enfant place son prénom.",
+        "Rituel du matin : faire un tour de météo intérieure ('Aujourd'hui je suis...')",
+        "Adapter l'activité : si beaucoup d'enfants sont 'orage', proposer une activité défouloir.",
+        "Accueillir sans juger : 'OK tu es nuage aujourd'hui, je comprends. Tu veux en parler ou tu préfères rester tranquille ?'"
+      ],
+
+      "conseils_application": [
+        "Reste neutre, ne force jamais à être 'soleil'",
+        "Utilise cet outil régulièrement pour le ritualiser",
+        "Montre l'exemple : 'Moi aujourd'hui je suis soleil avec un petit nuage'",
+        "Valorise l'expression : 'Merci d'avoir partagé'"
+      ],
+
+      "erreurs_a_eviter": [
+        "Forcer un enfant à dire sa météo",
+        "Juger ('Pourquoi t'es triste, y'a pas de raison')",
+        "Utiliser cet outil uniquement en cas de crise (perd son sens)"
+      ],
+
+      "difficulte": "facile",
+      "temps_mise_en_place_min": 5,
+
+      "tags": ["emotions", "meteo_interieure", "bien-etre", "accueil", "rituel"]
+    }
+  ],
+
+  "categories": [
+    {
+      "id": "gestion_groupe",
+      "nom": "Gestion de groupe",
+      "description": "Astuces pour gérer l'attention, le silence, les conflits, la dynamique de groupe",
+      "icone": "👥"
+    },
+    {
+      "id": "transitions",
+      "nom": "Transitions",
+      "description": "Passer d'une activité à l'autre de manière fluide",
+      "icone": "🔄"
+    },
+    {
+      "id": "adaptation_niveaux",
+      "nom": "Adaptation par niveaux",
+      "description": "Adapter les activités aux différents âges et niveaux",
+      "icone": "📊"
+    },
+    {
+      "id": "mode_urgence",
+      "nom": "Mode urgence / Impro",
+      "description": "Activités et stratégies de dernière minute",
+      "icone": "🚨"
+    },
+    {
+      "id": "animation_jeux",
+      "nom": "Animation de jeux",
+      "description": "Expliquer, arbitrer, dynamiser les jeux collectifs",
+      "icone": "🎲"
+    },
+    {
+      "id": "emotions",
+      "nom": "Gestion des émotions",
+      "description": "Accueillir, accompagner, réguler les émotions des enfants",
+      "icone": "💙"
+    },
+    {
+      "id": "materiel",
+      "nom": "Matériel et organisation",
+      "description": "Préparer, ranger, optimiser le matériel",
+      "icone": "📦"
+    },
+    {
+      "id": "creativite",
+      "nom": "Créativité et expression",
+      "description": "Favoriser l'expression libre et la créativité",
+      "icone": "🎨"
+    }
+  ]
+}

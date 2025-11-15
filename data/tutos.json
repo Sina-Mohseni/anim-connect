@@ -1,0 +1,480 @@
+{
+  "tutos": [
+    {
+      "id": "tuto_001",
+      "titre": "Construire une fiche d'activité avec PSAADRAFRA",
+      "slug": "construire-fiche-psaadrafra",
+      "categorie": "methodologie",
+      "description_courte": "Apprends à structurer tes activités avec la méthode PSAADRAFRA pour des animations réussies",
+      "description_longue": "La méthode PSAADRAFRA est un outil puissant pour construire des activités complètes et pédagogiques. Ce tuto te guide pas à pas dans chaque étape.",
+
+      "niveau_difficulte": "débutant",
+      "duree_lecture_min": 10,
+
+      "objectifs_apprentissage": [
+        "Comprendre la structure PSAADRAFRA",
+        "Savoir remplir chaque section",
+        "Être capable de créer sa propre fiche d'activité"
+      ],
+
+      "prerequis": [
+        "Aucun prérequis, accessible à tous"
+      ],
+
+      "contenu": {
+        "introduction": "PSAADRAFRA, c'est quoi ? C'est un acronyme pour structurer une activité de A à Z : Présentation, Sensibilisation, Acquisition, Appropriation, Diversification, Remédiation, Approfondissement, Finalisation, Rangement, Réévaluation. Ça peut sembler long, mais en réalité, c'est logique et ça suit le déroulé naturel d'une bonne activité.",
+
+        "sections": [
+          {
+            "titre": "P - Présentation",
+            "contenu": "C'est l'accroche ! Tu présentes l'activité de manière motivante. Exemple : 'Aujourd'hui, on devient des détectives !' Ne rentre pas dans les détails, crée juste de l'envie.",
+            "duree_type": "2-3 min",
+            "exemple": "Pour une activité peinture : 'Vous allez créer des œuvres magiques avec des outils surprises !'",
+            "erreurs_frequentes": [
+              "Expliquer toutes les règles dès le début (trop long, les enfants décrochent)",
+              "Être trop vague ('On va faire un truc bien')"
+            ]
+          },
+
+          {
+            "titre": "S - Sensibilisation",
+            "contenu": "Tu réveilles la curiosité et tu prépares les enfants au sujet. Pose des questions, montre un objet intrigant, raconte une mini-histoire.",
+            "duree_type": "5 min",
+            "exemple": "Pour une chasse au trésor : 'Regardez cette vieille carte... À votre avis, qu'est-ce qu'il y a au bout ?'",
+            "erreurs_frequentes": [
+              "Sauter cette étape (dommage, elle engage vraiment les enfants)",
+              "Faire trop long (pas un cours théorique)"
+            ]
+          },
+
+          {
+            "titre": "A - Acquisition de savoirs",
+            "contenu": "C'est le moment où tu donnes les règles, les techniques, les infos nécessaires. Reste concret et montre par l'exemple.",
+            "duree_type": "5-10 min",
+            "exemple": "Pour un jeu sportif : 'Voici comment on tient le ballon, regardez je vous montre'",
+            "erreurs_frequentes": [
+              "Parler trop longtemps sans démonstration",
+              "Donner trop d'infos d'un coup"
+            ]
+          },
+
+          {
+            "titre": "A - Appropriation",
+            "contenu": "Les enfants FONT l'activité. Ils s'approprient ce que tu as expliqué. C'est le cœur de l'animation. Ton rôle : observer, encourager, guider.",
+            "duree_type": "15-30 min (selon activité)",
+            "exemple": "Les enfants partent chercher les indices, peignent, construisent...",
+            "erreurs_frequentes": [
+              "Faire à la place des enfants",
+              "Laisser faire sans observer (tu rates des infos importantes)"
+            ]
+          },
+
+          {
+            "titre": "D - Diversification",
+            "contenu": "Tu adaptes pour que chaque enfant trouve son compte : variantes faciles, difficiles, différents rôles.",
+            "duree_type": "Intégré à l'appropriation",
+            "exemple": "Les petits cherchent des formes, les grands des mots cachés",
+            "erreurs_frequentes": [
+              "Proposer une seule version rigide",
+              "Oublier les enfants en difficulté ou ceux qui vont vite"
+            ]
+          },
+
+          {
+            "titre": "R - Remédiation",
+            "contenu": "Tu anticipes les problèmes et tu prépares des solutions. Si un enfant bloque, tu as un plan B.",
+            "duree_type": "Au besoin",
+            "exemple": "Si l'énigme est trop dure → donner un indice supplémentaire",
+            "erreurs_frequentes": [
+              "Ne pas anticiper (et improviser dans le stress)",
+              "Abandonner l'activité à la première difficulté"
+            ]
+          },
+
+          {
+            "titre": "A - Approfondissement",
+            "contenu": "Pour aller plus loin : créer, inventer, prolonger. Pas toujours nécessaire, mais enrichissant.",
+            "duree_type": "Optionnel, 10-15 min",
+            "exemple": "'Maintenant vous allez inventer votre propre énigme pour un autre groupe'",
+            "erreurs_frequentes": [
+              "Forcer alors que les enfants sont fatigués",
+              "Ne jamais proposer d'approfondissement (dommage pour ceux qui en veulent plus)"
+            ]
+          },
+
+          {
+            "titre": "F - Finalisation",
+            "contenu": "Tu conclus l'activité : on partage, on célèbre, on regarde ce qu'on a produit.",
+            "duree_type": "5 min",
+            "exemple": "'Chacun montre son dessin et dit ce qu'il a préféré'",
+            "erreurs_frequentes": [
+              "Terminer brutalement sans retour",
+              "Faire trop long (les enfants décrochent)"
+            ]
+          },
+
+          {
+            "titre": "R - Rangement",
+            "contenu": "On range ensemble. C'est pédagogique : responsabilisation, soin du matériel.",
+            "duree_type": "5-10 min",
+            "exemple": "'Qui range les feutres ? Qui essuie les tables ?'",
+            "erreurs_frequentes": [
+              "Tout ranger toi-même (épuisant et ça n'apprend rien aux enfants)",
+              "Laisser le bazar (respect du lieu)"
+            ]
+          },
+
+          {
+            "titre": "A - Réévaluation",
+            "contenu": "Tu fais le bilan : qu'est-ce qui a fonctionné ? Qu'est-ce que les enfants ont retenu ? Note pour la prochaine fois.",
+            "duree_type": "5 min",
+            "exemple": "'Qu'avez-vous appris ? Qu'est-ce qui était difficile ?'",
+            "erreurs_frequentes": [
+              "Sauter cette étape (dommage, c'est là qu'on ancre les apprentissages)",
+              "Ne pas noter pour soi-même ce qui a marché ou pas"
+            ]
+          }
+        ],
+
+        "exercice_pratique": {
+          "consigne": "Choisis une activité simple (ex: jeu de balle) et remplis chaque étape PSAADRAFRA sur papier. Chronomètre-toi : combien de temps ça te prend ?",
+          "objectif": "Te familiariser avec la méthode avant de l'utiliser en vrai"
+        },
+
+        "pour_aller_plus_loin": [
+          "Consulte les fiches projets complètes sur Anim'Connect",
+          "Teste PSAADRAFRA sur 3 activités différentes pour voir la logique",
+          "Partage ta fiche avec un collègue pour avoir un retour"
+        ]
+      },
+
+      "ressources_complementaires": [
+        {
+          "titre": "Modèle de fiche vierge PSAADRAFRA",
+          "type": "pdf",
+          "lien": "/ressources/modele-psaadrafra.pdf"
+        },
+        {
+          "titre": "Exemples de fiches complètes",
+          "type": "interne",
+          "lien": "/projets"
+        }
+      ],
+
+      "tags": ["psaadrafra", "methodologie", "fiche_activite", "structuration", "essentiel"]
+    },
+
+    {
+      "id": "tuto_002",
+      "titre": "Animer un grand jeu pour 20+ enfants",
+      "slug": "animer-grand-jeu-20-enfants",
+      "categorie": "animation",
+      "description_courte": "Les clés pour organiser et animer un grand jeu collectif sans stress",
+      "description_longue": "Les grands jeux, c'est génial... mais ça peut vite devenir chaotique. Ce tuto te donne une méthode claire pour préparer, lancer et gérer un grand jeu avec un grand groupe.",
+
+      "niveau_difficulte": "intermédiaire",
+      "duree_lecture_min": 12,
+
+      "objectifs_apprentissage": [
+        "Savoir préparer un grand jeu en amont",
+        "Gérer la logistique (équipes, matériel, terrain)",
+        "Animer et arbitrer pendant le jeu",
+        "Adapter en temps réel si besoin"
+      ],
+
+      "prerequis": [
+        "Avoir déjà animé quelques activités simples",
+        "Connaître les bases de la gestion de groupe"
+      ],
+
+      "contenu": {
+        "introduction": "Un grand jeu, c'est un moment fort pour les enfants : défi, coopération, défouloir. Mais mal préparé, ça tourne au chaos. Voici les étapes pour réussir.",
+
+        "sections": [
+          {
+            "titre": "1. Préparation (J-1 ou le matin même)",
+            "contenu": "Liste tout ce dont tu as besoin : matériel, terrain, nombre d'équipes, règles claires. Repère le terrain à l'avance. Prévois un plan B météo.",
+            "checklist": [
+              "Règles écrites noir sur blanc",
+              "Matériel compté et testé",
+              "Terrain délimité et sécurisé",
+              "Équipes pré-formées (ou méthode de tirage au sort prête)",
+              "Chronomètre / sifflet",
+              "Trousse de secours à portée"
+            ]
+          },
+
+          {
+            "titre": "2. Constitution des équipes",
+            "contenu": "Équilibre les équipes : mélange âges, niveaux, dynamiques. Évite les 'dream teams' qui écrasent tout.",
+            "astuces": [
+              "Tirage au sort avec couleurs ou numéros",
+              "Toi tu formes les équipes (si tu connais bien les enfants)",
+              "Capitaines qui choisissent à tour de rôle (attention aux derniers choisis, ça peut blesser)"
+            ]
+          },
+
+          {
+            "titre": "3. Explication des règles",
+            "contenu": "Regroupe tout le monde. Silence obligatoire. Explique en 3 temps : objectif du jeu, règles principales, consignes de sécurité. Fais reformuler.",
+            "pieges_a_eviter": [
+              "Expliquer en plusieurs groupes (infos différentes = conflits)",
+              "Donner trop de détails d'un coup",
+              "Oublier les règles de sécurité (ex: zone interdite, pas de contact physique brutal)"
+            ]
+          },
+
+          {
+            "titre": "4. Lancement du jeu",
+            "contenu": "Top départ clair (sifflet, compte à rebours). Les premières 5 minutes sont cruciales : observe, interviens si règles non respectées.",
+            "ton_role": [
+              "Arbitre : tu fais respecter les règles",
+              "Observateur : tu vois qui est en difficulté, qui monopolise",
+              "Régulateur : tu relances la dynamique si un groupe stagne"
+            ]
+          },
+
+          {
+            "titre": "5. Gestion pendant le jeu",
+            "contenu": "Circule, encourage, sois visible. Si un conflit éclate, siffle, stop, règle ça immédiatement. Chronomètre le temps.",
+            "situations_courantes": [
+              "Une équipe triche → rappel à la règle, éventuellement pénalité",
+              "Un enfant se blesse → stop le jeu, soigne, reprends",
+              "Une équipe est démotivée (perd de loin) → valorise l'effort, ajuste la difficulté"
+            ]
+          },
+
+          {
+            "titre": "6. Fin du jeu et bilan",
+            "contenu": "Siffle la fin. Regroupe tout le monde. Annonce les résultats (ou pas, selon le jeu). Valorise TOUTES les équipes. Fais un retour : qu'avez-vous aimé ?",
+            "important": "Le résultat compte moins que le vécu. Même l'équipe perdante doit repartir contente."
+          }
+        ],
+
+        "exemple_concret": {
+          "titre": "Exemple : Beret géant (30 enfants, 6-10 ans)",
+          "etapes": [
+            "Préparation : 6 foulards de couleurs, terrain délimité, 3 équipes de 10",
+            "Règles : Chaque enfant a un numéro. Quand j'appelle le numéro, il court chercher le foulard au centre et revient dans son camp sans se faire toucher",
+            "Lancement : 'C'est parti, numéro 5 !'",
+            "Gestion : je veille à appeler tous les numéros, j'encourage les plus timides",
+            "Fin : on compte les points, on applaudit tout le monde"
+          ]
+        }
+      },
+
+      "ressources_complementaires": [
+        {
+          "titre": "50 idées de grands jeux",
+          "type": "interne",
+          "lien": "/projets?tag=grand_jeu"
+        }
+      ],
+
+      "tags": ["grand_jeu", "animation", "groupe", "organisation", "arbitrage"]
+    },
+
+    {
+      "id": "tuto_003",
+      "titre": "Gérer un cycle d'activités sur plusieurs séances",
+      "slug": "gerer-cycle-activites",
+      "categorie": "planification",
+      "description_courte": "Construis un cycle cohérent pour faire progresser les enfants sur plusieurs semaines",
+      "description_longue": "Un cycle, c'est une série d'activités liées par un objectif commun (ex: cycle cirque, cycle nature, cycle coopération). Ça permet une vraie progression.",
+
+      "niveau_difficulte": "avancé",
+      "duree_lecture_min": 15,
+
+      "objectifs_apprentissage": [
+        "Définir un objectif de cycle",
+        "Planifier une progression logique",
+        "Évaluer les acquis en fin de cycle"
+      ],
+
+      "prerequis": [
+        "Avoir animé plusieurs activités isolées",
+        "Maîtriser PSAADRAFRA"
+      ],
+
+      "contenu": {
+        "introduction": "Plutôt que de faire des activités 'one-shot' sans lien, un cycle permet de construire une vraie progression. Les enfants apprennent mieux, et toi tu donnes du sens à ton animation.",
+
+        "sections": [
+          {
+            "titre": "Étape 1 : Choisir un thème et un objectif",
+            "contenu": "Ex: Cycle cirque → objectif = développer la motricité et la confiance en soi. Cycle nature → objectif = découvrir l'environnement et respecter le vivant.",
+            "questions_a_se_poser": [
+              "Qu'est-ce que je veux qu'ils apprennent / développent ?",
+              "Quel est l'intérêt pédagogique ?",
+              "Est-ce adapté à mon public (âge, niveau) ?"
+            ]
+          },
+
+          {
+            "titre": "Étape 2 : Structurer le cycle (4 à 6 séances idéalement)",
+            "contenu": "Séance 1 : Découverte. Séance 2-3 : Approfondissement. Séance 4-5 : Création / Autonomie. Séance 6 : Restitution / Spectacle / Bilan.",
+            "exemple": "Cycle cirque : S1 = découverte jonglage / équilibre. S2 = perfectionnement jonglage. S3 = acrobaties. S4 = numéro collectif. S5 = répétitions. S6 = spectacle."
+          },
+
+          {
+            "titre": "Étape 3 : Préparer chaque séance avec PSAADRAFRA",
+            "contenu": "Chaque séance est une activité complète, mais s'inscrit dans la progression du cycle. Garde une cohérence.",
+            "astuce": "Note à la fin de chaque séance ce qui a marché, ce qui a bloqué. Ajuste la séance suivante."
+          },
+
+          {
+            "titre": "Étape 4 : Impliquer les enfants",
+            "contenu": "Dès la séance 2, demande-leur ce qu'ils veulent approfondir. En fin de cycle, ils peuvent créer quelque chose (spectacle, expo, jeu...).",
+            "benefice": "Motivation +++ et sentiment d'être acteurs de leur apprentissage."
+          },
+
+          {
+            "titre": "Étape 5 : Évaluer la progression",
+            "contenu": "Pas de notes ! Mais observe : est-ce que Tom ose maintenant jongler devant les autres ? Est-ce que Léa connaît 3 arbres par leur nom ? La progression, c'est ça.",
+            "outil": "Grille d'observation simple : objectif / acquis / en cours / non atteint."
+          }
+        ],
+
+        "exemple_complet": {
+          "titre": "Cycle 'Coopération' (5 séances, CP-CE1)",
+          "seances": [
+            "S1 : Jeux de connaissance et confiance (parcours aveugle guidé)",
+            "S2 : Construction collective (tour de kaplas géante à plusieurs)",
+            "S3 : Jeu coopératif extérieur (traverser la rivière de crocodiles ensemble)",
+            "S4 : Créer un jeu coopératif (les enfants inventent leur jeu)",
+            "S5 : Bilan - jeu créé par les enfants + retour sur ce qu'on a appris"
+          ]
+        }
+      },
+
+      "ressources_complementaires": [
+        {
+          "titre": "Exemples de cycles thématiques",
+          "type": "interne",
+          "lien": "/tutos?tag=cycle"
+        }
+      ],
+
+      "tags": ["cycle", "progression", "planification", "projet", "long_terme"]
+    },
+
+    {
+      "id": "tuto_004",
+      "titre": "Adapter une activité quand il pleut (plan B météo)",
+      "slug": "adapter-activite-pluie",
+      "categorie": "adaptation",
+      "description_courte": "Transforme ton activité extérieure en version intérieur sans improvisation stressante",
+      "description_longue": "La météo ne prévient pas toujours. Apprends à adapter rapidement une activité prévue dehors pour la faire dedans, sans perdre l'intérêt pédagogique.",
+
+      "niveau_difficulte": "débutant",
+      "duree_lecture_min": 8,
+
+      "objectifs_apprentissage": [
+        "Anticiper un plan B météo",
+        "Adapter l'espace et le matériel",
+        "Gérer l'énergie en intérieur"
+      ],
+
+      "prerequis": [
+        "Aucun"
+      ],
+
+      "contenu": {
+        "introduction": "Il pleut. Ton grand jeu extérieur tombe à l'eau (littéralement). Pas de panique : avec quelques ajustements, tu peux sauver ton activité.",
+
+        "sections": [
+          {
+            "titre": "Réflexe 1 : Anticiper AVANT",
+            "contenu": "Quand tu prépares une activité extérieure, demande-toi toujours : 'Et si il pleut, je fais quoi ?' Note un plan B.",
+            "exemple": "Grand jeu de piste extérieur → Version intérieur : chasse au trésor dans les différentes salles du centre."
+          },
+
+          {
+            "titre": "Réflexe 2 : Adapter l'espace",
+            "contenu": "En intérieur, l'espace est limité. Réduis les distances, limite les déplacements rapides (risque de chute), utilise plusieurs salles si possible.",
+            "astuces": [
+              "Déplace les tables pour libérer de l'espace",
+              "Délimite des zones avec du scotch au sol",
+              "Utilise couloirs et escaliers comme parcours"
+            ]
+          },
+
+          {
+            "titre": "Réflexe 3 : Gérer l'énergie",
+            "contenu": "Les enfants ont besoin de se défouler, surtout s'ils sont enfermés. Alterne activités calmes et dynamiques.",
+            "exemples_activites": [
+              "Dynamique en intérieur : parcours moteur, relais en mode 'marche rapide', danse",
+              "Calme : jeux de société géants, construction, activités manuelles"
+            ]
+          },
+
+          {
+            "titre": "Réflexe 4 : Transformer le jeu",
+            "contenu": "Garde l'idée de base mais change le format.",
+            "transformations": [
+              "Course → relais assis-debout",
+              "Cache-cache extérieur → cache-cache objets en intérieur",
+              "Foot → foot assis (en cercle, avec ballon léger)"
+            ]
+          }
+        ],
+
+        "exemples_concrets": [
+          {
+            "activite_prevue": "Olympiades extérieures",
+            "plan_b": "Olympiades intérieures : épreuves adaptées (lancer de chaussettes dans un carton, équilibre sur une ligne, mime...)"
+          },
+          {
+            "activite_prevue": "Land Art (créations nature dehors)",
+            "plan_b": "Créations avec éléments naturels amenés dedans (feuilles, branches, cailloux) ou art avec matériel de récup"
+          },
+          {
+            "activite_prevue": "Jeu de balle extérieur",
+            "plan_b": "Balle assise en cercle, ou ballon léger (éviter les ballons durs en intérieur)"
+          }
+        ]
+      },
+
+      "tags": ["pluie", "plan_b", "adaptation", "interieur", "meteo"]
+    }
+  ],
+
+  "categories": [
+    {
+      "id": "methodologie",
+      "nom": "Méthodologie",
+      "description": "Apprends les méthodes et outils pour structurer tes animations",
+      "icone": "📐"
+    },
+    {
+      "id": "animation",
+      "nom": "Animation de groupe",
+      "description": "Techniques pour animer des groupes d'enfants efficacement",
+      "icone": "🎭"
+    },
+    {
+      "id": "planification",
+      "nom": "Planification",
+      "description": "Organiser des cycles, projets, plannings d'activités",
+      "icone": "📅"
+    },
+    {
+      "id": "adaptation",
+      "nom": "Adaptation",
+      "description": "Adapter les activités selon les contextes (météo, niveau, nombre...)",
+      "icone": "🔧"
+    },
+    {
+      "id": "communication",
+      "nom": "Communication",
+      "description": "Communiquer avec les enfants, les parents, l'équipe",
+      "icone": "💬"
+    },
+    {
+      "id": "securite",
+      "nom": "Sécurité",
+      "description": "Gérer la sécurité physique et affective",
+      "icone": "🛡️"
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "projets": [
+    {
+      "id": "proj_001",
+      "titre": "La chasse au trésor coopérative",
+      "slug": "chasse-au-tresor-cooperative",
+      "description_courte": "Une aventure en équipe pour développer la coopération et l'orientation spatiale",
+      "description_longue": "Les enfants partent ensemble à la recherche d'indices cachés dans l'espace de jeu. Ils doivent collaborer pour résoudre des énigmes adaptées à leur niveau et trouver le trésor final.",
+
+      "metadonnees": {
+        "niveaux": ["PS", "MS", "GS", "CP", "CE1", "CE2"],
+        "duree_min": 30,
+        "duree_max": 60,
+        "nb_participants_min": 6,
+        "nb_participants_max": 20,
+        "lieu": ["exterieur", "interieur"],
+        "moment_journee": ["matin", "apres-midi"],
+        "saison": ["toutes"],
+        "meteo": ["beau", "couvert", "pluie"]
+      },
+
+      "tags": {
+        "energie": "moyen",
+        "type_activite": ["cooperatif", "aventure", "reflexion"],
+        "competences": ["orientation", "lecture", "logique", "communication"],
+        "ambiance": ["calme", "dynamique"],
+        "materiel_necessaire": "minimal"
+      },
+
+      "materiel": {
+        "obligatoire": [
+          "Papiers ou cartons pour les indices",
+          "Feutres/crayons",
+          "Un petit trésor (bonbons, autocollants, diplômes...)"
+        ],
+        "optionnel": [
+          "Boussole factice",
+          "Carte du lieu",
+          "Déguisements"
+        ],
+        "cout": "gratuit"
+      },
+
+      "objectifs_pedagogiques": {
+        "principaux": [
+          "Développer la coopération et l'entraide",
+          "Travailler l'orientation dans l'espace",
+          "Stimuler la réflexion et la résolution de problèmes"
+        ],
+        "secondaires": [
+          "Renforcer la cohésion de groupe",
+          "Développer la patience et l'écoute",
+          "Encourager la prise d'initiative"
+        ]
+      },
+
+      "psaadrafra": {
+        "presentation": {
+          "introduction": "Aujourd'hui, nous allons partir à l'aventure ! Un trésor a été caché quelque part et nous devons le retrouver ensemble.",
+          "accroche": "Qui veut devenir un vrai chasseur de trésors ?",
+          "duree_min": 3
+        },
+
+        "sensibilisation": {
+          "elements": [
+            "Montrer une carte ou un premier indice mystérieux",
+            "Poser des questions : Avez-vous déjà cherché un trésor ? Comment fait-on ?",
+            "Expliquer qu'on va devoir s'entraider"
+          ],
+          "duree_min": 5
+        },
+
+        "acquisition_savoirs": {
+          "notions": [
+            "Comment lire un indice",
+            "Se repérer dans l'espace (gauche/droite, devant/derrière)",
+            "Travailler en équipe : partager les idées"
+          ],
+          "duree_min": 5
+        },
+
+        "appropriation": {
+          "description": "Les enfants reçoivent le premier indice et commencent à chercher. Ils doivent collaborer pour comprendre l'énigme et trouver le prochain indice.",
+          "role_animateur": "Observer, guider sans donner la réponse, encourager la coopération",
+          "duree_min": 20
+        },
+
+        "diversification": {
+          "variantes": [
+            "Maternelles : indices visuels (dessins, photos)",
+            "CP-CE1 : indices avec phrases courtes",
+            "CE2+ : énigmes plus complexes, calculs simples"
+          ],
+          "adaptations": [
+            "Réduire le nombre d'indices pour les plus jeunes",
+            "Augmenter la difficulté des énigmes pour les plus grands",
+            "Proposer des rôles (lecteur, chercheur, navigateur)"
+          ]
+        },
+
+        "remediation": {
+          "difficultes_possibles": [
+            "Un enfant monopolise les indices",
+            "Le groupe se disperse",
+            "Une énigme est trop difficile"
+          ],
+          "solutions": [
+            "Rappeler la règle de coopération, faire tourner les rôles",
+            "Regrouper et refixer l'objectif",
+            "Donner un indice supplémentaire, reformuler"
+          ]
+        },
+
+        "approfondissement": {
+          "pour_aller_plus_loin": [
+            "Créer leur propre chasse au trésor pour un autre groupe",
+            "Dessiner la carte de leur parcours",
+            "Inventer de nouvelles énigmes"
+          ]
+        },
+
+        "finalisation": {
+          "cloture": "Découverte du trésor ensemble, célébration collective",
+          "partage": "Chacun raconte quel indice était le plus difficile, ce qu'il a préféré",
+          "duree_min": 5
+        },
+
+        "rangement": {
+          "actions": [
+            "Ramasser tous les indices",
+            "Ranger le matériel utilisé",
+            "Remettre l'espace en ordre"
+          ],
+          "participation_enfants": true,
+          "duree_min": 5
+        },
+
+        "reevaluation": {
+          "questions_bilan": [
+            "Qu'avez-vous appris aujourd'hui ?",
+            "Qu'est-ce qui a bien fonctionné en équipe ?",
+            "Qu'est-ce qui était difficile ?"
+          ],
+          "criteres_reussite": [
+            "Les enfants ont coopéré",
+            "Tous ont participé à la recherche",
+            "Le trésor a été trouvé (ou effort collectif visible)"
+          ]
+        }
+      },
+
+      "astuces_animateur": [
+        {
+          "titre": "Préparation en amont",
+          "conseil": "Cache les indices 10-15 min avant. Teste le parcours pour vérifier que tout est clair."
+        },
+        {
+          "titre": "Gestion du groupe",
+          "conseil": "Si le groupe est grand (15+), forme 2 équipes avec des parcours différents qui convergent vers le même trésor."
+        },
+        {
+          "titre": "Niveau de difficulté",
+          "conseil": "Commence facile ! Mieux vaut que les enfants réussissent rapidement au début pour les motiver."
+        },
+        {
+          "titre": "En cas de pluie",
+          "conseil": "Adapte la chasse en intérieur : utilise les différentes salles, couloirs, placards."
+        }
+      ],
+
+      "variantes_detaillees": {
+        "maternelle": {
+          "niveaux": ["PS", "MS", "GS"],
+          "adaptations": [
+            "Utiliser uniquement des images/photos comme indices",
+            "Parcours très court (3-4 indices max)",
+            "Animateur très présent, accompagne le groupe",
+            "Trésor visible à la fin (pas caché dans une cachette complexe)"
+          ],
+          "exemple_indice": "Photo du toboggan → les enfants vont au toboggan et trouvent l'indice suivant"
+        },
+
+        "elementaire_cp_ce1": {
+          "niveaux": ["CP", "CE1"],
+          "adaptations": [
+            "Indices avec phrases courtes et simples",
+            "5-6 indices",
+            "Mélange d'images et de texte",
+            "Possibilité de petites énigmes (compter, trouver des couleurs)"
+          ],
+          "exemple_indice": "Cherche près de quelque chose de rouge et rond → ballon rouge"
+        },
+
+        "elementaire_ce2_plus": {
+          "niveaux": ["CE2", "CM1", "CM2"],
+          "adaptations": [
+            "Énigmes avec calculs, rébus, codes secrets",
+            "7-8 indices ou plus",
+            "Indices textuels avec jeux de mots",
+            "Possibilité de fausses pistes"
+          ],
+          "exemple_indice": "Je suis dans un endroit où l'on court mais où l'on ne marche pas (terrain de sport)"
+        }
+      },
+
+      "demo_aventure": {
+        "type": "narrative_choice",
+        "description": "Simulation interactive de l'activité vue par les yeux d'un animateur",
+
+        "scenes": [
+          {
+            "id": "scene_01",
+            "titre": "Préparation",
+            "texte": "Tu es animateur et tu as 15 enfants de 5-7 ans. Tu décides de faire une chasse au trésor. Par où commences-tu ?",
+            "image": null,
+            "choix": [
+              {
+                "id": "choix_01_a",
+                "texte": "Je cache directement les indices sans plan",
+                "scene_suivante": "scene_02_erreur",
+                "feedback": "Attention ! Sans plan, tu risques d'oublier où sont les indices."
+              },
+              {
+                "id": "choix_01_b",
+                "texte": "Je prépare un plan avec 5 indices adaptés au niveau",
+                "scene_suivante": "scene_02_ok",
+                "feedback": "Excellente idée ! La préparation est la clé."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_02_ok",
+            "titre": "Lancement de l'activité",
+            "texte": "Tes indices sont prêts. Les enfants sont devant toi, excités. Comment introduis-tu l'activité ?",
+            "choix": [
+              {
+                "id": "choix_02_a",
+                "texte": "Je distribue directement le premier indice",
+                "scene_suivante": "scene_03_moyen",
+                "feedback": "Ça fonctionne, mais tu aurais pu créer plus de suspense !"
+              },
+              {
+                "id": "choix_02_b",
+                "texte": "Je raconte une petite histoire de pirate qui a caché un trésor",
+                "scene_suivante": "scene_03_excellent",
+                "feedback": "Parfait ! Tu captes leur attention et les immerges dans l'aventure."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_03_excellent",
+            "titre": "Premier indice",
+            "texte": "Les enfants sont captivés ! Tu leur montres le premier indice : un dessin de balançoire. Que se passe-t-il ?",
+            "choix": [
+              {
+                "id": "choix_03_a",
+                "texte": "Tout le groupe court vers la balançoire en criant",
+                "scene_suivante": "scene_04_gestion",
+                "feedback": "C'est le risque ! Il faut canaliser l'énergie."
+              },
+              {
+                "id": "choix_03_b",
+                "texte": "Tu leur demandes d'abord où il faut aller, puis vous y allez ensemble calmement",
+                "scene_suivante": "scene_04_bien",
+                "feedback": "Très bien ! Tu gardes le contrôle du groupe."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_04_bien",
+            "titre": "Coopération",
+            "texte": "Arrivés à la balançoire, un enfant trouve rapidement l'indice et veut le garder pour lui. Que fais-tu ?",
+            "choix": [
+              {
+                "id": "choix_04_a",
+                "texte": "Je le laisse faire, c'est lui qui a trouvé",
+                "scene_suivante": "scene_05_frustration",
+                "feedback": "Les autres risquent de se sentir exclus."
+              },
+              {
+                "id": "choix_04_b",
+                "texte": "Je rappelle qu'on cherche ENSEMBLE et propose que quelqu'un d'autre lise l'indice",
+                "scene_suivante": "scene_05_cooperatif",
+                "feedback": "Excellent ! Tu renforces l'esprit d'équipe."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_05_cooperatif",
+            "titre": "Succès final",
+            "texte": "Après 4 indices, les enfants trouvent le trésor (des petits diplômes de chasseur). Ils sont ravis ! Comment conclus-tu ?",
+            "choix": [
+              {
+                "id": "choix_05_a",
+                "texte": "On distribue les diplômes et on passe à autre chose",
+                "scene_suivante": "scene_fin_basique",
+                "feedback": "C'est correct, mais tu rates une occasion pédagogique."
+              },
+              {
+                "id": "choix_05_b",
+                "texte": "On fait un bilan : qu'avez-vous préféré ? Comment avez-vous travaillé ensemble ?",
+                "scene_suivante": "scene_fin_pedagogique",
+                "feedback": "Parfait ! La réévaluation permet d'ancrer les apprentissages."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_fin_pedagogique",
+            "titre": "Bravo !",
+            "texte": "Félicitations ! Tu as mené cette activité de A à Z en respectant les principes PSAADRAFRA. Les enfants ont coopéré, appris à s'orienter et se sont amusés. Mission réussie !",
+            "choix": [],
+            "conseils_finaux": [
+              "N'hésite pas à réutiliser cette activité en variant les thèmes (pirates, détectives, explorateurs)",
+              "Note ce qui a bien fonctionné pour la prochaine fois",
+              "Photographie tes meilleurs indices pour les réutiliser"
+            ]
+          }
+        ],
+
+        "objectif_demo": "Montrer comment préparer et animer une chasse au trésor en appliquant PSAADRAFRA",
+        "duree_estimee_min": 5
+      },
+
+      "credits": {
+        "auteur": "Équipe Anim'Connect",
+        "date_creation": "2025-01-15",
+        "version": "1.0"
+      },
+
+      "statut": {
+        "publie": true,
+        "mis_en_avant": true,
+        "badge_special": "coup_de_coeur"
+      }
+    },
+
+    {
+      "id": "proj_002",
+      "titre": "Atelier peinture libre (sans pinceau)",
+      "slug": "peinture-libre-sans-pinceau",
+      "description_courte": "Exploration sensorielle et créative avec différents outils",
+      "description_longue": "Les enfants découvrent la peinture autrement : avec les doigts, des éponges, des rouleaux, des objets du quotidien. L'accent est mis sur l'exploration et le processus créatif plutôt que sur le résultat.",
+
+      "metadonnees": {
+        "niveaux": ["PS", "MS", "GS", "CP"],
+        "duree_min": 30,
+        "duree_max": 45,
+        "nb_participants_min": 4,
+        "nb_participants_max": 12,
+        "lieu": ["interieur"],
+        "moment_journee": ["matin", "apres-midi"],
+        "saison": ["toutes"],
+        "meteo": ["toutes"]
+      },
+
+      "tags": {
+        "energie": "calme",
+        "type_activite": ["creatif", "sensoriel", "expression"],
+        "competences": ["motricite_fine", "imagination", "expression_artistique"],
+        "ambiance": ["calme", "concentration"],
+        "materiel_necessaire": "moyen"
+      },
+
+      "materiel": {
+        "obligatoire": [
+          "Peinture lavable (3-4 couleurs)",
+          "Feuilles épaisses ou cartons",
+          "Éponges, rouleaux, bouchons, fourchettes...",
+          "Tabliers ou vieux vêtements",
+          "Bassine d'eau et savon"
+        ],
+        "optionnel": [
+          "Bâches pour protéger le sol",
+          "Pinces à linge pour faire sécher"
+        ],
+        "cout": "moyen"
+      },
+
+      "objectifs_pedagogiques": {
+        "principaux": [
+          "Développer la créativité et l'expression libre",
+          "Stimuler la motricité fine",
+          "Découvrir différentes textures et techniques"
+        ],
+        "secondaires": [
+          "Apprendre à respecter le travail des autres",
+          "Développer l'autonomie",
+          "Accepter l'imperfection"
+        ]
+      },
+
+      "psaadrafra": {
+        "presentation": {
+          "introduction": "Aujourd'hui, on va peindre... mais SANS pinceaux ! On va utiliser nos mains et plein d'objets rigolos.",
+          "accroche": "Vous êtes prêts à vous salir les mains ?",
+          "duree_min": 2
+        },
+
+        "sensibilisation": {
+          "elements": [
+            "Montrer les différents outils (éponge, rouleau, fourchette...)",
+            "Demander : À votre avis, qu'est-ce que ça va donner sur le papier ?",
+            "Laisser toucher les textures des éponges, rouleaux..."
+          ],
+          "duree_min": 5
+        },
+
+        "acquisition_savoirs": {
+          "notions": [
+            "Chaque outil laisse une trace différente",
+            "On peut mélanger les couleurs",
+            "Il n'y a pas de 'mauvais' dessin, c'est de l'exploration"
+          ],
+          "duree_min": 3
+        },
+
+        "appropriation": {
+          "description": "Chaque enfant reçoit sa feuille et peut choisir ses outils. Il explore librement, à son rythme. Certains iront vite, d'autres prendront leur temps.",
+          "role_animateur": "Circule, encourage, valorise les découvertes ('Oh, regarde ce que fait l'éponge !'), aide à gérer la peinture",
+          "duree_min": 20
+        },
+
+        "diversification": {
+          "variantes": [
+            "PS-MS : se concentrer sur 1-2 outils simples (main, éponge)",
+            "GS-CP : proposer plus d'outils, encourager les mélanges de couleurs"
+          ],
+          "adaptations": [
+            "Pour les réticents à se salir : proposer un gant, ou commencer avec un outil",
+            "Pour les plus rapides : proposer une 2e feuille, un format différent"
+          ]
+        },
+
+        "remediation": {
+          "difficultes_possibles": [
+            "Un enfant refuse de se salir",
+            "La peinture déborde partout",
+            "Un enfant dit 'c'est raté, c'est moche'"
+          ],
+          "solutions": [
+            "Proposer un outil intermédiaire (gant, coton-tige)",
+            "Rappeler les règles, limiter la quantité de peinture sur la palette",
+            "Valoriser le processus : 'Raconte-moi ce que tu as fait', pas de jugement"
+          ]
+        },
+
+        "approfondissement": {
+          "pour_aller_plus_loin": [
+            "Créer une œuvre collective sur un grand format",
+            "Expérimenter avec d'autres matières (encre, craie grasse + peinture...)",
+            "Exposer les créations dans la salle"
+          ]
+        },
+
+        "finalisation": {
+          "cloture": "Chacun présente sa création (si volontaire), on fait sécher les œuvres",
+          "partage": "Quel outil avez-vous préféré ? Quelle texture ?",
+          "duree_min": 5
+        },
+
+        "rangement": {
+          "actions": [
+            "Se laver les mains ensemble",
+            "Nettoyer les outils dans la bassine",
+            "Essuyer les tables",
+            "Jeter les protections sales"
+          ],
+          "participation_enfants": true,
+          "duree_min": 10
+        },
+
+        "reevaluation": {
+          "questions_bilan": [
+            "Qu'avez-vous découvert aujourd'hui ?",
+            "C'était comment de peindre sans pinceau ?",
+            "Vous avez envie de recommencer ?"
+          ],
+          "criteres_reussite": [
+            "Les enfants ont exploré au moins 2 outils",
+            "Ambiance calme et concentrée",
+            "Chacun a créé quelque chose"
+          ]
+        }
+      },
+
+      "astuces_animateur": [
+        {
+          "titre": "Installation",
+          "conseil": "Prépare TOUT avant l'arrivée des enfants : tables protégées, peinture dans des pots peu profonds, outils disposés. Ça évite le chaos."
+        },
+        {
+          "titre": "Gestion des tabliers",
+          "conseil": "Prévoir 5 min pour que tout le monde mette son tablier. C'est long mais ça protège les vêtements !"
+        },
+        {
+          "titre": "Quantité de peinture",
+          "conseil": "Mieux vaut en remettre que de donner trop d'un coup. Limite le gaspillage et les dégâts."
+        },
+        {
+          "titre": "Valorisation",
+          "conseil": "Évite les 'c'est beau' automatiques. Préfère : 'Tu as utilisé beaucoup de rouge !', 'Raconte-moi', 'J'aime cette partie-là'."
+        }
+      ],
+
+      "variantes_detaillees": {
+        "maternelle": {
+          "niveaux": ["PS", "MS", "GS"],
+          "adaptations": [
+            "Limiter à 2-3 couleurs",
+            "Proposer des formats A4 ou A3",
+            "Très présent pour aider à gérer la peinture",
+            "Focus sur l'exploration sensorielle"
+          ]
+        },
+
+        "elementaire_cp": {
+          "niveaux": ["CP"],
+          "adaptations": [
+            "Possibilité de consigne légère (ex: peindre un paysage imaginaire)",
+            "Introduire la notion de composition",
+            "Encourager les mélanges de couleurs"
+          ]
+        }
+      },
+
+      "demo_aventure": {
+        "type": "narrative_observation",
+        "description": "Observe une séance d'atelier peinture et identifie les bonnes pratiques",
+
+        "scenes": [
+          {
+            "id": "scene_01",
+            "titre": "Observation de l'installation",
+            "texte": "Tu observes Sarah, une animatrice expérimentée. Elle installe l'atelier peinture. Tables protégées, pots de peinture, tabliers prêts. Elle vérifie qu'il y a assez d'éponges pour tout le monde. Que remarques-tu ?",
+            "choix": [
+              {
+                "id": "obs_01",
+                "texte": "Elle anticipe bien",
+                "scene_suivante": "scene_02",
+                "feedback": "Exact ! La préparation évite 80% des problèmes."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_02",
+            "titre": "Introduction",
+            "texte": "Les 8 enfants (4-5 ans) arrivent. Sarah les fait asseoir et leur montre les outils un par un. Elle laisse toucher l'éponge sèche. Pourquoi fait-elle ça ?",
+            "choix": [
+              {
+                "id": "obs_02",
+                "texte": "Pour créer de la curiosité et préparer à la texture",
+                "scene_suivante": "scene_03",
+                "feedback": "Oui ! La sensibilisation tactile est importante en maternelle."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_03",
+            "titre": "Pendant l'activité",
+            "texte": "Emma (5 ans) trempe son éponge dans la peinture bleue et fait des traces partout sur sa feuille en riant. Lucas (4 ans) reste figé devant sa feuille blanche. Comment réagit Sarah ?",
+            "choix": [
+              {
+                "id": "obs_03_a",
+                "texte": "Elle dit à Emma de se calmer et force Lucas à commencer",
+                "scene_suivante": "scene_04_erreur",
+                "feedback": "Non, ce serait contre-productif."
+              },
+              {
+                "id": "obs_03_b",
+                "texte": "Elle valorise les traces d'Emma et propose doucement un outil à Lucas",
+                "scene_suivante": "scene_04_ok",
+                "feedback": "Parfait ! Respecter le rythme de chacun."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_04_ok",
+            "titre": "Gestion d'une difficulté",
+            "texte": "Léa (4 ans) commence à pleurer : 'C'est raté, c'est tout mélangé !' Sa feuille a des couleurs qui ont bavé. Que devrait faire Sarah ?",
+            "choix": [
+              {
+                "id": "obs_04_a",
+                "texte": "Lui dire que c'est très bien comme ça",
+                "scene_suivante": "scene_05_moyen",
+                "feedback": "Gentil, mais Léa ne se sentira pas comprise."
+              },
+              {
+                "id": "obs_04_b",
+                "texte": "Accueillir l'émotion, proposer une nouvelle feuille ou transformer le 'mélange' en quelque chose",
+                "scene_suivante": "scene_05_excellent",
+                "feedback": "Excellent ! Tu valides son ressenti et proposes une solution."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_05_excellent",
+            "titre": "Rangement participatif",
+            "texte": "L'activité se termine. Sarah propose : 'Qui veut m'aider à nettoyer les éponges ?' 5 mains se lèvent. Certains enfants adorent cette partie ! Que retiens-tu ?",
+            "choix": [
+              {
+                "id": "obs_05",
+                "texte": "Le rangement peut être un moment pédagogique et ludique",
+                "scene_suivante": "scene_fin",
+                "feedback": "Absolument ! Et ça responsabilise les enfants."
+              }
+            ]
+          },
+
+          {
+            "id": "scene_fin",
+            "titre": "Bravo !",
+            "texte": "Tu as observé une séance réussie. Sarah a su anticiper, s'adapter aux émotions, valoriser le processus créatif et impliquer les enfants jusqu'au bout. C'est ça, l'animation réussie !",
+            "choix": [],
+            "conseils_finaux": [
+              "Chaque atelier créatif est différent : reste flexible",
+              "Le 'résultat' compte moins que le vécu de l'enfant",
+              "Note ce qui fonctionne pour le reproduire"
+            ]
+          }
+        ]
+      },
+
+      "credits": {
+        "auteur": "Équipe Anim'Connect",
+        "date_creation": "2025-01-15",
+        "version": "1.0"
+      },
+
+      "statut": {
+        "publie": true,
+        "mis_en_avant": false,
+        "badge_special": null
+      }
+    }
+  ]
+}

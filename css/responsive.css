@@ -1,0 +1,318 @@
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* ========== MOBILE (< 768px) ========== */
+
+@media (max-width: 767px) {
+  /* Header mobile */
+  .header__menu-toggle {
+    display: flex;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: var(--shadow-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+
+  .header__nav.active {
+    max-height: 500px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: var(--spacing-md);
+    gap: 0;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  /* Hero mobile */
+  .hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  /* Grille mobile */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filtres mobile */
+  .filters__body {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cards mobile */
+  .card__actions {
+    flex-direction: column;
+  }
+
+  .card__actions .btn {
+    width: 100%;
+  }
+
+  /* Boutons mobile */
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  /* Formulaires mobile */
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Modal mobile */
+  .modal {
+    max-width: 100%;
+    margin: var(--spacing-sm);
+  }
+
+  /* Typography mobile */
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Section mobile */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  /* Footer mobile */
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ========== TABLETTE (768px - 1023px) ========== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Grille tablette */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Header tablette */
+  .nav-list {
+    gap: var(--spacing-md);
+  }
+
+  .nav-list a {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  /* Filtres tablette */
+  .filters__body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========== DESKTOP (1024px - 1279px) ========== */
+
+@media (min-width: 1024px) {
+  /* Grille desktop */
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Filtres desktop */
+  .filters__body {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========== LARGE DESKTOP (>= 1280px) ========== */
+
+@media (min-width: 1280px) {
+  /* Grille large desktop */
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Filtres large desktop */
+  .filters__body {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Hero large */
+  .hero__title {
+    font-size: 3.5rem;
+  }
+}
+
+/* ========== PRINT ========== */
+
+@media print {
+  /* Masquer navigation, footer, boutons */
+  .header,
+  .footer,
+  .btn,
+  .filters,
+  .search-bar,
+  .modal-backdrop {
+    display: none !important;
+  }
+
+  /* Optimiser pour impression */
+  body {
+    font-size: 12pt;
+    color: black;
+    background: white;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  /* Éviter coupures de page */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  /* Liens en noir */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  /* Afficher les URLs des liens */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Ne pas afficher les URLs pour les liens internes */
+  a[href^="#"]:after,
+  a[href^="/"]:after {
+    content: "";
+  }
+}
+
+/* ========== DARK MODE (optionnel - pour future implémentation) ========== */
+
+@media (prefers-color-scheme: dark) {
+  /* Sera implémenté plus tard si besoin */
+  /*
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --white: #2a2a2a;
+    ...
+  }
+  */
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========== HOVER DEVICES ========== */
+
+@media (hover: hover) {
+  /* Améliorations pour appareils avec survol */
+  .card:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ========== TOUCH DEVICES ========== */
+
+@media (hover: none) {
+  /* Optimisations pour touch */
+  .btn,
+  .card,
+  a {
+    transform: none !important;
+  }
+
+  /* Augmenter zones tactiles */
+  .btn {
+    min-height: 44px;
+  }
+
+  .nav-list a {
+    min-height: 44px;
+  }
+}

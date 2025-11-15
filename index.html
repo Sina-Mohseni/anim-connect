@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anim'Connect - Activités et Projets d'Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">🎨</span>
+                    <span class="logo-text">Anim'Connect</span>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                    <li><a href="#activites" class="nav-link">Activités</a></li>
+                    <li><a href="#aventure" class="nav-link">Aventure IA</a></li>
+                    <li><a href="#apropos" class="nav-link">À propos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Anim'Connect</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Découvrez des activités et projets d'animation pour toutes les structures éducatives
+                </p>
+                <p class="hero-description">
+                    De la maternelle aux adultes, trouvez l'inspiration pour vos centres de loisirs, accueils périscolaires, ludothèques et bars à jeux.
+                </p>
+                <div class="hero-cta">
+                    <a href="#activites" class="btn btn-primary">Explorer les activités</a>
+                    <a href="#aventure" class="btn btn-secondary">Vivre une aventure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtres Section -->
+    <section id="activites" class="activities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Activités</h2>
+                <p class="section-subtitle">Filtrez et découvrez les projets adaptés à vos besoins</p>
+            </div>
+
+            <!-- Filtres -->
+            <div class="filters-container">
+                <button class="filter-toggle" id="filterToggle">
+                    <span>🔍 Filtres</span>
+                    <span class="filter-count" id="filterCount"></span>
+                </button>
+
+                <div class="filters-panel" id="filtersPanel">
+                    <!-- Public -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Public</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="public" value="maternelle" class="filter-checkbox">
+                                <span class="filter-label">Maternelle (PS, MS, GS)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="public" value="elementaire" class="filter-checkbox">
+                                <span class="filter-label">Élémentaire (CP-CM2)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="public" value="college" class="filter-checkbox">
+                                <span class="filter-label">Collège</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="public" value="lycee" class="filter-checkbox">
+                                <span class="filter-label">Lycée</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="public" value="adultes" class="filter-checkbox">
+                                <span class="filter-label">Adultes</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Catégories -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Catégories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="arts-plastiques" class="filter-checkbox">
+                                <span class="filter-label">Arts Plastiques</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="grands-jeux" class="filter-checkbox">
+                                <span class="filter-label">Grands Jeux</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="sportif" class="filter-checkbox">
+                                <span class="filter-label">Sportif</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="culturel" class="filter-checkbox">
+                                <span class="filter-label">Culturel</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="scientifique" class="filter-checkbox">
+                                <span class="filter-label">Scientifique</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="cuisine" class="filter-checkbox">
+                                <span class="filter-label">Cuisine</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="nature" class="filter-checkbox">
+                                <span class="filter-label">Nature & Environnement</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="musique" class="filter-checkbox">
+                                <span class="filter-label">Musique & Chant</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="theatre" class="filter-checkbox">
+                                <span class="filter-label">Théâtre & Expression</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="categorie" value="jeux-societe" class="filter-checkbox">
+                                <span class="filter-label">Jeux de Société</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Type de structure -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Type de structure</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="structure" value="accueil-periscolaire" class="filter-checkbox">
+                                <span class="filter-label">Accueil Périscolaire</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="structure" value="centre-loisirs" class="filter-checkbox">
+                                <span class="filter-label">Centre de Loisirs</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="structure" value="ludotheque" class="filter-checkbox">
+                                <span class="filter-label">Ludothèque</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="structure" value="bar-jeux" class="filter-checkbox">
+                                <span class="filter-label">Bar à Jeux</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Durée -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Durée</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="duree" value="court" class="filter-checkbox">
+                                <span class="filter-label">Court (< 1h)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duree" value="moyen" class="filter-checkbox">
+                                <span class="filter-label">Moyen (1-2h)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duree" value="long" class="filter-checkbox">
+                                <span class="filter-label">Long (> 2h)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duree" value="projet" class="filter-checkbox">
+                                <span class="filter-label">Projet (plusieurs séances)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button class="btn-reset" id="resetFilters">Réinitialiser</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liste des activités -->
+            <div class="activities-grid" id="activitiesGrid">
+                <!-- Les activités seront chargées dynamiquement via JavaScript -->
+            </div>
+
+            <!-- État vide -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-icon">🔍</div>
+                <h3>Aucune activité trouvée</h3>
+                <p>Essayez de modifier vos filtres pour voir plus de résultats</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Aventure IA -->
+    <section id="aventure" class="adventure-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Vivez une Aventure Interactive</h2>
+                <p class="section-subtitle">Découvrez nos activités d'une manière immersive grâce à l'IA</p>
+            </div>
+
+            <div class="adventure-content">
+                <div class="adventure-card">
+                    <div class="adventure-icon">🎭</div>
+                    <h3>Comment ça marche ?</h3>
+                    <p>Choisissez une activité et laissez-vous guider dans une aventure interactive où vous vivrez l'expérience comme si vous y étiez.</p>
+                    <ul class="adventure-features">
+                        <li>Scénarios adaptatifs</li>
+                        <li>Dialogues interactifs</li>
+                        <li>Découverte immersive</li>
+                        <li>Apprentissage ludique</li>
+                    </ul>
+                </div>
+
+                <div class="adventure-demo" id="adventureDemo">
+                    <div class="demo-placeholder">
+                        <p>Sélectionnez une activité dans la section ci-dessus pour démarrer votre aventure</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('activites').scrollIntoView({behavior: 'smooth'})">
+                            Choisir une activité
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À propos d'Anim'Connect</h2>
+                    <p>
+                        Anim'Connect est une plateforme dédiée aux animateurs et animatrices travaillant dans les structures éducatives et de loisirs.
+                    </p>
+                    <p>
+                        Notre mission est de vous fournir un catalogue riche et diversifié d'activités et de projets adaptés à tous les publics, de la maternelle aux adultes.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="statActivites">0</div>
+                            <div class="stat-label">Activités</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Catégories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Publics</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-grid">
+                        <div class="visual-item">🎨</div>
+                        <div class="visual-item">⚽</div>
+                        <div class="visual-item">🎭</div>
+                        <div class="visual-item">🔬</div>
+                        <div class="visual-item">🎵</div>
+                        <div class="visual-item">🎲</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🎨</span>
+                        <span class="logo-text">Anim'Connect</span>
+                    </div>
+                    <p>Votre ressource pour l'animation éducative et ludique</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#activites">Activités</a></li>
+                        <li><a href="#aventure">Aventure IA</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Une question ou une suggestion ?</p>
+                    <p>contact@animconnect.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anim'Connect. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal pour les détails d'activité -->
+    <div class="modal" id="activityModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content" id="modalContent">
+            <!-- Le contenu sera chargé dynamiquement -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

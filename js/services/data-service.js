@@ -14,9 +14,9 @@ class DataService {
 
     try {
       const [projetsData, astucesData, tutosData] = await Promise.all([
-        fetch('/data/projets.json').then(r => r.json()),
-        fetch('/data/astuces.json').then(r => r.json()),
-        fetch('/data/tutos.json').then(r => r.json())
+        fetch('./data/projets.json').then(r => r.json()),
+        fetch('./data/astuces.json').then(r => r.json()),
+        fetch('./data/tutos.json').then(r => r.json())
       ]);
 
       this.projets = projetsData.projets || [];

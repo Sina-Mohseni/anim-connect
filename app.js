@@ -2,7 +2,7 @@
 // ANIM'CONNECT - Application SPA
 // ==========================================
 
-// État global de l'application
+// ï¿½tat global de l'application
 const AppState = {
     categories: [],
     projects: [],
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ==========================================
-// CHARGEMENT DES DONNÉES
+// CHARGEMENT DES DONNï¿½ES
 // ==========================================
 async function loadData() {
     try {
-        // Charger les catégories
+        // Charger les catï¿½gories
         const categoriesResponse = await fetch('data/categories.json');
         const categoriesData = await categoriesResponse.json();
         AppState.categories = categoriesData.categories;
@@ -43,15 +43,15 @@ async function loadData() {
         const projectsData = await projectsResponse.json();
         AppState.projects = projectsData.projects;
 
-        // Charger les types de démo
+        // Charger les types de dï¿½mo
         const demoTypesResponse = await fetch('data/demo-types.json');
         const demoTypesData = await demoTypesResponse.json();
         AppState.demoTypes = demoTypesData.demoTypes;
 
-        // Charger tous les personas
+        // Charger tous les personas (10 personas)
         const personaIds = [
             'strategiste', 'conteur', 'guide', 'explorateur', 'mysterieux',
-            'educateur', 'enthousiaste', 'artiste', 'scientifique', 'aventurier', 'createur'
+            'educateur', 'enthousiaste', 'artiste', 'scientifique', 'aventurier'
         ];
 
         for (const id of personaIds) {
@@ -60,7 +60,7 @@ async function loadData() {
         }
 
     } catch (error) {
-        console.error('Erreur lors du chargement des données:', error);
+        console.error('Erreur lors du chargement des donnï¿½es:', error);
     }
 }
 
@@ -86,12 +86,12 @@ function initNavigation() {
 function navigateTo(page, params = {}) {
     AppState.currentPage = page;
 
-    // Mettre à jour l'état actif du menu
+    // Mettre ï¿½ jour l'ï¿½tat actif du menu
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.toggle('active', item.dataset.page === page);
     });
 
-    // Rendre la page appropriée
+    // Rendre la page appropriï¿½e
     const app = document.getElementById('app');
 
     switch(page) {
@@ -138,7 +138,7 @@ function renderHomePage() {
         <div class="home-page fade-in">
             <div class="hero-section">
                 <h1 class="hero-title">Anim'Connect</h1>
-                <p class="hero-subtitle">Explorez un univers de jeux, d'activités et d'aventures interactives</p>
+                <p class="hero-subtitle">Explorez un univers de jeux, d'activitï¿½s et d'aventures interactives</p>
             </div>
 
             <div class="categories-grid">
@@ -187,10 +187,10 @@ function renderProjetsPage() {
                                             <p class="project-description">${project.shortDescription}</p>
                                             <div class="project-actions">
                                                 <button class="btn" onclick="navigateTo('fiche', {projectId: '${project.id}'})">
-                                                    =Ë Fiche
+                                                    =ï¿½ Fiche
                                                 </button>
                                                 <button class="btn btn-primary" onclick="navigateTo('demo', {projectId: '${project.id}'})">
-                                                    <® Démo
+                                                    <ï¿½ Dï¿½mo
                                                 </button>
                                             </div>
                                         </div>
@@ -213,14 +213,14 @@ function renderProjetsPage() {
 // PAGE FICHE
 function renderFichePage(projectId) {
     const project = AppState.projects.find(p => p.id === projectId);
-    if (!project) return '<div class="error">Projet non trouvé</div>';
+    if (!project) return '<div class="error">Projet non trouvï¿½</div>';
 
     const fiche = project.fiche;
 
     return `
         <div class="fiche-page">
             <button class="back-button" onclick="navigateTo('projets')">
-                 Retour aux projets
+                ï¿½ Retour aux projets
             </button>
 
             <div class="fiche-header">
@@ -229,15 +229,15 @@ function renderFichePage(projectId) {
             </div>
 
             <div class="fiche-section">
-                <h3>=Ö Présentation</h3>
+                <h3>=ï¿½ Prï¿½sentation</h3>
                 <p>${fiche.presentation}</p>
             </div>
 
             <div class="fiche-section">
-                <h3>=Ê Informations</h3>
+                <h3>=ï¿½ Informations</h3>
                 <div class="fiche-meta">
                     <div class="meta-item">
-                        <div class="meta-label">Âge</div>
+                        <div class="meta-label">ï¿½ge</div>
                         <div class="meta-value">${fiche.age}</div>
                     </div>
                     <div class="meta-item">
@@ -245,35 +245,35 @@ function renderFichePage(projectId) {
                         <div class="meta-value">${fiche.joueurs}</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Durée</div>
+                        <div class="meta-label">Durï¿½e</div>
                         <div class="meta-value">${fiche.duree}</div>
                     </div>
                     <div class="meta-item">
-                        <div class="meta-label">Difficulté</div>
+                        <div class="meta-label">Difficultï¿½</div>
                         <div class="meta-value">${fiche.difficulte}</div>
                     </div>
                 </div>
             </div>
 
             <div class="fiche-section">
-                <h3>=Ü Règles</h3>
+                <h3>=ï¿½ Rï¿½gles</h3>
                 <p>${fiche.regle}</p>
             </div>
 
             <div class="fiche-section">
-                <h3>=¡ Apports</h3>
+                <h3>=ï¿½ Apports</h3>
                 <ul>
                     ${fiche.apports.map(apport => `<li>${apport}</li>`).join('')}
                 </ul>
             </div>
 
             <div class="fiche-section">
-                <h3>=Å Fréquence</h3>
+                <h3>=ï¿½ Frï¿½quence</h3>
                 <p>${fiche.frequence}</p>
             </div>
 
             <div class="fiche-section">
-                <h3>=­ Remarques</h3>
+                <h3>=ï¿½ Remarques</h3>
                 <p>${fiche.remarques}</p>
             </div>
 
@@ -283,24 +283,24 @@ function renderFichePage(projectId) {
             </div>
 
             <button class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 2rem;" onclick="navigateTo('demo', {projectId: '${projectId}'})">
-                <® Lancer une Démo Interactive
+                <ï¿½ Lancer une Dï¿½mo Interactive
             </button>
         </div>
     `;
 }
 
-// PAGE DEMO (sélection persona et type)
+// PAGE DEMO (sï¿½lection persona et type)
 function renderDemoPage(projectId) {
     const project = AppState.projects.find(p => p.id === projectId);
-    if (!project) return '<div class="error">Projet non trouvé</div>';
+    if (!project) return '<div class="error">Projet non trouvï¿½</div>';
 
     return `
         <div class="demo-page">
             <button class="back-button" onclick="navigateTo('fiche', {projectId: '${projectId}'})">
-                 Retour à la fiche
+                ï¿½ Retour ï¿½ la fiche
             </button>
 
-            <h1 class="page-title">Configurer votre Démo</h1>
+            <h1 class="page-title">Configurer votre Dï¿½mo</h1>
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
                 Projet : <strong style="color: var(--primary-color);">${project.title}</strong>
             </p>
@@ -319,7 +319,7 @@ function renderDemoPage(projectId) {
                 </div>
 
                 <div class="selection-section">
-                    <h2 class="selection-title">2. Choisissez le Type de Démo</h2>
+                    <h2 class="selection-title">2. Choisissez le Type de Dï¿½mo</h2>
                     <div class="demo-types-grid" id="demo-types-grid">
                         ${AppState.demoTypes.map(type => `
                             <div class="demo-type-card" data-type-id="${type.id}">
@@ -334,7 +334,7 @@ function renderDemoPage(projectId) {
                 </div>
 
                 <button class="start-demo-button" id="start-demo-btn" disabled>
-                    Démarrer la Démo
+                    Dï¿½marrer la Dï¿½mo
                 </button>
             </div>
         </div>
@@ -351,7 +351,7 @@ function renderChatPage() {
         <div class="chat-page">
             <div class="chat-header">
                 <button class="back-button" onclick="navigateTo('demo', {projectId: '${project.id}'})">
-                     Retour
+                    ï¿½ Retour
                 </button>
                 <div class="chat-persona-info">
                     <div class="chat-persona-avatar" style="border-color: ${persona.color};">
@@ -365,7 +365,7 @@ function renderChatPage() {
             </div>
 
             <div class="chat-messages" id="chat-messages">
-                <!-- Les messages seront ajoutés ici dynamiquement -->
+                <!-- Les messages seront ajoutï¿½s ici dynamiquement -->
             </div>
 
             <div class="chat-input-area">
@@ -390,25 +390,25 @@ function renderCentrePage() {
             <h1 class="page-title">Centre d'Information</h1>
 
             <div class="info-card">
-                <h2>À propos d'Anim'Connect</h2>
+                <h2>ï¿½ propos d'Anim'Connect</h2>
                 <p>
-                    Anim'Connect est une plateforme interactive dédiée à l'animation ludique et créative.
-                    Nous proposons une large gamme de jeux, activités, ateliers et contenus créatifs pour tous les âges.
+                    Anim'Connect est une plateforme interactive dï¿½diï¿½e ï¿½ l'animation ludique et crï¿½ative.
+                    Nous proposons une large gamme de jeux, activitï¿½s, ateliers et contenus crï¿½atifs pour tous les ï¿½ges.
                 </p>
 
                 <h3>Notre Mission</h3>
                 <p>
-                    Rendre l'animation accessible, interactive et passionnante grâce à des outils modernes
-                    et des expériences personnalisées avec nos personas IA.
+                    Rendre l'animation accessible, interactive et passionnante grï¿½ce ï¿½ des outils modernes
+                    et des expï¿½riences personnalisï¿½es avec nos personas IA.
                 </p>
 
-                <h3>Nos Catégories</h3>
+                <h3>Nos Catï¿½gories</h3>
                 <ul>
-                    <li><strong>Jeux de société</strong> : Des jeux de plateau, de cartes et de stratégie</li>
-                    <li><strong>Activités</strong> : Activités artistiques, sportives et éducatives</li>
-                    <li><strong>Jeux de Rôles</strong> : Aventures immersives dans divers univers</li>
-                    <li><strong>Ateliers</strong> : Formations et créations collectives</li>
-                    <li><strong>Scènes</strong> : Contenus multimédias (histoires, vidéos, musiques, audios)</li>
+                    <li><strong>Jeux de sociï¿½tï¿½</strong> : Des jeux de plateau, de cartes et de stratï¿½gie</li>
+                    <li><strong>Activitï¿½s</strong> : Activitï¿½s artistiques, sportives et ï¿½ducatives</li>
+                    <li><strong>Jeux de Rï¿½les</strong> : Aventures immersives dans divers univers</li>
+                    <li><strong>Ateliers</strong> : Formations et crï¿½ations collectives</li>
+                    <li><strong>Scï¿½nes</strong> : Contenus multimï¿½dias (histoires, vidï¿½os, musiques, audios)</li>
                 </ul>
             </div>
 
@@ -417,53 +417,53 @@ function renderCentrePage() {
 
                 <h3>1. Explorer les Projets</h3>
                 <p>
-                    Parcourez nos projets classés par catégories et sous-catégories.
-                    Chaque projet dispose d'une fiche complète (SPAADRAFRA) détaillant toutes les informations.
+                    Parcourez nos projets classï¿½s par catï¿½gories et sous-catï¿½gories.
+                    Chaque projet dispose d'une fiche complï¿½te (SPAADRAFRA) dï¿½taillant toutes les informations.
                 </p>
 
                 <h3>2. Consulter les Fiches</h3>
                 <p>
-                    Cliquez sur "Fiche" pour accéder aux détails complets : règles, durée, âge, apports pédagogiques, etc.
+                    Cliquez sur "Fiche" pour accï¿½der aux dï¿½tails complets : rï¿½gles, durï¿½e, ï¿½ge, apports pï¿½dagogiques, etc.
                 </p>
 
-                <h3>3. Lancer une Démo Interactive</h3>
+                <h3>3. Lancer une Dï¿½mo Interactive</h3>
                 <p>
-                    Choisissez un persona IA qui vous guidera selon sa personnalité unique.
-                    Sélectionnez ensuite le type de démo souhaité parmi 6 options différentes.
+                    Choisissez un persona IA qui vous guidera selon sa personnalitï¿½ unique.
+                    Sï¿½lectionnez ensuite le type de dï¿½mo souhaitï¿½ parmi 6 options diffï¿½rentes.
                 </p>
 
                 <h3>4. Interagir avec les Personas</h3>
                 <p>
-                    Nos 11 personas ont chacun leur style : Le Stratège, Le Conteur, Le Guide,
-                    L'Explorateur, Le Mystérieux, L'Éducateur, L'Enthousiaste, L'Artiste,
-                    Le Scientifique, L'Aventurier et Le Créateur.
+                    Nos 11 personas ont chacun leur style : Le Stratï¿½ge, Le Conteur, Le Guide,
+                    L'Explorateur, Le Mystï¿½rieux, L'ï¿½ducateur, L'Enthousiaste, L'Artiste,
+                    Le Scientifique, L'Aventurier et Le Crï¿½ateur.
                 </p>
             </div>
 
             <div class="info-card">
-                <h2>Les Types de Démo</h2>
+                <h2>Les Types de Dï¿½mo</h2>
                 <ul>
-                    <li><strong>Rappel complet</strong> : Résumé structuré de la fiche</li>
-                    <li><strong>En savoir plus</strong> : Informations supplémentaires au-delà de la fiche</li>
-                    <li><strong>Histoire</strong> : Vivre le projet comme un récit narratif</li>
+                    <li><strong>Rappel complet</strong> : Rï¿½sumï¿½ structurï¿½ de la fiche</li>
+                    <li><strong>En savoir plus</strong> : Informations supplï¿½mentaires au-delï¿½ de la fiche</li>
+                    <li><strong>Histoire</strong> : Vivre le projet comme un rï¿½cit narratif</li>
                     <li><strong>Histoire interactive</strong> : Participer avec vos propres choix</li>
                     <li><strong>Variante</strong> : Explorer d'autres versions du projet</li>
-                    <li><strong>Personnalisé</strong> : Créer votre version sur mesure</li>
+                    <li><strong>Personnalisï¿½</strong> : Crï¿½er votre version sur mesure</li>
                 </ul>
             </div>
 
             <div class="info-card">
                 <h2>Personnalisation</h2>
                 <p>
-                    Rendez-vous dans les Paramètres pour personnaliser l'apparence du site
-                    en choisissant votre couleur dominante préférée.
+                    Rendez-vous dans les Paramï¿½tres pour personnaliser l'apparence du site
+                    en choisissant votre couleur dominante prï¿½fï¿½rï¿½e.
                 </p>
             </div>
         </div>
     `;
 }
 
-// PAGE PARAMÈTRES
+// PAGE PARAMï¿½TRES
 function renderParametresPage() {
     const colorPresets = [
         { name: 'Cyan', color: '#00d4ff', dark: '#0099cc', light: '#33ddff' },
@@ -478,12 +478,12 @@ function renderParametresPage() {
 
     return `
         <div class="parametres-page fade-in">
-            <h1 class="page-title">Paramètres</h1>
+            <h1 class="page-title">Paramï¿½tres</h1>
 
             <div class="settings-section">
                 <h2>Couleur Dominante</h2>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    Choisissez la couleur principale du site selon vos préférences
+                    Choisissez la couleur principale du site selon vos prï¿½fï¿½rences
                 </p>
 
                 <div class="color-presets">
@@ -500,11 +500,11 @@ function renderParametresPage() {
             </div>
 
             <div class="settings-section">
-                <h2>À propos</h2>
+                <h2>ï¿½ propos</h2>
                 <p style="color: var(--text-secondary);">
                     Anim'Connect - Version 2.0<br>
                     Plateforme interactive d'animation ludique<br>
-                    © 2024 Tous droits réservés
+                    ï¿½ 2024 Tous droits rï¿½servï¿½s
                 </p>
             </div>
         </div>
@@ -512,11 +512,11 @@ function renderParametresPage() {
 }
 
 // ==========================================
-// GESTIONNAIRES D'ÉVÉNEMENTS
+// GESTIONNAIRES D'ï¿½Vï¿½NEMENTS
 // ==========================================
 
 function initFicheHandlers() {
-    // Déjà géré par onclick dans le HTML
+    // Dï¿½jï¿½ gï¿½rï¿½ par onclick dans le HTML
 }
 
 function initDemoHandlers(projectId) {
@@ -526,7 +526,7 @@ function initDemoHandlers(projectId) {
     let selectedPersona = null;
     let selectedDemoType = null;
 
-    // Gestion de la sélection des personas
+    // Gestion de la sï¿½lection des personas
     document.querySelectorAll('.persona-card').forEach(card => {
         card.addEventListener('click', () => {
             document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
@@ -536,7 +536,7 @@ function initDemoHandlers(projectId) {
         });
     });
 
-    // Gestion de la sélection du type de démo
+    // Gestion de la sï¿½lection du type de dï¿½mo
     document.querySelectorAll('.demo-type-card').forEach(card => {
         card.addEventListener('click', () => {
             document.querySelectorAll('.demo-type-card').forEach(c => c.classList.remove('selected'));
@@ -580,7 +580,7 @@ function initChatHandlers() {
             chatInput.value = '';
             chatInput.style.height = 'auto';
 
-            // Simuler une réponse du persona (délai pour effet réaliste)
+            // Simuler une rï¿½ponse du persona (dï¿½lai pour effet rï¿½aliste)
             setTimeout(() => {
                 const response = generatePersonaResponse(message);
                 addMessage('persona', response);
@@ -623,55 +623,55 @@ function addMessage(type, text) {
 }
 
 function generatePersonaResponse(userMessage) {
-    // Simulation simplifiée de réponse IA basée sur le persona et le projet
+    // Simulation simplifiï¿½e de rï¿½ponse IA basï¿½e sur le persona et le projet
     const persona = AppState.currentPersona;
     const project = AppState.currentProject;
     const demoType = AppState.currentDemoType;
 
-    // Réponses contextuelles basées sur les mots-clés
+    // Rï¿½ponses contextuelles basï¿½es sur les mots-clï¿½s
     const lowerMessage = userMessage.toLowerCase();
 
-    if (lowerMessage.includes('règle') || lowerMessage.includes('comment')) {
-        return `${persona.name === 'Le Guide' ? 'Avec plaisir !' : 'Bien sûr !'} Les règles de ${project.title} sont : ${project.fiche.regle}`;
+    if (lowerMessage.includes('rï¿½gle') || lowerMessage.includes('comment')) {
+        return `${persona.name === 'Le Guide' ? 'Avec plaisir !' : 'Bien sï¿½r !'} Les rï¿½gles de ${project.title} sont : ${project.fiche.regle}`;
     }
 
-    if (lowerMessage.includes('durée') || lowerMessage.includes('temps')) {
-        return `La durée de ${project.title} est de ${project.fiche.duree}. ${persona.name === 'L\'Enthousiaste' ? 'C\'est parfait pour passer un bon moment !' : 'C\'est une durée idéale pour ce type d\'activité.'}`;
+    if (lowerMessage.includes('durï¿½e') || lowerMessage.includes('temps')) {
+        return `La durï¿½e de ${project.title} est de ${project.fiche.duree}. ${persona.name === 'L\'Enthousiaste' ? 'C\'est parfait pour passer un bon moment !' : 'C\'est une durï¿½e idï¿½ale pour ce type d\'activitï¿½.'}`;
     }
 
     if (lowerMessage.includes('joueur')) {
-        return `${project.title} se joue à ${project.fiche.joueurs}. ${persona.name === 'Le Stratège' ? 'Un nombre optimal pour une bonne dynamique de jeu.' : ''}`;
+        return `${project.title} se joue ï¿½ ${project.fiche.joueurs}. ${persona.name === 'Le Stratï¿½ge' ? 'Un nombre optimal pour une bonne dynamique de jeu.' : ''}`;
     }
 
     if (lowerMessage.includes('merci')) {
-        return `${persona.name === 'L\'Enthousiaste' ? 'De rien ! C\'est un plaisir !' : 'Je vous en prie ! N\'hésitez pas si vous avez d\'autres questions.'}`;
+        return `${persona.name === 'L\'Enthousiaste' ? 'De rien ! C\'est un plaisir !' : 'Je vous en prie ! N\'hï¿½sitez pas si vous avez d\'autres questions.'}`;
     }
 
-    // Réponses par défaut selon le type de démo
+    // Rï¿½ponses par dï¿½faut selon le type de dï¿½mo
     if (demoType.id === 'recap') {
-        return `Voici un élément clé de ${project.title} : ${project.fiche.apports[0]}. ${persona.name === 'L\'Éducateur' ? 'C\'est un apport pédagogique important.' : ''}`;
+        return `Voici un ï¿½lï¿½ment clï¿½ de ${project.title} : ${project.fiche.apports[0]}. ${persona.name === 'L\'ï¿½ducateur' ? 'C\'est un apport pï¿½dagogique important.' : ''}`;
     }
 
     if (demoType.id === 'story') {
-        return `Laissez-moi vous raconter... ${project.fiche.presentation} ${persona.name === 'Le Conteur' ? 'Et ce n\'est que le début de l\'aventure !' : ''}`;
+        return `Laissez-moi vous raconter... ${project.fiche.presentation} ${persona.name === 'Le Conteur' ? 'Et ce n\'est que le dï¿½but de l\'aventure !' : ''}`;
     }
 
-    // Réponse générique adaptée au persona
+    // Rï¿½ponse gï¿½nï¿½rique adaptï¿½e au persona
     const genericResponses = {
-        'strategiste': `Analysons cela ensemble. Concernant ${project.title}, je dirais que c'est une excellente question qui mérite une réponse structurée.`,
-        'conteur': `Ah, quelle merveilleuse question ! Laissez-moi vous conter comment ${project.title} peut transformer votre expérience...`,
-        'guide': `Je vais vous aider avec ça ! Pour ${project.title}, voici ce que je vous recommande de savoir...`,
-        'explorateur': `Excellente curiosité ! Explorons ensemble les facettes de ${project.title} !`,
-        'mysterieux': `Intéressant... Vous touchez là à quelque chose d'important concernant ${project.title}...`,
-        'educateur': `Bonne question ! Cela nous permet d'approfondir notre compréhension de ${project.title}.`,
-        'enthousiaste': `Wow ! Super question ! ${project.title} est vraiment incroyable pour ça !`,
-        'artiste': `Quelle belle interrogation... ${project.title} est comme une Suvre d'art à découvrir...`,
-        'scientifique': `Intéressant. Analysons factuellement les caractéristiques de ${project.title}.`,
-        'aventurier': `En avant ! Découvrons ensemble les secrets de ${project.title} !`,
-        'createur': `Bonne idée ! ${project.title} offre plein de possibilités créatives à explorer.`
+        'strategiste': `Analysons cela ensemble. Concernant ${project.title}, je dirais que c'est une excellente question qui mï¿½rite une rï¿½ponse structurï¿½e.`,
+        'conteur': `Ah, quelle merveilleuse question ! Laissez-moi vous conter comment ${project.title} peut transformer votre expï¿½rience...`,
+        'guide': `Je vais vous aider avec ï¿½a ! Pour ${project.title}, voici ce que je vous recommande de savoir...`,
+        'explorateur': `Excellente curiositï¿½ ! Explorons ensemble les facettes de ${project.title} !`,
+        'mysterieux': `Intï¿½ressant... Vous touchez lï¿½ ï¿½ quelque chose d'important concernant ${project.title}...`,
+        'educateur': `Bonne question ! Cela nous permet d'approfondir notre comprï¿½hension de ${project.title}.`,
+        'enthousiaste': `Wow ! Super question ! ${project.title} est vraiment incroyable pour ï¿½a !`,
+        'artiste': `Quelle belle interrogation... ${project.title} est comme une Suvre d'art ï¿½ dï¿½couvrir...`,
+        'scientifique': `Intï¿½ressant. Analysons factuellement les caractï¿½ristiques de ${project.title}.`,
+        'aventurier': `En avant ! Dï¿½couvrons ensemble les secrets de ${project.title} !`,
+        'createur': `Bonne idï¿½e ! ${project.title} offre plein de possibilitï¿½s crï¿½atives ï¿½ explorer.`
     };
 
-    return genericResponses[persona.id] || `Merci pour votre message à propos de ${project.title}. Comment puis-je vous aider davantage ?`;
+    return genericResponses[persona.id] || `Merci pour votre message ï¿½ propos de ${project.title}. Comment puis-je vous aider davantage ?`;
 }
 
 function initParametresHandlers() {
@@ -681,7 +681,7 @@ function initParametresHandlers() {
             const dark = preset.dataset.dark;
             const light = preset.dataset.light;
 
-            // Mettre à jour les variables CSS
+            // Mettre ï¿½ jour les variables CSS
             document.documentElement.style.setProperty('--primary-color', color);
             document.documentElement.style.setProperty('--primary-dark', dark);
             document.documentElement.style.setProperty('--primary-light', light);
@@ -693,7 +693,7 @@ function initParametresHandlers() {
 
             AppState.settings.primaryColor = color;
 
-            // Mettre à jour l'UI
+            // Mettre ï¿½ jour l'UI
             document.querySelectorAll('.color-preset').forEach(p => p.classList.remove('active'));
             preset.classList.add('active');
         });
@@ -701,7 +701,7 @@ function initParametresHandlers() {
 }
 
 // ==========================================
-// THÈME
+// THï¿½ME
 // ==========================================
 function applyTheme() {
     const primaryColor = localStorage.getItem('primaryColor');

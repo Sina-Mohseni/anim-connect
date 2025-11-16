@@ -4,21 +4,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anim'Connect - Activités et Projets d'Animation</title>
-    <meta http-equiv="refresh" content="0; url=home.html">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-modern.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        // Redirection JavaScript en backup
-        window.location.href = 'home.html';
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Message de redirection pour les navigateurs sans JS -->
-    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-        <h1>Redirection en cours...</h1>
-        <p>Si vous n'êtes pas redirigé automatiquement, <a href="home.html">cliquez ici</a>.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="navigateTo('home')">
+                <span class="logo-icon">🎨</span>
+                <span>Anim'Connect</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li>
+                    <a class="nav-link active" data-page="home">
+                        <span class="nav-link-icon">🏠</span>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-page="activities">
+                        <span class="nav-link-icon">🎯</span>
+                        <span>Activités</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-page="adventure">
+                        <span class="nav-link-icon">🎮</span>
+                        <span>Aventure</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" data-page="about">
+                        <span class="nav-link-icon">👤</span>
+                        <span>À propos</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page: Accueil -->
+    <div id="home-view" class="page-view active">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Anim'Connect</h1>
+                    <p class="hero-subtitle">
+                        Activités et Projets d'Animation pour tous
+                    </p>
+                    <p class="hero-description">
+                        De la maternelle aux adultes, découvrez un catalogue complet d'activités pour vos centres de loisirs, accueils périscolaires, ludothèques et bars à jeux.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" onclick="navigateTo('activities')">
+                            Explorer les activités
+                        </button>
+                        <button class="btn btn-secondary" onclick="navigateTo('about')">
+                            Découvrir l'équipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Catégories d'Activités</h2>
+                    <p class="section-subtitle">Explorez nos différentes thématiques</p>
+                </div>
+                <div class="categories-grid" id="homeCategoriesGrid">
+                    <!-- Chargé dynamiquement -->
+                </div>
+            </div>
+        </section>
     </div>
+
+    <!-- Page: Activités -->
+    <div id="activities-view" class="page-view">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nos Activités</h2>
+                    <p class="section-subtitle">Découvrez toutes nos activités par catégorie</p>
+                </div>
+                <div class="categories-grid" id="activitiesCategoriesGrid">
+                    <!-- Chargé dynamiquement -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: Aventure -->
+    <div id="adventure-view" class="page-view">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Aventure Interactive</h1>
+                    <p class="hero-subtitle">
+                        Vivez vos activités d'une manière immersive
+                    </p>
+                    <p class="hero-description">
+                        Découvrez nos activités à travers des aventures interactives guidées par l'IA. Une nouvelle façon d'explorer et de comprendre chaque projet !
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" onclick="navigateTo('activities')">
+                            Choisir une activité
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">🎭 Comment ça marche ?</h3>
+                        <p style="color: var(--text-muted); line-height: 1.8;">
+                            Choisissez une activité et laissez-vous guider dans une aventure interactive où vous vivrez l'expérience comme si vous y étiez.
+                            Des scénarios adaptatifs, des dialogues immersifs et un apprentissage ludique vous attendent !
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">✨ Fonctionnalités</h3>
+                        <ul style="color: var(--text-muted); line-height: 2; list-style: none;">
+                            <li>✓ Scénarios adaptatifs</li>
+                            <li>✓ Dialogues interactifs</li>
+                            <li>✓ Découverte immersive</li>
+                            <li>✓ Apprentissage ludique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: À propos -->
+    <div id="about-view" class="page-view">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">À propos d'Anim'Connect</h2>
+                    <p class="section-subtitle">Découvrez notre univers et notre mission</p>
+                </div>
+
+                <!-- Auteur -->
+                <div class="author-card" id="authorCard">
+                    <!-- Chargé dynamiquement -->
+                </div>
+
+                <!-- Personas -->
+                <div class="section-header">
+                    <h2 class="section-title">Les Multiples Facettes</h2>
+                    <p class="section-subtitle">10 personas pour des activités infinies</p>
+                </div>
+                <div class="personas-grid" id="personasGrid">
+                    <!-- Chargé dynamiquement -->
+                </div>
+
+                <!-- Présentation -->
+                <div style="margin-top: 4rem; margin-bottom: 3rem;" id="presentationSection">
+                    <!-- Chargé dynamiquement -->
+                </div>
+
+                <!-- Valeurs -->
+                <div class="values-grid" id="valuesGrid">
+                    <!-- Chargé dynamiquement -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: Catégorie Detail (dynamique) -->
+    <div id="category-view" class="page-view">
+        <section class="section">
+            <div class="container">
+                <div class="category-detail" id="categoryDetail">
+                    <!-- Chargé dynamiquement -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🎨</span>
+                        <span>Anim'Connect</span>
+                    </div>
+                    <p style="margin-top: 1rem;">Votre ressource pour l'animation éducative et ludique</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" onclick="navigateTo('home'); return false;">Accueil</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" onclick="navigateTo('activities'); return false;">Activités</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" onclick="navigateTo('adventure'); return false;">Aventure</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" onclick="navigateTo('about'); return false;">À propos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Une question ou une suggestion ?</p>
+                    <p>contact@animconnect.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anim'Connect. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="spa-app.js"></script>
 </body>
 </html>

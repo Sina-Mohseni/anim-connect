@@ -1,44 +1,78 @@
 {
   "auteur": {
     "nom": "ELRAND AVICENNA",
-    "bio": "Animateur polyvalent et créateur d'Anim'Connect, passionné par l'animation éducative et ludique.",
-    "photo": "🎨",
+    "bio": "Animateur polyvalent et créateur d'Anim'Connect, passionné par l'animation éducative et ludique. Expert en conception d'activités pour tous les âges et toutes les structures.",
+    "photo": "👨‍🎨",
     "personas": [
       {
-        "nom": "Le Créatif",
-        "icon": "🎨",
-        "description": "Arts plastiques, ateliers créatifs et expression artistique",
-        "competences": ["Peinture", "Sculpture", "Arts visuels", "Créations manuelles"]
+        "nom": "Le Créatif Déchaîné",
+        "emoji": "🤪",
+        "description": "Arts plastiques, bricolages et créations en tous genres",
+        "competences": ["Peinture", "Sculpture", "DIY", "Recyclage créatif"],
+        "citation": "Un tube de colle et de l'imagination, et hop !"
       },
       {
-        "nom": "Le Conteur",
-        "icon": "📖",
-        "description": "Histoires, jeux de rôle et narration interactive",
-        "competences": ["Création d'histoires", "Jeux de rôle", "Narration", "Improvisation"]
+        "nom": "Le Conteur Mystique",
+        "emoji": "🧙‍♂️",
+        "description": "Histoires épiques, jeux de rôle et narration immersive",
+        "competences": ["Création d'histoires", "Jeux de rôle", "Improvisation", "Univers fantastiques"],
+        "citation": "Il était une fois... et ça va être épique !"
       },
       {
-        "nom": "Le Musicien",
-        "icon": "🎵",
-        "description": "Musique, rythme et expression sonore",
-        "competences": ["Musique", "Chant", "Percussions", "Création d'instruments"]
+        "nom": "Le Rockstar Musical",
+        "emoji": "🎸",
+        "description": "Musique, rythmes et ambiances sonores déjantées",
+        "competences": ["Musique", "Chant", "Percussions", "Création sonore"],
+        "citation": "La vie sans musique, c'est comme un cookie sans pépites"
       },
       {
-        "nom": "Le Scientifique",
-        "icon": "🔬",
-        "description": "Ateliers scientifiques et découvertes",
-        "competences": ["Expériences", "Sciences naturelles", "Physique ludique", "Observation"]
+        "nom": "Le Savant Fou",
+        "emoji": "🤓",
+        "description": "Expériences scientifiques spectaculaires et découvertes",
+        "competences": ["Chimie ludique", "Physique", "Astronomie", "Robotique"],
+        "citation": "Eureka ! Et BOOM ! (ne vous inquiétez pas, c'est normal)"
       },
       {
-        "nom": "Le Coach",
-        "icon": "⚽",
-        "description": "Activités physiques et sportives",
-        "competences": ["Sports collectifs", "Expression corporelle", "Motricité", "Jeux actifs"]
+        "nom": "Le Coach Énergique",
+        "emoji": "💪",
+        "description": "Sports, jeux actifs et défis physiques motivants",
+        "competences": ["Sports collectifs", "Parcours moteurs", "Yoga", "Danse"],
+        "citation": "On y va, on se bouge ! Allez allez allez !"
       },
       {
-        "nom": "Le Pédagogue",
-        "icon": "📚",
-        "description": "Ateliers éducatifs et apprentissages ludiques",
-        "competences": ["Ateliers pédagogiques", "Jeux éducatifs", "Activités de réflexion", "Accompagnement"]
+        "nom": "Le Geek Passionné",
+        "emoji": "🎮",
+        "description": "Jeux vidéo, tech, coding et culture geek assumée",
+        "competences": ["Gaming", "Programmation", "Électronique", "Maker"],
+        "citation": "Have you tried turning it off and on again?"
+      },
+      {
+        "nom": "Le Chef Cuistot",
+        "emoji": "👨‍🍳",
+        "description": "Ateliers cuisine, pâtisserie et découvertes gustatives",
+        "competences": ["Cuisine", "Pâtisserie", "Dégustation", "Food art"],
+        "citation": "La cuisine, c'est de l'amour avec un peu de beurre"
+      },
+      {
+        "nom": "Le Philosophe Zen",
+        "emoji": "🧘",
+        "description": "Réflexion, méditation et activités de bien-être",
+        "competences": ["Relaxation", "Philosophie", "Débats", "Mindfulness"],
+        "citation": "Carpe diem... mais après la sieste"
+      },
+      {
+        "nom": "L'Aventurier Intrépide",
+        "emoji": "🏕️",
+        "description": "Grands jeux, nature et aventures en plein air",
+        "competences": ["Orientation", "Survie douce", "Grands jeux", "Nature"],
+        "citation": "L'aventure, c'est l'aventure !"
+      },
+      {
+        "nom": "Le Maestro du Spectacle",
+        "emoji": "🎭",
+        "description": "Théâtre, expression scénique et performances artistiques",
+        "competences": ["Théâtre", "Improvisation", "Mime", "Mise en scène"],
+        "citation": "Toute la vie est un spectacle, alors autant briller !"
       }
     ]
   },
@@ -295,7 +329,7 @@
     },
     {
       "id": "ateliers-educatifs",
-      "nom": "Ateliers Éducatifs / Pédagogiques",
+      "nom": "Ateliers Éducatifs",
       "icon": "📚",
       "description": "Activités d'apprentissage ludique pour développer connaissances et compétences.",
       "projets": [
@@ -318,7 +352,7 @@
           "duree": "1h30"
         },
         {
-          "titre": "Formations et ateliers thématiques",
+          "titre": "Formations thématiques",
           "public": "Adultes",
           "description": "Sessions d'apprentissage sur des thématiques variées.",
           "duree": "2-3h"
@@ -360,7 +394,7 @@
     {
       "id": "activites-expression",
       "nom": "Activités d'Expression",
-      "icon": "🎭",
+      "icon": "🎪",
       "description": "Théâtre, danse, mime et toutes formes d'expression corporelle et artistique.",
       "projets": [
         {

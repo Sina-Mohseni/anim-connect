@@ -446,6 +446,85 @@ body {
     color: var(--text-primary);
 }
 
+/* Menu des catégories principales */
+.main-categories-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.main-category-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.main-category-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.main-category-icon {
+    font-size: 5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.main-category-content {
+    flex: 1;
+}
+
+.main-category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.main-category-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Sous-catégories */
+.subcategories-view {
+    margin-top: var(--spacing-xl);
+}
+
+.subcategory-section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.subcategory-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.subcategory-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.subcategory-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
 /* ===================================
    Category Detail View
    =================================== */
@@ -679,6 +758,19 @@ body {
     .categories-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
+
+    .main-categories-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .main-category-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-category-icon {
+        font-size: 4rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -693,6 +785,14 @@ body {
     .personas-grid,
     .categories-grid {
         grid-template-columns: 1fr;
+    }
+
+    .main-category-icon {
+        font-size: 3.5rem;
+    }
+
+    .main-category-title {
+        font-size: 1.5rem;
     }
 }
 

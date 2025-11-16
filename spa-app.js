@@ -24,7 +24,7 @@ async function loadData() {
 
         // Charger les catégories sur la page d'accueil
         renderHomeCategories();
-        renderActivitiesCategories();
+        renderMainCategoriesMenu();
 
         // Charger la page À propos
         renderAboutPage();
@@ -81,72 +81,94 @@ function navigateTo(page) {
             }
         });
 
+        // Si on navigue vers activités, réinitialiser la vue
+        if (page === 'activities') {
+            showMainCategories();
+        }
+
         // Scroll en haut
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-function showCategory(categoryId) {
-    const category = aboutData.categories.find(c => c.id === categoryId);
-    if (!category) return;
-
-    const categoryDetail = document.getElementById('categoryDetail');
-    categoryDetail.innerHTML = `
-        <div class="category-header">
-            <div class="category-header-icon">${category.icon}</div>
-            <h2 class="section-title">${category.nom}</h2>
-            <p class="category-description">${category.description}</p>
-        </div>
-
-        <button class="btn btn-secondary" onclick="navigateTo('activities')" style="margin-bottom: 2rem;">
-            ← Retour aux catégories
-        </button>
-
-        <div class="projects-grid">
-            ${category.projets.map(projet => `
-                <div class="project-card">
-                    <div class="project-header">
-                        <h4 class="project-title">${projet.titre}</h4>
-                        <span class="project-badge">${projet.public}</span>
-                    </div>
-                    <p class="project-description">${projet.description}</p>
-                    <div class="project-duration">
-                        <span>⏱️</span>
-                        <span>${projet.duree}</span>
-                    </div>
-                </div>
-            `).join('')}
-        </div>
-    `;
-
-    navigateTo('category');
-}
-
 // ===================================
-// Rendu des catégories
+// Catégories principales
 // ===================================
 function renderHomeCategories() {
     if (!aboutData) return;
 
     const container = document.getElementById('homeCategoriesGrid');
     container.innerHTML = aboutData.categories.map(cat => `
-        <div class="category-card" onclick="showCategory('${cat.id}')">
+        <div class="category-card" onclick="navigateTo('activities'); setTimeout(() => showCategorySubcategories('${cat.id}'), 100);">
             <div class="category-icon">${cat.icon}</div>
             <h3 class="category-name">${cat.nom}</h3>
         </div>
     `).join('');
 }
 
-function renderActivitiesCategories() {
+function renderMainCategoriesMenu() {
     if (!aboutData) return;
 
-    const container = document.getElementById('activitiesCategoriesGrid');
+    const container = document.getElementById('mainCategoriesMenu');
     container.innerHTML = aboutData.categories.map(cat => `
-        <div class="category-card" onclick="showCategory('${cat.id}')">
-            <div class="category-icon">${cat.icon}</div>
-            <h3 class="category-name">${cat.nom}</h3>
+        <div class="main-category-item" onclick="showCategorySubcategories('${cat.id}')">
+            <div class="main-category-icon">${cat.icon}</div>
+            <div class="main-category-content">
+                <h3 class="main-category-title">${cat.nom}</h3>
+                <p class="main-category-description">${cat.description}</p>
+            </div>
         </div>
     `).join('');
+}
+
+function showMainCategories() {
+    document.getElementById('mainCategoriesMenu').style.display = 'grid';
+    document.getElementById('subcategoriesView').style.display = 'none';
+}
+
+function showCategorySubcategories(categoryId) {
+    const category = aboutData.categories.find(c => c.id === categoryId);
+    if (!category) return;
+
+    // Cacher le menu principal
+    document.getElementById('mainCategoriesMenu').style.display = 'none';
+
+    // Afficher les sous-catégories
+    const subcategoriesView = document.getElementById('subcategoriesView');
+    const subcategoriesContent = document.getElementById('subcategoriesContent');
+
+    subcategoriesContent.innerHTML = `
+        <div class="section-header">
+            <h2 class="section-title">${category.icon} ${category.nom}</h2>
+            <p class="section-subtitle">${category.description}</p>
+        </div>
+
+        ${category.subcategories.map(subcat => `
+            <div class="subcategory-section">
+                <div class="subcategory-header">
+                    <div class="subcategory-icon">${subcat.icon}</div>
+                    <h3 class="subcategory-title">${subcat.nom}</h3>
+                </div>
+                <div class="projects-grid">
+                    ${subcat.projets.map(projet => `
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h4 class="project-title">${projet.titre}</h4>
+                                <span class="project-badge">${projet.public}</span>
+                            </div>
+                            <p class="project-description">${projet.description}</p>
+                            <div class="project-duration">
+                                <span>⏱️</span>
+                                <span>${projet.duree}</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('')}
+    `;
+
+    subcategoriesView.style.display = 'block';
 }
 
 // ===================================

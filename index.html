@@ -93,11 +93,21 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Nos Activités</h2>
-                    <p class="section-subtitle">Découvrez toutes nos activités par catégorie</p>
+                    <h2 class="section-title">Explorer par Catégorie</h2>
+                    <p class="section-subtitle">Choisissez une catégorie principale pour découvrir toutes les activités</p>
                 </div>
-                <div class="categories-grid" id="activitiesCategoriesGrid">
+
+                <!-- Menu des catégories principales -->
+                <div class="main-categories-menu" id="mainCategoriesMenu">
                     <!-- Chargé dynamiquement -->
+                </div>
+
+                <!-- Sous-catégories de la catégorie sélectionnée -->
+                <div id="subcategoriesView" class="subcategories-view" style="display: none;">
+                    <button class="btn btn-secondary mb-lg" onclick="showMainCategories()">
+                        ← Retour aux catégories
+                    </button>
+                    <div id="subcategoriesContent"></div>
                 </div>
             </div>
         </section>

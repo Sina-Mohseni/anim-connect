@@ -2,141 +2,121 @@
   "categories": [
     {
       "id": "jeux-societe",
-      "nom": "Jeux de société",
-      "icone": "🎲",
-      "description": "Des jeux de plateau, de cartes et de société pour tous les âges",
-      "sousCategories": [
+      "name": "Jeux de société",
+      "icon": "🎲",
+      "description": "Découvrez nos jeux de société originaux et immersifs",
+      "subcategories": [
         {
           "id": "jeux-strategie",
-          "nom": "Jeux de Stratégie",
-          "description": "Jeux nécessitant réflexion et planification"
+          "name": "Jeux de stratégie",
+          "description": "Des jeux qui sollicitent la réflexion et la tactique"
         },
         {
           "id": "jeux-ambiance",
-          "nom": "Jeux d'Ambiance",
-          "description": "Jeux pour animer vos soirées"
-        },
-        {
-          "id": "jeux-cartes",
-          "nom": "Jeux de Cartes",
-          "description": "Classiques et modernes jeux de cartes"
+          "name": "Jeux d'ambiance",
+          "description": "Des jeux pour s'amuser entre amis"
         },
         {
           "id": "jeux-cooperatifs",
-          "nom": "Jeux Coopératifs",
-          "description": "Jouez ensemble contre le jeu"
+          "name": "Jeux coopératifs",
+          "description": "Jouez ensemble pour gagner ensemble"
         }
       ]
     },
     {
       "id": "activites",
-      "nom": "Activités",
-      "icone": "🎨",
-      "description": "Activités créatives et éducatives pour tous",
-      "sousCategories": [
-        {
-          "id": "activites-manuelles",
-          "nom": "Activités Manuelles",
-          "description": "Bricolage, création et construction"
-        },
+      "name": "Activités",
+      "icon": "🎯",
+      "description": "Des activités variées pour tous les âges",
+      "subcategories": [
         {
           "id": "activites-artistiques",
-          "nom": "Activités Artistiques",
-          "description": "Dessin, peinture et arts visuels"
+          "name": "Activités artistiques",
+          "description": "Exprimez votre créativité"
         },
         {
           "id": "activites-sportives",
-          "nom": "Activités Sportives",
-          "description": "Jeux et activités physiques"
+          "name": "Activités sportives",
+          "description": "Bougez et amusez-vous"
         },
         {
-          "id": "activites-scientifiques",
-          "nom": "Activités Scientifiques",
-          "description": "Expériences et découvertes"
+          "id": "activites-educatives",
+          "name": "Activités éducatives",
+          "description": "Apprenez en vous amusant"
         }
       ]
     },
     {
       "id": "jeux-roles",
-      "nom": "Jeux de Rôles",
-      "icone": "🎭",
-      "description": "Aventures narratives et jeux de rôles immersifs",
-      "sousCategories": [
+      "name": "Jeux de Rôles",
+      "icon": "🎭",
+      "description": "Incarnez des personnages dans des aventures épiques",
+      "subcategories": [
         {
           "id": "jdr-fantastique",
-          "nom": "JDR Fantastique",
-          "description": "Univers de fantasy et magie"
+          "name": "JDR Fantastique",
+          "description": "Dragons, magie et aventures médiévales"
         },
         {
           "id": "jdr-science-fiction",
-          "nom": "JDR Science-Fiction",
-          "description": "Aventures futuristes et spatiales"
+          "name": "JDR Science-Fiction",
+          "description": "Explorez l'espace et le futur"
         },
         {
           "id": "jdr-contemporain",
-          "nom": "JDR Contemporain",
-          "description": "Histoires dans notre monde moderne"
-        },
-        {
-          "id": "jdr-horreur",
-          "nom": "JDR Horreur",
-          "description": "Ambiances sombres et mystérieuses"
+          "name": "JDR Contemporain",
+          "description": "Des aventures dans notre monde moderne"
         }
       ]
     },
     {
       "id": "ateliers",
-      "nom": "Ateliers",
-      "icone": "🛠️",
-      "description": "Ateliers thématiques et formations",
-      "sousCategories": [
+      "name": "Ateliers",
+      "icon": "🛠️",
+      "description": "Participez à nos ateliers créatifs et éducatifs",
+      "subcategories": [
         {
-          "id": "ateliers-cuisine",
-          "nom": "Ateliers Cuisine",
-          "description": "Découvrir et cuisiner ensemble"
+          "id": "ateliers-creation",
+          "name": "Ateliers de création",
+          "description": "Créez vos propres projets"
         },
         {
-          "id": "ateliers-theatre",
-          "nom": "Ateliers Théâtre",
-          "description": "Expression théâtrale et improvisation"
+          "id": "ateliers-formation",
+          "name": "Ateliers de formation",
+          "description": "Développez de nouvelles compétences"
         },
         {
-          "id": "ateliers-musique",
-          "nom": "Ateliers Musique",
-          "description": "Initiation musicale et rythmique"
-        },
-        {
-          "id": "ateliers-ecriture",
-          "nom": "Ateliers Écriture",
-          "description": "Créativité littéraire et storytelling"
+          "id": "ateliers-decouverte",
+          "name": "Ateliers de découverte",
+          "description": "Explorez de nouveaux univers"
         }
       ]
     },
     {
       "id": "scenes",
-      "nom": "Scènes",
-      "icone": "🎬",
-      "description": "Contenus multimédias et créations scéniques",
-      "sousCategories": [
+      "name": "Scènes",
+      "icon": "🎬",
+      "description": "Plongez dans nos créations artistiques",
+      "subcategories": [
         {
           "id": "histoires",
-          "nom": "Histoires",
-          "description": "Récits, contes et narrations"
+          "name": "Histoires",
+          "description": "Des récits captivants à découvrir"
         },
         {
           "id": "videos",
-          "nom": "Vidéos",
-          "description": "Contenus vidéos et courts-métrages"
+          "name": "Vidéos",
+          "description": "Nos créations vidéo"
         },
         {
           "id": "musiques",
-          "nom": "Musiques",
-          "description": "Compositions et créations musicales"
+          "name": "Musiques",
+          "description": "Compositions originales"
         },
         {
           "id": "audios",
-          "nom": "Audios",
-          "description": "Podcasts et créations sonores"
+          "name": "Audios",
+          "description": "Podcasts et contenus audio"
         }
       ]
     }

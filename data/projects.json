@@ -1,0 +1,284 @@
+{
+  "projects": [
+    {
+      "id": "chrono-legends",
+      "title": "Chrono Legends",
+      "categoryId": "jeux-societe",
+      "subcategoryId": "jeux-strategie",
+      "shortDescription": "Un jeu de stratégie où vous voyagez à travers le temps",
+      "image": "https://via.placeholder.com/400x300/1a1a2e/eee?text=Chrono+Legends",
+      "fiche": {
+        "titre": "Chrono Legends",
+        "sousTitre": "Maîtrisez le temps, forgez votre légende",
+        "presentation": "Chrono Legends est un jeu de stratégie innovant qui vous plonge dans une aventure temporelle épique. Incarnez un voyageur du temps et influencez le cours de l'histoire.",
+        "age": "12+",
+        "joueurs": "2-4 joueurs",
+        "duree": "60-90 minutes",
+        "difficulte": "Intermédiaire",
+        "regle": "Chaque joueur dispose d'un deck de cartes temporelles. À votre tour, vous pouvez jouer une carte action, voyager dans le temps ou modifier une ligne temporelle. Le premier à accumuler 10 points de légende gagne.",
+        "apports": [
+          "Développe la pensée stratégique",
+          "Stimule la créativité narrative",
+          "Encourage l'anticipation et la planification"
+        ],
+        "frequence": "Idéal pour des soirées jeux hebdomadaires",
+        "remarques": "Nécessite de l'espace pour disposer les différentes lignes temporelles",
+        "auteur": "Alexandre Dupont"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["strategiste", "conteur", "explorateur"]
+    },
+    {
+      "id": "escape-mystere",
+      "title": "Escape Mystère",
+      "categoryId": "jeux-societe",
+      "subcategoryId": "jeux-cooperatifs",
+      "shortDescription": "Un escape game coopératif plein d'énigmes",
+      "image": "https://via.placeholder.com/400x300/0f3460/eee?text=Escape+Mystere",
+      "fiche": {
+        "titre": "Escape Mystère",
+        "sousTitre": "Coopérez pour vous échapper",
+        "presentation": "Un jeu d'escape coopératif où vous devez résoudre des énigmes pour sortir d'un manoir mystérieux avant la fin du temps imparti.",
+        "age": "10+",
+        "joueurs": "2-6 joueurs",
+        "duree": "45-60 minutes",
+        "difficulte": "Facile à Difficile (selon le scénario)",
+        "regle": "Explorez les pièces du manoir, trouvez des indices, résolvez des énigmes. Vous avez 60 minutes pour vous échapper. Tout le monde gagne ou perd ensemble.",
+        "apports": [
+          "Renforce l'esprit d'équipe",
+          "Développe la logique et la déduction",
+          "Améliore la communication"
+        ],
+        "frequence": "Parfait pour une soirée occasionnelle entre amis",
+        "remarques": "5 scénarios différents inclus avec différents niveaux de difficulté",
+        "auteur": "Sophie Martin"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["guide", "mysterieux", "educateur"]
+    },
+    {
+      "id": "royaume-imaginaire",
+      "title": "Le Royaume Imaginaire",
+      "categoryId": "jeux-roles",
+      "subcategoryId": "jdr-fantastique",
+      "shortDescription": "Un JDR fantastique pour débutants et experts",
+      "image": "https://via.placeholder.com/400x300/16213e/eee?text=Royaume+Imaginaire",
+      "fiche": {
+        "titre": "Le Royaume Imaginaire",
+        "sousTitre": "Votre aventure, vos choix, votre légende",
+        "presentation": "Un système de jeu de rôle accessible qui permet de vivre des aventures épiques dans un monde fantastique riche et cohérent.",
+        "age": "14+",
+        "joueurs": "3-6 joueurs + 1 Maître du Jeu",
+        "duree": "3-4 heures par session",
+        "difficulte": "Adaptable",
+        "regle": "Le MJ décrit la situation, les joueurs déclarent leurs actions, on lance les dés pour résoudre les situations incertaines. Un système simple basé sur des d6.",
+        "apports": [
+          "Stimule l'imagination et la créativité",
+          "Développe les compétences sociales",
+          "Encourage la narration collaborative"
+        ],
+        "frequence": "Sessions régulières recommandées (1-2 fois par mois)",
+        "remarques": "Livret de règles, guide du MJ, et 3 scénarios d'introduction inclus",
+        "auteur": "Équipe Anim'Connect"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["conteur", "guide", "aventurier"]
+    },
+    {
+      "id": "atelier-creation-jeux",
+      "title": "Atelier Création de Jeux",
+      "categoryId": "ateliers",
+      "subcategoryId": "ateliers-creation",
+      "shortDescription": "Apprenez à créer vos propres jeux de société",
+      "image": "https://via.placeholder.com/400x300/1a1a2e/eee?text=Atelier+Creation",
+      "fiche": {
+        "titre": "Atelier Création de Jeux",
+        "sousTitre": "De l'idée au prototype jouable",
+        "presentation": "Un atelier complet pour apprendre les bases du game design et créer votre propre jeu de société du concept au prototype.",
+        "age": "16+",
+        "joueurs": "6-12 participants",
+        "duree": "3 sessions de 3 heures",
+        "difficulte": "Tous niveaux",
+        "regle": "Parcours progressif : brainstorming, mécanique de jeu, prototypage, playtest, itération. Chaque participant crée son propre jeu.",
+        "apports": [
+          "Comprendre les mécaniques de jeu",
+          "Développer la créativité ludique",
+          "Apprendre le prototypage rapide"
+        ],
+        "frequence": "Programme sur 3 semaines",
+        "remarques": "Matériel de prototypage fourni. Possibilité de continuer en autonomie après l'atelier",
+        "auteur": "Laurent Rousseau - Game Designer"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["educateur", "createur", "strategiste"]
+    },
+    {
+      "id": "legends-of-cosmos",
+      "title": "Legends of Cosmos",
+      "categoryId": "jeux-roles",
+      "subcategoryId": "jdr-science-fiction",
+      "shortDescription": "Explorez la galaxie dans ce JDR spatial épique",
+      "image": "https://via.placeholder.com/400x300/0a1931/eee?text=Legends+of+Cosmos",
+      "fiche": {
+        "titre": "Legends of Cosmos",
+        "sousTitre": "L'espace infini attend vos légendes",
+        "presentation": "Un jeu de rôle de science-fiction où vous incarnez l'équipage d'un vaisseau explorant une galaxie pleine de mystères, de dangers et de merveilles technologiques.",
+        "age": "14+",
+        "joueurs": "3-5 joueurs + 1 MJ",
+        "duree": "3-5 heures par session",
+        "difficulte": "Intermédiaire",
+        "regle": "Système narratif avec gestion de vaisseau, exploration spatiale, combats spatiaux et au sol. Chaque joueur a un rôle à bord (pilote, ingénieur, diplomate, etc.).",
+        "apports": [
+          "Travail d'équipe et coordination",
+          "Résolution de problèmes complexes",
+          "Immersion dans un univers de SF riche"
+        ],
+        "frequence": "Campagne longue recommandée (10-20 sessions)",
+        "remarques": "Comprend un générateur de systèmes solaires et de planètes pour créer votre propre galaxie",
+        "auteur": "Marie Dubois"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["explorateur", "scientifique", "aventurier"]
+    },
+    {
+      "id": "histoire-dragon-oublie",
+      "title": "Le Dragon Oublié",
+      "categoryId": "scenes",
+      "subcategoryId": "histoires",
+      "shortDescription": "Une histoire épique de courage et de rédemption",
+      "image": "https://via.placeholder.com/400x300/2d1b69/eee?text=Dragon+Oublie",
+      "fiche": {
+        "titre": "Le Dragon Oublié",
+        "sousTitre": "Quand les légendes ressurgissent",
+        "presentation": "Une histoire épique racontant la quête d'un jeune héros qui découvre qu'il est le dernier descendant d'une lignée de gardiens de dragons.",
+        "age": "10+",
+        "joueurs": "Histoire narrative (1+ auditeurs)",
+        "duree": "45 minutes de lecture/écoute",
+        "difficulte": "Accessible",
+        "regle": "Histoire linéaire ou interactive selon le mode choisi. Peut être lue, racontée, ou vécue de manière interactive avec choix multiples.",
+        "apports": [
+          "Stimule l'imagination",
+          "Transmet des valeurs de courage et d'amitié",
+          "Introduction à la narration fantastique"
+        ],
+        "frequence": "Histoire complète en une session, ou chapitres séparés",
+        "remarques": "Disponible en version audio, texte illustré, et mode interactif",
+        "auteur": "Camille Leroux"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["conteur", "mysterieux", "guide"]
+    },
+    {
+      "id": "musique-voyages-temporels",
+      "title": "Voyages Temporels - Soundtrack",
+      "categoryId": "scenes",
+      "subcategoryId": "musiques",
+      "shortDescription": "Une composition musicale orchestrale épique",
+      "image": "https://via.placeholder.com/400x300/1a1a2e/eee?text=Voyages+Temporels",
+      "fiche": {
+        "titre": "Voyages Temporels",
+        "sousTitre": "Une odyssée sonore à travers les âges",
+        "presentation": "Une composition orchestrale originale qui vous transporte à travers différentes époques historiques, du passé lointain au futur dystopique.",
+        "age": "Tout public",
+        "joueurs": "Écoute individuelle ou collective",
+        "duree": "35 minutes (7 mouvements de 5 minutes)",
+        "difficulte": "Écoute facile",
+        "regle": "Album complet ou par mouvements. Chaque mouvement représente une époque différente avec ses sonorités caractéristiques.",
+        "apports": [
+          "Découverte de styles musicaux variés",
+          "Stimulation de l'imagination temporelle",
+          "Appréciation musicale"
+        ],
+        "frequence": "Écoute libre, idéal comme ambiance pour JDR ou lecture",
+        "remarques": "Disponible en streaming et téléchargement. Partition disponible pour orchestres amateurs",
+        "auteur": "Ensemble Musical Anim'Connect"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["artiste", "scientifique", "explorateur"]
+    },
+    {
+      "id": "activite-impro-theatre",
+      "title": "Improvisation Théâtrale",
+      "categoryId": "activites",
+      "subcategoryId": "activites-artistiques",
+      "shortDescription": "Découvrez l'art de l'improvisation théâtrale",
+      "image": "https://via.placeholder.com/400x300/0f3460/eee?text=Impro+Theatre",
+      "fiche": {
+        "titre": "Improvisation Théâtrale",
+        "sousTitre": "Libérez votre créativité spontanée",
+        "presentation": "Une activité ludique pour découvrir et pratiquer l'improvisation théâtrale. Parfait pour développer la confiance en soi et la créativité.",
+        "age": "12+",
+        "joueurs": "8-16 participants",
+        "duree": "2 heures",
+        "difficulte": "Débutant à Avancé",
+        "regle": "Échauffements, exercices progressifs, puis improvisations courtes et longues. Basé sur l'écoute, l'acceptation et la construction collective.",
+        "apports": [
+          "Confiance en soi et expression corporelle",
+          "Créativité et spontanéité",
+          "Écoute active et collaboration"
+        ],
+        "frequence": "Sessions hebdomadaires recommandées",
+        "remarques": "Aucune expérience théâtrale requise. Ambiance bienveillante garantie",
+        "auteur": "Troupe Impro'Connect"
+      },
+      "demoTypes": [
+        "recap",
+        "deep-dive",
+        "story",
+        "interactive",
+        "variant",
+        "custom"
+      ],
+      "recommendedPersonas": ["artiste", "guide", "enthousiaste"]
+    }
+  ]
+}

@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anim'Connect - Projets d'Animation Interactive</title>
-    <link rel="stylesheet" href="app.css">
+    <title>Anim'Connect - Explorez l'univers ludique</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Menu de Navigation Principal -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="logo" data-route="home">
-                <span class="logo-icon">🎨</span>
+    <!-- Header étroit -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🎲</span>
                 <span class="logo-text">Anim'Connect</span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item" data-route="home">
-                    <span class="nav-icon">🏠</span>
-                    <span class="nav-label">Home</span>
-                </li>
-                <li class="nav-item" data-route="centre">
-                    <span class="nav-icon">ℹ️</span>
-                    <span class="nav-label">Centre</span>
-                </li>
-                <li class="nav-item" data-route="projets">
-                    <span class="nav-icon">📁</span>
-                    <span class="nav-label">Projets</span>
-                </li>
-                <li class="nav-item" data-route="parametres">
-                    <span class="nav-icon">⚙️</span>
-                    <span class="nav-label">Paramètres</span>
-                </li>
-            </ul>
         </div>
+    </header>
+
+    <!-- Navigation Menu (sans hamburger) -->
+    <nav class="nav-menu">
+        <button class="nav-item active" data-page="home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </button>
+        <button class="nav-item" data-page="centre">
+            <span class="nav-icon">ℹ️</span>
+            <span class="nav-label">Centre</span>
+        </button>
+        <button class="nav-item" data-page="projets">
+            <span class="nav-icon">📁</span>
+            <span class="nav-label">Projets</span>
+        </button>
+        <button class="nav-item" data-page="parametres">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">Paramètres</span>
+        </button>
     </nav>
 
-    <!-- Conteneur Principal pour les Pages Dynamiques -->
-    <main id="app-content">
-        <!-- Le contenu sera chargé dynamiquement ici -->
+    <!-- Main Content Area (contenu dynamique) -->
+    <main class="main-content" id="app">
+        <!-- Le contenu sera injecté dynamiquement ici par JavaScript -->
     </main>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <p>&copy; 2024 Anim'Connect - Tous droits réservés</p>
-            <p>Votre plateforme d'animation interactive</p>
+    <!-- Footer (même taille que header) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Footer vide pour l'instant -->
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
 </body>
 </html>

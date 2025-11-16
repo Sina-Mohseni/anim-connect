@@ -1,0 +1,46 @@
+{
+  "demoTypes": [
+    {
+      "id": "recap",
+      "name": "Rappel complet de la fiche",
+      "icon": "📋",
+      "description": "Un résumé structuré et complet de toutes les informations de la fiche SPAADRAFRA",
+      "color": "#3498db"
+    },
+    {
+      "id": "deep-dive",
+      "name": "En savoir plus",
+      "icon": "🔍",
+      "description": "Découvrez des détails supplémentaires et des informations qui ne sont pas dans la fiche",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "story",
+      "name": "Vivre comme une histoire",
+      "icon": "📖",
+      "description": "Vivez le projet comme une histoire narrative immersive",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "interactive",
+      "name": "Histoire interactive",
+      "icon": "🎮",
+      "description": "Participez activement avec vos propres choix qui influencent le déroulement",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "variant",
+      "name": "Autre version ou variante",
+      "icon": "🔄",
+      "description": "Explorez des variantes et des versions alternatives du projet",
+      "color": "#f39c12"
+    },
+    {
+      "id": "custom",
+      "name": "Version personnalisée",
+      "icon": "✨",
+      "description": "Créez votre propre version personnalisée du projet selon vos besoins",
+      "color": "#e84393"
+    }
+  ]
+}

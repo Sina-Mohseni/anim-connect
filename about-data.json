@@ -1,0 +1,425 @@
+{
+  "auteur": {
+    "nom": "ELRAND AVICENNA",
+    "bio": "Animateur polyvalent et créateur d'Anim'Connect, passionné par l'animation éducative et ludique.",
+    "photo": "🎨",
+    "personas": [
+      {
+        "nom": "Le Créatif",
+        "icon": "🎨",
+        "description": "Arts plastiques, ateliers créatifs et expression artistique",
+        "competences": ["Peinture", "Sculpture", "Arts visuels", "Créations manuelles"]
+      },
+      {
+        "nom": "Le Conteur",
+        "icon": "📖",
+        "description": "Histoires, jeux de rôle et narration interactive",
+        "competences": ["Création d'histoires", "Jeux de rôle", "Narration", "Improvisation"]
+      },
+      {
+        "nom": "Le Musicien",
+        "icon": "🎵",
+        "description": "Musique, rythme et expression sonore",
+        "competences": ["Musique", "Chant", "Percussions", "Création d'instruments"]
+      },
+      {
+        "nom": "Le Scientifique",
+        "icon": "🔬",
+        "description": "Ateliers scientifiques et découvertes",
+        "competences": ["Expériences", "Sciences naturelles", "Physique ludique", "Observation"]
+      },
+      {
+        "nom": "Le Coach",
+        "icon": "⚽",
+        "description": "Activités physiques et sportives",
+        "competences": ["Sports collectifs", "Expression corporelle", "Motricité", "Jeux actifs"]
+      },
+      {
+        "nom": "Le Pédagogue",
+        "icon": "📚",
+        "description": "Ateliers éducatifs et apprentissages ludiques",
+        "competences": ["Ateliers pédagogiques", "Jeux éducatifs", "Activités de réflexion", "Accompagnement"]
+      }
+    ]
+  },
+  "presentation": {
+    "titre": "Qu'est-ce que Anim'Connect ?",
+    "description": "Anim'Connect est une plateforme collaborative dédiée aux animateurs et animatrices travaillant dans les structures éducatives et de loisirs. Notre mission est de vous fournir un catalogue riche et diversifié d'activités et de projets adaptés à tous les publics, de la maternelle aux adultes.",
+    "valeurs": [
+      {
+        "titre": "Innovation",
+        "icon": "💡",
+        "description": "Des activités créatives et innovantes qui stimulent l'imagination"
+      },
+      {
+        "titre": "Inclusion",
+        "icon": "🤝",
+        "description": "Des projets adaptés à tous les âges et tous les niveaux"
+      },
+      {
+        "titre": "Partage",
+        "icon": "❤️",
+        "description": "Une communauté d'animateurs qui partagent leur passion"
+      },
+      {
+        "titre": "Qualité",
+        "icon": "⭐",
+        "description": "Des fiches détaillées et testées sur le terrain"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "jeux-societe",
+      "nom": "Jeux de Société",
+      "icon": "🎲",
+      "description": "Découvrez notre sélection de jeux de société pour tous les âges, favorisant les interactions sociales et le développement de la réflexion stratégique.",
+      "projets": [
+        {
+          "titre": "Découverte des jeux coopératifs",
+          "public": "Maternelles",
+          "description": "Premiers jeux de société adaptés aux tout-petits pour développer l'esprit d'équipe.",
+          "duree": "30-45 min"
+        },
+        {
+          "titre": "Jeux de plateau classiques",
+          "public": "Élémentaires CP/CE1",
+          "description": "Initiation aux grands classiques du jeu de société avec règles simplifiées.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Jeux de stratégie junior",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Jeux développant la réflexion, la planification et la prise de décision.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Soirées jeux complexes",
+          "public": "Adultes",
+          "description": "Découverte de jeux modernes avec mécaniques avancées et stratégies élaborées.",
+          "duree": "2-3h"
+        }
+      ]
+    },
+    {
+      "id": "jeux-role",
+      "nom": "Jeux de Rôle",
+      "icon": "🎭",
+      "description": "Plongez dans des aventures narratives où imagination et créativité se rencontrent pour créer des histoires inoubliables.",
+      "projets": [
+        {
+          "titre": "Contes interactifs",
+          "public": "Maternelles",
+          "description": "Premières expériences de jeu de rôle à travers des contes participatifs simples.",
+          "duree": "30 min"
+        },
+        {
+          "titre": "Aventures simplifiées",
+          "public": "Élémentaires CP/CE1",
+          "description": "Initiation au jeu de rôle avec des règles simples et des aventures courtes.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Campagnes découverte",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Premières vraies campagnes de jeu de rôle sur plusieurs séances.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Campagnes épiques",
+          "public": "Adultes",
+          "description": "Campagnes complexes avec création de personnages et univers détaillés.",
+          "duree": "3-4h"
+        }
+      ]
+    },
+    {
+      "id": "histoires",
+      "nom": "Histoires",
+      "icon": "📖",
+      "description": "L'art de raconter et créer des histoires pour développer l'imaginaire et les compétences narratives.",
+      "projets": [
+        {
+          "titre": "Raconte-moi une histoire",
+          "public": "Maternelles",
+          "description": "Écoute active et participation à des histoires interactives avec supports visuels.",
+          "duree": "20-30 min"
+        },
+        {
+          "titre": "Créations d'histoires illustrées",
+          "public": "Élémentaires CP/CE1",
+          "description": "Invention d'histoires courtes avec dessins et premiers écrits.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Ateliers d'écriture créative",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Développement de techniques narratives et création de récits structurés.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Storytelling avancé",
+          "public": "Adultes",
+          "description": "Techniques professionnelles de narration et création d'univers complexes.",
+          "duree": "2h"
+        }
+      ]
+    },
+    {
+      "id": "musiques",
+      "nom": "Musiques",
+      "icon": "🎵",
+      "description": "Éveil musical, création sonore et découverte des rythmes pour tous les âges.",
+      "projets": [
+        {
+          "titre": "Éveil musical",
+          "public": "Maternelles",
+          "description": "Découverte des sons, rythmes et premiers instruments adaptés aux petits.",
+          "duree": "30 min"
+        },
+        {
+          "titre": "Chorale et chansons",
+          "public": "Élémentaires CP/CE1",
+          "description": "Apprentissage de chansons et pratique du chant en groupe.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Création musicale",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Composition de petites œuvres et apprentissage d'instruments simples.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Ateliers musicaux créatifs",
+          "public": "Adultes",
+          "description": "Exploration de styles musicaux variés et création d'arrangements.",
+          "duree": "2h"
+        }
+      ]
+    },
+    {
+      "id": "scenes-audiovisuelles",
+      "nom": "Scènes Audio-Visuelles",
+      "icon": "🎬",
+      "description": "Création vidéo, photo, effets sonores et montage pour donner vie à vos projets créatifs.",
+      "projets": [
+        {
+          "titre": "Théâtre d'ombres",
+          "public": "Maternelles",
+          "description": "Création de spectacles d'ombres chinoises avec support musical.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Courts-métrages simples",
+          "public": "Élémentaires CP/CE1",
+          "description": "Réalisation de petites vidéos avec tablettes et accessoires simples.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Projet vidéo complet",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "De l'écriture du scénario au montage final d'un court-métrage.",
+          "duree": "Plusieurs séances"
+        },
+        {
+          "titre": "Production audiovisuelle",
+          "public": "Adultes",
+          "description": "Réalisation professionnelle avec techniques de tournage et post-production.",
+          "duree": "Projet longue durée"
+        }
+      ]
+    },
+    {
+      "id": "ateliers-creatifs",
+      "nom": "Ateliers Créatifs",
+      "icon": "✨",
+      "description": "Activités manuelles et artistiques pour développer la créativité et la dextérité.",
+      "projets": [
+        {
+          "titre": "Peinture et modelage",
+          "public": "Maternelles",
+          "description": "Activités sensorielles avec peinture, pâte à modeler et matériaux variés.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Bricolages et décorations",
+          "public": "Élémentaires CP/CE1",
+          "description": "Création d'objets décoratifs avec papier, carton et matériaux recyclés.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Projets artistiques",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Réalisation de créations complexes mêlant plusieurs techniques.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Arts plastiques avancés",
+          "public": "Adultes",
+          "description": "Exploration de techniques artistiques variées et projets ambitieux.",
+          "duree": "2h"
+        }
+      ]
+    },
+    {
+      "id": "ateliers-scientifiques",
+      "nom": "Ateliers Scientifiques",
+      "icon": "🔬",
+      "description": "Expériences, découvertes et apprentissages scientifiques de manière ludique.",
+      "projets": [
+        {
+          "titre": "Petites expériences",
+          "public": "Maternelles",
+          "description": "Découverte des phénomènes scientifiques simples : flotter/couler, couleurs, etc.",
+          "duree": "30 min"
+        },
+        {
+          "titre": "Sciences amusantes",
+          "public": "Élémentaires CP/CE1",
+          "description": "Expériences spectaculaires et sûres pour éveiller la curiosité.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Projets scientifiques",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Démarche expérimentale complète avec hypothèses et conclusions.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Ateliers scientifiques approfondis",
+          "public": "Adultes",
+          "description": "Exploration de concepts scientifiques complexes avec expérimentations.",
+          "duree": "2h"
+        }
+      ]
+    },
+    {
+      "id": "ateliers-educatifs",
+      "nom": "Ateliers Éducatifs / Pédagogiques",
+      "icon": "📚",
+      "description": "Activités d'apprentissage ludique pour développer connaissances et compétences.",
+      "projets": [
+        {
+          "titre": "Jeux éducatifs",
+          "public": "Maternelles",
+          "description": "Apprentissage des formes, couleurs, nombres à travers le jeu.",
+          "duree": "30 min"
+        },
+        {
+          "titre": "Ateliers lecture et écriture",
+          "public": "Élémentaires CP/CE1",
+          "description": "Activités ludiques pour renforcer la lecture et l'écriture.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Projets pédagogiques",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Apprentissages transversaux mêlant plusieurs matières.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Formations et ateliers thématiques",
+          "public": "Adultes",
+          "description": "Sessions d'apprentissage sur des thématiques variées.",
+          "duree": "2-3h"
+        }
+      ]
+    },
+    {
+      "id": "activites-physiques",
+      "nom": "Activités Physiques",
+      "icon": "⚽",
+      "description": "Sports, jeux actifs et développement moteur pour tous les niveaux.",
+      "projets": [
+        {
+          "titre": "Motricité et jeux d'éveil",
+          "public": "Maternelles",
+          "description": "Parcours moteurs et jeux pour développer l'équilibre et la coordination.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Jeux sportifs adaptés",
+          "public": "Élémentaires CP/CE1",
+          "description": "Initiation aux sports collectifs avec règles simplifiées.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Sports et grands jeux",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Pratique sportive et jeux collectifs avec règles complètes.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Activités sportives variées",
+          "public": "Adultes",
+          "description": "Sports, fitness et activités physiques pour tous niveaux.",
+          "duree": "1-2h"
+        }
+      ]
+    },
+    {
+      "id": "activites-expression",
+      "nom": "Activités d'Expression",
+      "icon": "🎭",
+      "description": "Théâtre, danse, mime et toutes formes d'expression corporelle et artistique.",
+      "projets": [
+        {
+          "titre": "Jeux d'expression",
+          "public": "Maternelles",
+          "description": "Mime, danse libre et expression corporelle adaptée aux petits.",
+          "duree": "30 min"
+        },
+        {
+          "titre": "Théâtre et improvisation",
+          "public": "Élémentaires CP/CE1",
+          "description": "Premiers pas sur scène avec petites improvisations guidées.",
+          "duree": "1h"
+        },
+        {
+          "titre": "Projets théâtraux",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Création et représentation de pièces courtes.",
+          "duree": "Plusieurs séances"
+        },
+        {
+          "titre": "Expression scénique",
+          "public": "Adultes",
+          "description": "Techniques théâtrales avancées et créations originales.",
+          "duree": "2h"
+        }
+      ]
+    },
+    {
+      "id": "activites-reflexion",
+      "nom": "Activités de Réflexion",
+      "icon": "🧩",
+      "description": "Énigmes, casse-têtes, jeux de logique pour développer la pensée critique.",
+      "projets": [
+        {
+          "titre": "Puzzles et jeux simples",
+          "public": "Maternelles",
+          "description": "Premiers casse-têtes adaptés et jeux de logique simple.",
+          "duree": "20-30 min"
+        },
+        {
+          "titre": "Énigmes junior",
+          "public": "Élémentaires CP/CE1",
+          "description": "Résolution d'énigmes ludiques et jeux de réflexion.",
+          "duree": "45 min"
+        },
+        {
+          "titre": "Escape games éducatifs",
+          "public": "Élémentaires CE2/CM1/CM2",
+          "description": "Énigmes complexes en équipe avec contrainte de temps.",
+          "duree": "1h30"
+        },
+        {
+          "titre": "Challenges de réflexion",
+          "public": "Adultes",
+          "description": "Casse-têtes complexes, énigmes logiques et défis intellectuels.",
+          "duree": "1-2h"
+        }
+      ]
+    }
+  ]
+}

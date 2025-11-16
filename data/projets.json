@@ -1,0 +1,136 @@
+{
+  "projets": [
+    {
+      "id": "projet-001",
+      "nom": "Aventuriers du Rail Junior",
+      "categorie": "jeux-societe",
+      "sousCategorie": "jeux-strategie",
+      "description": "Un jeu de stratégie où les joueurs collectent des cartes et construisent des routes ferroviaires",
+      "spaadrafra": {
+        "situation": "Dans une salle avec des enfants de 6-10 ans qui découvrent les jeux de plateau stratégiques",
+        "public": "Enfants de 6 à 10 ans, groupes de 2 à 4 joueurs",
+        "animation": "Guidée par un animateur qui explique les règles progressivement",
+        "attentes": "Apprendre la stratégie de base, développer la patience et la planification",
+        "deroulement": "1. Explication des règles (10 min)\n2. Premier tour guidé (5 min)\n3. Partie libre avec accompagnement (20-30 min)\n4. Débriefing (5 min)",
+        "ressources": "Plateau de jeu, cartes wagons, cartes destinations, pions trains",
+        "adaptation": "Simplification des règles pour les plus jeunes, variantes coopératives possibles",
+        "finalite": "Développer la pensée stratégique et la gestion des ressources",
+        "retourAnalyse": "Observer l'engagement des enfants, leur compréhension des règles, leur plaisir de jeu"
+      },
+      "duree": "30-45 minutes",
+      "nbParticipants": "2-4 joueurs",
+      "materiel": ["Plateau de jeu", "Cartes", "Pions"],
+      "personasCompatibles": ["animateur-ludique", "pedagogue-patient", "conteur-imaginatif"]
+    },
+    {
+      "id": "projet-002",
+      "nom": "Loup-Garou Géant",
+      "categorie": "jeux-societe",
+      "sousCategorie": "jeux-ambiance",
+      "description": "Une version géante du célèbre jeu de Loup-Garou pour grands groupes",
+      "spaadrafra": {
+        "situation": "Animation en soirée avec un grand groupe d'ados/adultes",
+        "public": "Adolescents et adultes, 12 à 30 joueurs",
+        "animation": "Menée par un maître du jeu dynamique et théâtral",
+        "attentes": "S'amuser, créer de l'interaction sociale, déduction et stratégie",
+        "deroulement": "1. Distribution des rôles (5 min)\n2. Explication des règles (10 min)\n3. Partie avec alternance nuit/jour (30-60 min)\n4. Révélation et débriefing (10 min)",
+        "ressources": "Cartes de rôles géantes, cloche/gong, espace suffisant",
+        "adaptation": "Ajout de rôles spéciaux selon le niveau, variantes thématiques",
+        "finalite": "Renforcer la cohésion de groupe par le jeu social",
+        "retourAnalyse": "Niveau d'engagement, qualité des débats, ambiance générale"
+      },
+      "duree": "60-90 minutes",
+      "nbParticipants": "12-30 joueurs",
+      "materiel": ["Cartes de rôles", "Cloche", "Espace de jeu"],
+      "personasCompatibles": ["animateur-ludique", "comedien-expressif", "meneur-charismatique"]
+    },
+    {
+      "id": "projet-003",
+      "nom": "Atelier Peinture Abstraite",
+      "categorie": "activites",
+      "sousCategorie": "activites-artistiques",
+      "description": "Expression libre à travers la peinture abstraite et les couleurs",
+      "spaadrafra": {
+        "situation": "Atelier créatif dans un centre de loisirs ou une ludothèque",
+        "public": "Enfants de 5 à 12 ans, groupes de 6 à 12 participants",
+        "animation": "Accompagnement bienveillant favorisant l'expression personnelle",
+        "attentes": "Explorer les couleurs, développer la créativité, s'exprimer sans jugement",
+        "deroulement": "1. Présentation d'œuvres abstraites (10 min)\n2. Choix des couleurs et matériaux (5 min)\n3. Création libre (30-40 min)\n4. Présentation des œuvres (10 min)",
+        "ressources": "Peintures acryliques, pinceaux variés, toiles/papier épais, tabliers",
+        "adaptation": "Techniques variées (éponge, doigts, projections) selon l'âge",
+        "finalite": "Développer la confiance en soi et l'expression artistique",
+        "retourAnalyse": "Qualité de l'expression, niveau de confiance, diversité des créations"
+      },
+      "duree": "60 minutes",
+      "nbParticipants": "6-12 participants",
+      "materiel": ["Peintures", "Pinceaux", "Toiles", "Tabliers"],
+      "personasCompatibles": ["artiste-inspire", "pedagogue-patient", "animateur-ludique"]
+    },
+    {
+      "id": "projet-004",
+      "nom": "Enquête à Griffonville",
+      "categorie": "jeux-roles",
+      "sousCategorie": "jdr-fantastique",
+      "description": "Une aventure JDR pour débutants dans un village fantastique",
+      "spaadrafra": {
+        "situation": "Initiation au jeu de rôle dans un contexte ludique et accessible",
+        "public": "Enfants/ados de 10 à 15 ans, 3 à 6 joueurs",
+        "animation": "Maître du jeu guidant l'histoire et facilitant l'immersion",
+        "attentes": "Découvrir le JDR, développer l'imagination, résoudre une énigme",
+        "deroulement": "1. Création de personnages simplifiés (15 min)\n2. Introduction narrative (10 min)\n3. Enquête et exploration (60-90 min)\n4. Résolution et conclusion (15 min)",
+        "ressources": "Fiches de personnages, dés, cartes du village, indices",
+        "adaptation": "Niveau de difficulté ajustable, aides visuelles pour les plus jeunes",
+        "finalite": "Initier au JDR et développer la narration collaborative",
+        "retourAnalyse": "Engagement dans l'histoire, qualité du roleplay, résolution créative"
+      },
+      "duree": "120 minutes",
+      "nbParticipants": "3-6 joueurs + 1 MJ",
+      "materiel": ["Fiches personnages", "Dés", "Cartes", "Indices"],
+      "personasCompatibles": ["conteur-imaginatif", "meneur-charismatique", "pedagogue-patient"]
+    },
+    {
+      "id": "projet-005",
+      "nom": "La Grande Histoire Collective",
+      "categorie": "scenes",
+      "sousCategorie": "histoires",
+      "description": "Création collaborative d'une histoire par le groupe",
+      "spaadrafra": {
+        "situation": "Activité narrative en cercle, ambiance calme et créative",
+        "public": "Tous âges à partir de 7 ans, 6 à 15 participants",
+        "animation": "Facilitation douce pour encourager la participation de tous",
+        "attentes": "Créer ensemble, écouter les autres, développer l'imaginaire collectif",
+        "deroulement": "1. Définition du thème de base (5 min)\n2. Chacun ajoute une phrase à tour de rôle (30 min)\n3. Relecture de l'histoire complète (5 min)\n4. Discussion sur les surprises narratives (10 min)",
+        "ressources": "Espace confortable, enregistreur audio (optionnel), papier/stylo",
+        "adaptation": "Thèmes adaptés à l'âge, durée variable, support visuel possible",
+        "finalite": "Développer l'écoute active et la créativité collaborative",
+        "retourAnalyse": "Cohérence narrative, participation équilibrée, plaisir créatif"
+      },
+      "duree": "45-60 minutes",
+      "nbParticipants": "6-15 participants",
+      "materiel": ["Espace calme", "Enregistreur (optionnel)", "Papier"],
+      "personasCompatibles": ["conteur-imaginatif", "animateur-ludique", "pedagogue-patient"]
+    },
+    {
+      "id": "projet-006",
+      "nom": "Atelier Improvisation Théâtrale",
+      "categorie": "ateliers",
+      "sousCategorie": "ateliers-theatre",
+      "description": "Découverte et pratique de l'improvisation théâtrale",
+      "spaadrafra": {
+        "situation": "Salle de pratique avec espace scénique, ambiance ludique",
+        "public": "Ados et adultes à partir de 12 ans, 8 à 16 participants",
+        "animation": "Coaching bienveillant et dynamique, exercices progressifs",
+        "attentes": "Vaincre sa timidité, développer sa spontanéité, s'amuser",
+        "deroulement": "1. Échauffement corporel et vocal (15 min)\n2. Exercices d'improvisation guidée (30 min)\n3. Improvisations libres par petits groupes (30 min)\n4. Retour collectif (15 min)",
+        "ressources": "Espace dégagé, chaises, accessoires simples (chapeaux, foulards)",
+        "adaptation": "Niveau de difficulté progressif, thèmes variés selon le groupe",
+        "finalite": "Développer la confiance en soi et l'expression spontanée",
+        "retourAnalyse": "Évolution de l'aisance, qualité des interactions, plaisir de jouer"
+      },
+      "duree": "90 minutes",
+      "nbParticipants": "8-16 participants",
+      "materiel": ["Espace scénique", "Accessoires", "Chaises"],
+      "personasCompatibles": ["comedien-expressif", "meneur-charismatique", "animateur-ludique"]
+    }
+  ]
+}

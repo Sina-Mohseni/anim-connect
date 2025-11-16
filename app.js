@@ -1,812 +1,879 @@
-// ===================================
-// État de l'application
-// ===================================
-let activites = [];
-let filtresActifs = {
-    public: [],
-    categorie: [],
-    structure: [],
-    duree: []
+// ====================================
+// ANIM'CONNECT - Application SPA
+// ====================================
+
+// État global de l'application
+const AppState = {
+    categories: null,
+    projets: null,
+    personas: {},
+    currentRoute: 'home',
+    currentTheme: localStorage.getItem('theme') || 'blue',
+    chatHistory: [],
+    currentProjet: null,
+    currentPersona: null,
+    currentDemoType: null
 };
 
-// ===================================
-// Initialisation
-// ===================================
-document.addEventListener('DOMContentLoaded', () => {
+// ====================================
+// INITIALISATION
+// ====================================
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadData();
+    initRouter();
     initNavigation();
-    chargerActivites();
-    initFiltres();
-    initModal();
-    initAnimations();
+    applyTheme(AppState.currentTheme);
 });
 
-// ===================================
-// Navigation
-// ===================================
-function initNavigation() {
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    const links = document.querySelectorAll('.nav-link');
+// ====================================
+// CHARGEMENT DES DONNÉES
+// ====================================
 
-    // Menu mobile
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
+async function loadData() {
+    try {
+        // Charger les catégories
+        const categoriesRes = await fetch('data/categories.json');
+        AppState.categories = await categoriesRes.json();
 
-    // Navigation smooth scroll et active state
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+        // Charger les projets
+        const projetsRes = await fetch('data/projets.json');
+        AppState.projets = await projetsRes.json();
 
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+        // Charger les personas
+        const personaIds = [
+            'animateur-ludique',
+            'pedagogue-patient',
+            'conteur-imaginatif',
+            'comedien-expressif',
+            'meneur-charismatique',
+            'artiste-inspire'
+        ];
 
-                // Mettre à jour l'état actif
-                links.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-
-                // Fermer le menu mobile
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
-            }
-        });
-    });
-
-    // Scroll effect pour la navbar
-    let lastScroll = 0;
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        for (const id of personaIds) {
+            const res = await fetch(`data/personas/${id}.json`);
+            AppState.personas[id] = await res.json();
         }
 
-        lastScroll = currentScroll;
-    });
-
-    // Intersection Observer pour l'état actif de navigation
-    const sections = document.querySelectorAll('section[id]');
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, {
-        threshold: 0.3
-    });
-
-    sections.forEach(section => navObserver.observe(section));
-}
-
-// ===================================
-// Chargement des activités
-// ===================================
-async function chargerActivites() {
-    try {
-        const response = await fetch('activites.json');
-        const data = await response.json();
-        activites = data.activites;
-
-        afficherActivites(activites);
-        updateStatActivites();
+        console.log('Données chargées avec succès');
     } catch (error) {
-        console.error('Erreur lors du chargement des activités:', error);
-        afficherErreur();
+        console.error('Erreur lors du chargement des données:', error);
     }
 }
 
-function afficherActivites(activitesAffichees) {
-    const grid = document.getElementById('activitiesGrid');
-    const emptyState = document.getElementById('emptyState');
+// ====================================
+// SYSTÈME DE ROUTING
+// ====================================
 
-    if (!grid) return;
+function initRouter() {
+    // Écouter les changements d'URL
+    window.addEventListener('hashchange', handleRoute);
 
-    if (activitesAffichees.length === 0) {
-        grid.style.display = 'none';
-        emptyState.style.display = 'block';
-        return;
+    // Charger la route initiale
+    handleRoute();
+}
+
+function handleRoute() {
+    const hash = window.location.hash.slice(1) || 'home';
+    const [route, ...params] = hash.split('/');
+
+    AppState.currentRoute = route;
+    updateActiveNav(route);
+
+    // Router vers la bonne page
+    switch (route) {
+        case 'home':
+            renderHome();
+            break;
+        case 'centre':
+            renderCentre();
+            break;
+        case 'projets':
+            renderProjets();
+            break;
+        case 'parametres':
+            renderParametres();
+            break;
+        case 'fiche':
+            renderFiche(params[0]);
+            break;
+        case 'demo-select':
+            renderDemoSelect(params[0]);
+            break;
+        case 'demo-chat':
+            renderDemoChat(params[0], params[1], params[2]);
+            break;
+        default:
+            renderHome();
     }
 
-    grid.style.display = 'grid';
-    emptyState.style.display = 'none';
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
 
-    grid.innerHTML = activitesAffichees.map(activite => `
-        <div class="activity-card fade-in-up" data-id="${activite.id}">
-            <div class="activity-image">
-                <span style="position: relative; z-index: 1;">${activite.icon}</span>
+function navigateTo(route) {
+    window.location.hash = route;
+}
+
+// ====================================
+// NAVIGATION
+// ====================================
+
+function initNavigation() {
+    // Ajouter les événements de clic aux items de navigation
+    document.querySelectorAll('[data-route]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const route = item.getAttribute('data-route');
+            navigateTo(route);
+        });
+    });
+}
+
+function updateActiveNav(currentRoute) {
+    document.querySelectorAll('.nav-item').forEach(item => {
+        if (item.getAttribute('data-route') === currentRoute) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+// ====================================
+// PAGE: HOME
+// ====================================
+
+function renderHome() {
+    const content = document.getElementById('app-content');
+
+    content.innerHTML = `
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">🎨 Anim'Connect</h1>
+                <p class="hero-subtitle">Votre plateforme d'animation interactive avec intelligence artificielle</p>
+                <p class="hero-description">
+                    Découvrez des projets d'animation innovants et vivez-les à travers des expériences
+                    interactives guidées par des personas IA uniques.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="navigateTo('projets')">
+                        Explorer les Projets
+                    </button>
+                    <button class="btn btn-secondary" onclick="navigateTo('centre')">
+                        En savoir plus
+                    </button>
+                </div>
             </div>
-            <div class="activity-content">
-                <div class="activity-header">
-                    <h3 class="activity-title">${activite.titre}</h3>
-                    <p class="activity-description">${activite.description}</p>
-                </div>
-                <div class="activity-tags">
-                    <span class="tag primary">${getCategorieNom(activite.categorie)}</span>
-                    <span class="tag">${activite.dureeTexte}</span>
-                    <span class="tag">${activite.participants} pers.</span>
-                </div>
-                <div class="activity-footer">
-                    <div class="activity-info">
-                        <span>👥 ${getPublicLabel(activite.public)}</span>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Catégories de Projets</h2>
+                <div class="categories-grid" id="homeCategoriesGrid"></div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Comment ça fonctionne ?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3>1. Choisissez un Projet</h3>
+                        <p>Parcourez nos catégories et sélectionnez un projet qui vous intéresse</p>
                     </div>
-                    <div class="activity-cta">
-                        <button class="btn-icon" onclick="ouvrirModal(${activite.id})" title="Voir les détails">
-                            👁️
-                        </button>
-                        <button class="btn-icon" onclick="lancerAventure(${activite.id})" title="Vivre l'aventure">
-                            🎮
-                        </button>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <h3>2. Sélectionnez un Persona</h3>
+                        <p>Choisissez le guide IA qui correspond à votre style d'apprentissage</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>3. Vivez l'Expérience</h3>
+                        <p>Interagissez avec votre persona et explorez le projet de manière immersive</p>
                     </div>
                 </div>
             </div>
+        </section>
+    `;
+
+    // Charger les catégories
+    renderHomeCategories();
+}
+
+function renderHomeCategories() {
+    const grid = document.getElementById('homeCategoriesGrid');
+    if (!grid || !AppState.categories) return;
+
+    grid.innerHTML = AppState.categories.categories.map(cat => `
+        <div class="category-card" onclick="navigateTo('projets')">
+            <div class="category-icon">${cat.icone}</div>
+            <h3 class="category-name">${cat.nom}</h3>
+            <p class="category-desc">${cat.description}</p>
+            <span class="category-count">${cat.sousCategories.length} sous-catégories</span>
         </div>
     `).join('');
 }
 
-function getCategorieNom(categorieId) {
-    const categories = {
-        'arts-plastiques': 'Arts Plastiques',
-        'grands-jeux': 'Grands Jeux',
-        'sportif': 'Sportif',
-        'culturel': 'Culturel',
-        'scientifique': 'Scientifique',
-        'cuisine': 'Cuisine',
-        'nature': 'Nature',
-        'musique': 'Musique',
-        'theatre': 'Théâtre',
-        'jeux-societe': 'Jeux de Société'
-    };
-    return categories[categorieId] || categorieId;
-}
+// ====================================
+// PAGE: CENTRE
+// ====================================
 
-function getPublicLabel(publics) {
-    const labels = {
-        'maternelle': 'Mat.',
-        'elementaire': 'Élém.',
-        'college': 'Collège',
-        'lycee': 'Lycée',
-        'adultes': 'Adultes'
-    };
-    return publics.map(p => labels[p] || p).join(', ');
-}
+function renderCentre() {
+    const content = document.getElementById('app-content');
 
-function afficherErreur() {
-    const grid = document.getElementById('activitiesGrid');
-    if (grid) {
-        grid.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-icon">⚠️</div>
-                <h3>Erreur de chargement</h3>
-                <p>Impossible de charger les activités. Veuillez réessayer.</p>
-            </div>
-        `;
-    }
-}
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">📚 Centre d'Information</h1>
+                <p class="page-subtitle">Tout ce que vous devez savoir sur Anim'Connect</p>
 
-// ===================================
-// Système de filtres
-// ===================================
-function initFiltres() {
-    const filterToggle = document.getElementById('filterToggle');
-    const filtersPanel = document.getElementById('filtersPanel');
-    const resetButton = document.getElementById('resetFilters');
-    const checkboxes = document.querySelectorAll('.filter-checkbox');
+                <div class="info-section">
+                    <h2>🎯 Notre Mission</h2>
+                    <p>
+                        Anim'Connect révolutionne l'animation et l'apprentissage en combinant des projets
+                        d'animation éprouvés avec l'intelligence artificielle. Nous offrons une plateforme
+                        interactive où chaque utilisateur peut explorer, apprendre et personnaliser des
+                        activités selon ses besoins.
+                    </p>
+                </div>
 
-    // Toggle du panneau de filtres
-    if (filterToggle && filtersPanel) {
-        filterToggle.addEventListener('click', () => {
-            filtersPanel.classList.toggle('active');
-        });
-    }
+                <div class="info-section">
+                    <h2>🎭 Les Personas IA</h2>
+                    <p>
+                        Nos personas sont des guides intelligents, chacun avec sa propre personnalité et
+                        expertise. Ils transforment la découverte de projets en expérience interactive et
+                        personnalisée.
+                    </p>
+                    <div class="personas-grid" id="centrePersonasGrid"></div>
+                </div>
 
-    // Écouteurs sur les checkboxes
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', (e) => {
-            const type = e.target.name;
-            const value = e.target.value;
+                <div class="info-section">
+                    <h2>📋 La Méthode SPAADRAFRA</h2>
+                    <p>
+                        Chaque projet est structuré selon la méthode SPAADRAFRA, un cadre complet pour
+                        concevoir et animer des activités de qualité :
+                    </p>
+                    <ul class="spaadrafra-list">
+                        <li><strong>Situation</strong> : Le contexte de l'activité</li>
+                        <li><strong>Public</strong> : À qui s'adresse le projet</li>
+                        <li><strong>Animation</strong> : Comment mener l'activité</li>
+                        <li><strong>Attentes</strong> : Les objectifs et bénéfices</li>
+                        <li><strong>Déroulement</strong> : Les étapes détaillées</li>
+                        <li><strong>Ressources</strong> : Le matériel nécessaire</li>
+                        <li><strong>Adaptation</strong> : Les possibilités de variation</li>
+                        <li><strong>Finalité</strong> : Les objectifs pédagogiques</li>
+                        <li><strong>Retour et Analyse</strong> : L'évaluation de l'activité</li>
+                    </ul>
+                </div>
 
-            if (e.target.checked) {
-                if (!filtresActifs[type].includes(value)) {
-                    filtresActifs[type].push(value);
-                }
-            } else {
-                filtresActifs[type] = filtresActifs[type].filter(v => v !== value);
-            }
+                <div class="info-section">
+                    <h2>🎮 Types de Démo Interactive</h2>
+                    <p>Pour chaque projet, vous pouvez choisir parmi 6 types d'expériences :</p>
+                    <div class="demo-types-grid">
+                        <div class="demo-type-card">
+                            <h4>📄 Rappel Complet</h4>
+                            <p>Révision détaillée de toute la fiche du projet</p>
+                        </div>
+                        <div class="demo-type-card">
+                            <h4>🔍 En Savoir Plus</h4>
+                            <p>Informations approfondies au-delà de la fiche</p>
+                        </div>
+                        <div class="demo-type-card">
+                            <h4>📖 Histoire</h4>
+                            <p>Vivre le projet comme un récit captivant</p>
+                        </div>
+                        <div class="demo-type-card">
+                            <h4>🎲 Histoire Interactive</h4>
+                            <p>Faire des choix et influencer le déroulement</p>
+                        </div>
+                        <div class="demo-type-card">
+                            <h4>🔄 Variante</h4>
+                            <p>Proposer une autre version du projet</p>
+                        </div>
+                        <div class="demo-type-card">
+                            <h4>✨ Personnalisé</h4>
+                            <p>Créer une version sur mesure</p>
+                        </div>
+                    </div>
+                </div>
 
-            appliquerFiltres();
-            updateFilterCount();
-        });
-    });
-
-    // Bouton de réinitialisation
-    if (resetButton) {
-        resetButton.addEventListener('click', () => {
-            // Décocher toutes les cases
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-
-            // Réinitialiser les filtres
-            filtresActifs = {
-                public: [],
-                categorie: [],
-                structure: [],
-                duree: []
-            };
-
-            appliquerFiltres();
-            updateFilterCount();
-        });
-    }
-}
-
-function appliquerFiltres() {
-    let activitesFiltrees = [...activites];
-
-    // Appliquer chaque type de filtre
-    Object.keys(filtresActifs).forEach(type => {
-        if (filtresActifs[type].length > 0) {
-            activitesFiltrees = activitesFiltrees.filter(activite => {
-                // Pour les publics, vérifier si au moins un correspond
-                if (type === 'public') {
-                    return activite.public.some(p => filtresActifs[type].includes(p));
-                }
-                // Pour les autres, vérifier la correspondance directe
-                else if (Array.isArray(activite[type])) {
-                    return activite[type].some(item => filtresActifs[type].includes(item));
-                } else {
-                    return filtresActifs[type].includes(activite[type]);
-                }
-            });
-        }
-    });
-
-    afficherActivites(activitesFiltrees);
-}
-
-function updateFilterCount() {
-    const filterCount = document.getElementById('filterCount');
-    const total = Object.values(filtresActifs).reduce((sum, arr) => sum + arr.length, 0);
-
-    if (filterCount) {
-        if (total > 0) {
-            filterCount.textContent = total;
-            filterCount.style.display = 'inline-flex';
-        } else {
-            filterCount.style.display = 'none';
-        }
-    }
-}
-
-// ===================================
-// Modal
-// ===================================
-function initModal() {
-    const modal = document.getElementById('activityModal');
-    const overlay = document.getElementById('modalOverlay');
-
-    if (overlay) {
-        overlay.addEventListener('click', fermerModal);
-    }
-
-    // Fermer avec Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-            fermerModal();
-        }
-    });
-}
-
-function ouvrirModal(activiteId) {
-    const activite = activites.find(a => a.id === activiteId);
-    if (!activite) return;
-
-    const modal = document.getElementById('activityModal');
-    const modalContent = document.getElementById('modalContent');
-
-    if (!modal || !modalContent) return;
-
-    modalContent.innerHTML = `
-        <div class="modal-header">
-            <div>
-                <h2 class="modal-title">${activite.icon} ${activite.titre}</h2>
-                <div class="activity-tags" style="margin-top: 1rem;">
-                    <span class="tag primary">${getCategorieNom(activite.categorie)}</span>
-                    <span class="tag">${activite.dureeTexte}</span>
-                    <span class="tag">${activite.participants} participants</span>
+                <div class="info-section">
+                    <h2>💡 Comment Utiliser la Plateforme</h2>
+                    <ol class="usage-steps">
+                        <li>Parcourez les catégories et sous-catégories de projets</li>
+                        <li>Consultez la fiche SPAADRAFRA complète de chaque projet</li>
+                        <li>Lancez une démo interactive en choisissant votre persona</li>
+                        <li>Sélectionnez le type d'expérience que vous souhaitez vivre</li>
+                        <li>Dialoguez avec le persona pour explorer le projet</li>
+                        <li>Personnalisez les projets selon vos besoins</li>
+                    </ol>
                 </div>
             </div>
-            <button class="modal-close" onclick="fermerModal()">✕</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-section">
-                <h3>Description</h3>
-                <p>${activite.description}</p>
-            </div>
-
-            <div class="modal-section">
-                <h3>Public concerné</h3>
-                <p>${activite.public.map(p => getPublicFullLabel(p)).join(', ')}</p>
-            </div>
-
-            <div class="modal-section">
-                <h3>Objectifs pédagogiques</h3>
-                <ul>
-                    ${activite.objectifs.map(obj => `<li>${obj}</li>`).join('')}
-                </ul>
-            </div>
-
-            <div class="modal-section">
-                <h3>Matériel nécessaire</h3>
-                <ul>
-                    ${activite.materiel.map(mat => `<li>${mat}</li>`).join('')}
-                </ul>
-            </div>
-
-            <div class="modal-section">
-                <h3>Déroulement</h3>
-                <ul>
-                    ${activite.deroulement.map(etape => `<li>${etape}</li>`).join('')}
-                </ul>
-            </div>
-
-            <div class="modal-section">
-                <h3>Conseils pratiques</h3>
-                <p>${activite.conseils}</p>
-            </div>
-
-            <div class="modal-section">
-                <button class="btn btn-primary" onclick="lancerAventure(${activite.id}); fermerModal();">
-                    🎮 Vivre cette activité en mode aventure
-                </button>
-            </div>
-        </div>
+        </section>
     `;
 
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    renderCentrePersonas();
 }
 
-function fermerModal() {
-    const modal = document.getElementById('activityModal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+function renderCentrePersonas() {
+    const grid = document.getElementById('centrePersonasGrid');
+    if (!grid) return;
+
+    const personasArray = Object.values(AppState.personas);
+
+    grid.innerHTML = personasArray.map(persona => `
+        <div class="persona-card">
+            <div class="persona-avatar">${persona.avatar}</div>
+            <h3 class="persona-name">${persona.nom}</h3>
+            <p class="persona-desc">${persona.description}</p>
+        </div>
+    `).join('');
 }
 
-function getPublicFullLabel(publicId) {
-    const labels = {
-        'maternelle': 'Maternelle (PS, MS, GS)',
-        'elementaire': 'Élémentaire (CP-CM2)',
-        'college': 'Collège',
-        'lycee': 'Lycée',
-        'adultes': 'Adultes'
-    };
-    return labels[publicId] || publicId;
+// ====================================
+// PAGE: PROJETS
+// ====================================
+
+function renderProjets() {
+    const content = document.getElementById('app-content');
+
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">📁 Catalogue de Projets</h1>
+                <p class="page-subtitle">Explorez nos projets par catégories et sous-catégories</p>
+
+                <div id="projetsContent"></div>
+            </div>
+        </section>
+    `;
+
+    renderProjetsContent();
 }
 
-// ===================================
-// Système d'aventure IA
-// ===================================
-function lancerAventure(activiteId) {
-    const activite = activites.find(a => a.id === activiteId);
-    if (!activite || !activite.aventure) return;
+function renderProjetsContent() {
+    const container = document.getElementById('projetsContent');
+    if (!container || !AppState.categories) return;
 
-    const adventureDemo = document.getElementById('adventureDemo');
-    if (!adventureDemo) return;
+    let html = '';
 
-    // Scroll vers la section aventure
-    document.getElementById('aventure').scrollIntoView({ behavior: 'smooth' });
+    AppState.categories.categories.forEach(categorie => {
+        html += `
+            <div class="category-section">
+                <h2 class="category-title">${categorie.icone} ${categorie.nom}</h2>
+                <p class="category-description">${categorie.description}</p>
 
-    // Afficher l'interface d'aventure
-    setTimeout(() => {
-        adventureDemo.innerHTML = `
-            <div class="adventure-interface">
-                <div class="adventure-header">
-                    <h3>${activite.icon} ${activite.titre}</h3>
-                    <button class="btn-icon" onclick="quitterAventure()">✕</button>
-                </div>
-                <div class="adventure-story" id="adventureStory">
-                    <div class="story-message narrator">
-                        <p>${activite.aventure.intro}</p>
+                <div class="subcategories-grid">
+        `;
+
+        categorie.sousCategories.forEach(sousCat => {
+            const projets = AppState.projets.projets.filter(
+                p => p.sousCategorie === sousCat.id
+            );
+
+            html += `
+                <div class="subcategory-card">
+                    <h3 class="subcategory-name">${sousCat.nom}</h3>
+                    <p class="subcategory-desc">${sousCat.description}</p>
+                    <div class="projets-list">
+            `;
+
+            if (projets.length > 0) {
+                projets.forEach(projet => {
+                    html += `
+                        <div class="projet-item">
+                            <h4 class="projet-name">${projet.nom}</h4>
+                            <p class="projet-short-desc">${projet.description}</p>
+                            <div class="projet-meta">
+                                <span>⏱️ ${projet.duree}</span>
+                                <span>👥 ${projet.nbParticipants}</span>
+                            </div>
+                            <div class="projet-actions">
+                                <button class="btn btn-sm btn-secondary" onclick="navigateTo('fiche/${projet.id}')">
+                                    📄 Fiche
+                                </button>
+                                <button class="btn btn-sm btn-primary" onclick="navigateTo('demo-select/${projet.id}')">
+                                    🎮 Démo
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                html += '<p class="no-projets">Projets à venir...</p>';
+            }
+
+            html += `
                     </div>
                 </div>
-                <div class="adventure-choices" id="adventureChoices">
-                    ${genererChoix(activite.aventure.scenarios[0])}
-                </div>
-                <div class="adventure-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 10%"></div>
-                    </div>
-                    <p class="progress-text">Étape 1/${activite.aventure.scenarios.length + 2}</p>
+            `;
+        });
+
+        html += `
                 </div>
             </div>
         `;
+    });
 
-        // Stocker l'activité en cours
-        window.currentAdventure = {
-            activite: activite,
-            etapeIndex: 0,
-            choixFaits: []
-        };
+    container.innerHTML = html;
+}
+
+// ====================================
+// PAGE: PARAMÈTRES
+// ====================================
+
+function renderParametres() {
+    const content = document.getElementById('app-content');
+
+    const themes = [
+        { id: 'blue', nom: 'Bleu', color: '#3b82f6' },
+        { id: 'purple', nom: 'Violet', color: '#a855f7' },
+        { id: 'green', nom: 'Vert', color: '#10b981' },
+        { id: 'orange', nom: 'Orange', color: '#f97316' },
+        { id: 'pink', nom: 'Rose', color: '#ec4899' },
+        { id: 'teal', nom: 'Turquoise', color: '#14b8a6' }
+    ];
+
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">⚙️ Paramètres</h1>
+                <p class="page-subtitle">Personnalisez votre expérience</p>
+
+                <div class="settings-section">
+                    <h2>🎨 Thème de Couleur</h2>
+                    <p>Choisissez la couleur dominante de l'interface</p>
+
+                    <div class="themes-grid">
+                        ${themes.map(theme => `
+                            <div class="theme-option ${AppState.currentTheme === theme.id ? 'active' : ''}"
+                                 onclick="changeTheme('${theme.id}')">
+                                <div class="theme-color" style="background-color: ${theme.color}"></div>
+                                <span class="theme-name">${theme.nom}</span>
+                                ${AppState.currentTheme === theme.id ? '<span class="theme-check">✓</span>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+// ====================================
+// PAGE: FICHE PROJET
+// ====================================
+
+function renderFiche(projetId) {
+    const projet = AppState.projets.projets.find(p => p.id === projetId);
+
+    if (!projet) {
+        renderNotFound();
+        return;
+    }
+
+    const content = document.getElementById('app-content');
+    const spaadrafra = projet.spaadrafra;
+
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <button class="btn btn-secondary mb-2" onclick="navigateTo('projets')">
+                    ← Retour aux projets
+                </button>
+
+                <div class="fiche-header">
+                    <h1 class="fiche-title">${projet.nom}</h1>
+                    <p class="fiche-description">${projet.description}</p>
+                    <div class="fiche-meta">
+                        <span class="meta-badge">⏱️ ${projet.duree}</span>
+                        <span class="meta-badge">👥 ${projet.nbParticipants}</span>
+                    </div>
+                </div>
+
+                <div class="spaadrafra-card">
+                    <h2 class="spaadrafra-title">📋 Fiche SPAADRAFRA</h2>
+
+                    <div class="spaadrafra-item">
+                        <h3>📍 Situation</h3>
+                        <p>${spaadrafra.situation}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>👥 Public</h3>
+                        <p>${spaadrafra.public}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>🎬 Animation</h3>
+                        <p>${spaadrafra.animation}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>🎯 Attentes</h3>
+                        <p>${spaadrafra.attentes}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>📝 Déroulement</h3>
+                        <p style="white-space: pre-line;">${spaadrafra.deroulement}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>🛠️ Ressources</h3>
+                        <p>${spaadrafra.ressources}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>🔄 Adaptation</h3>
+                        <p>${spaadrafra.adaptation}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>🎓 Finalité</h3>
+                        <p>${spaadrafra.finalite}</p>
+                    </div>
+
+                    <div class="spaadrafra-item">
+                        <h3>📊 Retour et Analyse</h3>
+                        <p>${spaadrafra.retourAnalyse}</p>
+                    </div>
+                </div>
+
+                <div class="fiche-actions">
+                    <button class="btn btn-primary btn-lg" onclick="navigateTo('demo-select/${projet.id}')">
+                        🎮 Lancer une Démo Interactive
+                    </button>
+                </div>
+            </div>
+        </section>
+    `;
+}
+
+// ====================================
+// PAGE: SÉLECTION DÉMO
+// ====================================
+
+function renderDemoSelect(projetId) {
+    const projet = AppState.projets.projets.find(p => p.id === projetId);
+
+    if (!projet) {
+        renderNotFound();
+        return;
+    }
+
+    const content = document.getElementById('app-content');
+
+    const demoTypes = [
+        { id: 'rappel', nom: 'Rappel Complet', icon: '📄', desc: 'Rappel complet de la fiche SPAADRAFRA' },
+        { id: 'approfondir', nom: 'En Savoir Plus', icon: '🔍', desc: 'Informations approfondies au-delà de la fiche' },
+        { id: 'histoire', nom: 'Vivre comme une Histoire', icon: '📖', desc: 'Expérience narrative immersive' },
+        { id: 'interactif', nom: 'Histoire Interactive', icon: '🎲', desc: 'Faire vos propres choix dans l\'histoire' },
+        { id: 'variante', nom: 'Proposer une Variante', icon: '🔄', desc: 'Créer une autre version du projet' },
+        { id: 'personnalise', nom: 'Version Personnalisée', icon: '✨', desc: 'Co-créer une version sur mesure' }
+    ];
+
+    // Filtrer les personas compatibles
+    const personasCompatibles = projet.personasCompatibles.map(id => AppState.personas[id]).filter(Boolean);
+
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <button class="btn btn-secondary mb-2" onclick="navigateTo('fiche/${projet.id}')">
+                    ← Retour à la fiche
+                </button>
+
+                <h1 class="page-title">🎮 Configuration de la Démo</h1>
+                <h2 class="demo-projet-name">${projet.nom}</h2>
+
+                <div class="demo-select-section">
+                    <h3 class="demo-section-title">1️⃣ Choisissez votre Persona</h3>
+                    <div class="personas-select-grid" id="personasSelectGrid">
+                        ${personasCompatibles.map(persona => `
+                            <div class="persona-select-card" data-persona="${persona.id}">
+                                <div class="persona-avatar-large">${persona.avatar}</div>
+                                <h4 class="persona-select-name">${persona.nom}</h4>
+                                <p class="persona-select-desc">${persona.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="demo-select-section">
+                    <h3 class="demo-section-title">2️⃣ Choisissez le Type de Démo</h3>
+                    <div class="demo-types-select-grid" id="demoTypesSelectGrid">
+                        ${demoTypes.map(type => `
+                            <div class="demo-type-select-card" data-type="${type.id}">
+                                <div class="demo-type-icon">${type.icon}</div>
+                                <h4 class="demo-type-name">${type.nom}</h4>
+                                <p class="demo-type-desc">${type.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="demo-select-actions">
+                    <button class="btn btn-primary btn-lg" id="startDemoBtn" disabled>
+                        🚀 Démarrer la Démo
+                    </button>
+                </div>
+            </div>
+        </section>
+    `;
+
+    // Ajouter les événements de sélection
+    initDemoSelection(projetId);
+}
+
+function initDemoSelection(projetId) {
+    let selectedPersona = null;
+    let selectedType = null;
+
+    // Sélection du persona
+    document.querySelectorAll('.persona-select-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.persona-select-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedPersona = card.getAttribute('data-persona');
+            updateStartButton();
+        });
+    });
+
+    // Sélection du type de démo
+    document.querySelectorAll('.demo-type-select-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.demo-type-select-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedType = card.getAttribute('data-type');
+            updateStartButton();
+        });
+    });
+
+    function updateStartButton() {
+        const btn = document.getElementById('startDemoBtn');
+        if (selectedPersona && selectedType) {
+            btn.disabled = false;
+            btn.onclick = () => navigateTo(`demo-chat/${projetId}/${selectedPersona}/${selectedType}`);
+        } else {
+            btn.disabled = true;
+        }
+    }
+}
+
+// ====================================
+// PAGE: CHAT DÉMO
+// ====================================
+
+function renderDemoChat(projetId, personaId, demoType) {
+    const projet = AppState.projets.projets.find(p => p.id === projetId);
+    const persona = AppState.personas[personaId];
+
+    if (!projet || !persona) {
+        renderNotFound();
+        return;
+    }
+
+    AppState.currentProjet = projet;
+    AppState.currentPersona = persona;
+    AppState.currentDemoType = demoType;
+    AppState.chatHistory = [];
+
+    const content = document.getElementById('app-content');
+
+    content.innerHTML = `
+        <section class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <button class="btn-back" onclick="navigateTo('demo-select/${projetId}')">←</button>
+                    <div class="chat-header-info">
+                        <div class="chat-persona-avatar">${persona.avatar}</div>
+                        <div>
+                            <h3 class="chat-persona-name">${persona.nom}</h3>
+                            <p class="chat-projet-name">${projet.nom}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be added here -->
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text"
+                           class="chat-input"
+                           id="chatInput"
+                           placeholder="Écrivez votre message..."
+                           onkeypress="handleChatKeyPress(event)">
+                    <button class="btn-send" onclick="sendMessage()">
+                        Envoyer
+                    </button>
+                </div>
+            </div>
+        </section>
+    `;
+
+    // Ajouter le message d'accueil du persona
+    setTimeout(() => {
+        addMessageToChat(persona.phraseAccueil, 'persona');
+        addMessageToChat(generateInitialMessage(), 'persona');
+    }, 300);
+}
+
+function generateInitialMessage() {
+    const persona = AppState.currentPersona;
+    const projet = AppState.currentProjet;
+    const demoType = AppState.currentDemoType;
+
+    const demoTypeNames = {
+        'rappel': 'un rappel complet de la fiche',
+        'approfondir': 'approfondir le projet',
+        'histoire': 'vivre le projet comme une histoire',
+        'interactif': 'une histoire interactive',
+        'variante': 'explorer des variantes',
+        'personnalise': 'créer une version personnalisée'
+    };
+
+    return `Nous allons explorer "${projet.nom}" ensemble ! Tu as choisi ${demoTypeNames[demoType]}. Je suis là pour te guider. Par quoi veux-tu commencer ?`;
+}
+
+function handleChatKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    // Ajouter le message de l'utilisateur
+    addMessageToChat(message, 'user');
+    input.value = '';
+
+    // Simuler une réponse du persona (dans une vraie app, ça serait un appel API)
+    setTimeout(() => {
+        const response = generatePersonaResponse(message);
+        addMessageToChat(response, 'persona');
     }, 500);
 }
 
-function genererChoix(scenario) {
-    if (!scenario || !scenario.choix) return '';
+function addMessageToChat(message, sender) {
+    const messagesContainer = document.getElementById('chatMessages');
 
-    return `
-        <div class="story-question">
-            <p>${scenario.texte}</p>
-        </div>
-        <div class="choices-list">
-            ${scenario.choix.map((choix, index) => `
-                <button class="choice-btn" onclick="fairechoix(${index}, '${choix}')">
-                    ${choix}
-                </button>
-            `).join('')}
-        </div>
-    `;
-}
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
 
-function fairechoix(index, choixTexte) {
-    if (!window.currentAdventure) return;
-
-    const { activite, etapeIndex, choixFaits } = window.currentAdventure;
-    choixFaits.push(choixTexte);
-
-    const storyDiv = document.getElementById('adventureStory');
-    const choicesDiv = document.getElementById('adventureChoices');
-
-    // Afficher le choix du joueur
-    storyDiv.innerHTML += `
-        <div class="story-message player">
-            <p><strong>Vous :</strong> ${choixTexte}</p>
-        </div>
-    `;
-
-    // Générer la réponse en fonction du choix
-    const reponse = genererReponse(activite, etapeIndex, index, choixTexte);
-
-    setTimeout(() => {
-        storyDiv.innerHTML += `
-            <div class="story-message narrator">
-                <p>${reponse}</p>
-            </div>
+    if (sender === 'persona') {
+        messageDiv.innerHTML = `
+            <div class="message-avatar">${AppState.currentPersona.avatar}</div>
+            <div class="message-content">${message}</div>
         `;
-        storyDiv.scrollTop = storyDiv.scrollHeight;
+    } else {
+        messageDiv.innerHTML = `
+            <div class="message-content">${message}</div>
+        `;
+    }
 
-        // Passer à l'étape suivante ou terminer
-        if (etapeIndex < activite.aventure.scenarios.length - 1) {
-            window.currentAdventure.etapeIndex++;
-            const nextScenario = activite.aventure.scenarios[window.currentAdventure.etapeIndex];
-            choicesDiv.innerHTML = genererChoix(nextScenario);
-            updateProgress();
-        } else {
-            // Terminer l'aventure
-            setTimeout(() => {
-                terminerAventure();
-            }, 2000);
-        }
-    }, 1000);
+    messagesContainer.appendChild(messageDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    AppState.chatHistory.push({ sender, message });
 }
 
-function genererReponse(activite, etape, choixIndex, choixTexte) {
-    // Réponses contextuelles basées sur l'activité
-    const reponses = {
-        'peinture': [
-            "Excellent choix ! Tu prends tes pinceaux et commences à exprimer cette émotion à travers les couleurs...",
-            "Les couleurs se mélangent sur ta palette, créant des nuances surprenantes...",
-            "Ta création prend forme, racontant une histoire unique..."
+function generatePersonaResponse(userMessage) {
+    // Simulation simple de réponse
+    // Dans une vraie application, ceci ferait appel à une API IA
+
+    const persona = AppState.currentPersona;
+    const projet = AppState.currentProjet;
+    const demoType = AppState.currentDemoType;
+
+    // Exemples de réponses basées sur le persona
+    const responses = {
+        'animateur-ludique': [
+            `Super question ! ${userMessage} C'est exactement le genre de chose qui rend "${projet.nom}" si génial ! 🎯`,
+            `J'adore ton enthousiasme ! Laisse-moi te parler de ça plus en détail... ✨`,
+            `Excellente observation ! Dans ce projet, on va explorer ça ensemble ! 🚀`
         ],
-        'chasse': [
-            `Tu t'aventures sur ${choixTexte}. Le chemin révèle des indices mystérieux...`,
-            "Ton équipe découvre une nouvelle énigme ! Il faut combiner vos talents pour la résoudre...",
-            "Bravo ! Vous vous rapprochez du trésor..."
+        'pedagogue-patient': [
+            `Bonne question. Prenons le temps d'explorer cela étape par étape. 📚`,
+            `Je vois ce qui t'intéresse. Commençons par les bases... 🔍`,
+            `C'est une question pertinente. Voici comment on peut l'aborder... 📖`
         ],
-        'default': [
-            `Avec ${choixTexte}, une nouvelle aventure commence...`,
-            "Tu progresses dans l'activité, découvrant de nouvelles facettes...",
-            "Cette expérience t'apprend de nouvelles compétences..."
+        'conteur-imaginatif': [
+            `Ah, laisse-moi te conter cette partie de l'histoire... 📖`,
+            `Imagine un instant cette scène... ${userMessage} ✨`,
+            `Il était une fois, dans "${projet.nom}"... 🌟`
+        ],
+        'comedien-expressif': [
+            `*fait un geste théâtral* OH ! Excellente question ! 🎭`,
+            `*avec emphase* Laisse-moi te montrer ça de manière SPECTACULAIRE ! ✨`,
+            `*chuchote dramatiquement* Tu veux savoir un secret sur ce projet ? 🎪`
+        ],
+        'meneur-charismatique': [
+            `Bonne question, aventurier. Voici ce que tu dois savoir... ⚔️`,
+            `À toi de réfléchir : que ferais-tu dans cette situation ? 🎯`,
+            `Excellent. Tu commences à comprendre les enjeux. 🛡️`
+        ],
+        'artiste-inspire': [
+            `Quelle belle question... Laisse-moi t'inspirer avec cette réponse... 🎨`,
+            `Je ressens que tu cherches à explorer... C'est magnifique ! ✨`,
+            `Créons ensemble cette vision... ${userMessage} 🌈`
         ]
     };
 
-    const categorieKey = activite.categorie.includes('arts') ? 'peinture' :
-                        activite.categorie.includes('jeux') ? 'chasse' : 'default';
+    const personaResponses = responses[persona.id] || responses['animateur-ludique'];
+    const randomResponse = personaResponses[Math.floor(Math.random() * personaResponses.length)];
 
-    const reponsesCategorie = reponses[categorieKey] || reponses.default;
-    return reponsesCategorie[etape % reponsesCategorie.length];
+    return randomResponse;
 }
 
-function terminerAventure() {
-    const choicesDiv = document.getElementById('adventureChoices');
-    const { activite, choixFaits } = window.currentAdventure;
+// ====================================
+// GESTION DES THÈMES
+// ====================================
 
-    choicesDiv.innerHTML = `
-        <div class="adventure-end">
-            <h3>🎉 Aventure terminée !</h3>
-            <p>Félicitations ! Tu as découvert l'activité "${activite.titre}" d'une manière immersive.</p>
-            <p>Tu es maintenant prêt(e) à la mettre en pratique dans la vraie vie !</p>
-            <div class="end-actions">
-                <button class="btn btn-primary" onclick="ouvrirModal(${activite.id})">
-                    📋 Voir la fiche complète
-                </button>
-                <button class="btn btn-secondary" onclick="quitterAventure()">
-                    🔄 Choisir une autre activité
-                </button>
+function changeTheme(themeId) {
+    AppState.currentTheme = themeId;
+    localStorage.setItem('theme', themeId);
+    applyTheme(themeId);
+    renderParametres(); // Re-render pour mettre à jour la sélection
+}
+
+function applyTheme(themeId) {
+    const themes = {
+        'blue': '#3b82f6',
+        'purple': '#a855f7',
+        'green': '#10b981',
+        'orange': '#f97316',
+        'pink': '#ec4899',
+        'teal': '#14b8a6'
+    };
+
+    const color = themes[themeId] || themes['blue'];
+    document.documentElement.style.setProperty('--primary-color', color);
+}
+
+// ====================================
+// UTILITAIRES
+// ====================================
+
+function renderNotFound() {
+    const content = document.getElementById('app-content');
+    content.innerHTML = `
+        <section class="section">
+            <div class="container">
+                <div class="not-found">
+                    <h1>404</h1>
+                    <p>Page non trouvée</p>
+                    <button class="btn btn-primary" onclick="navigateTo('home')">
+                        Retour à l'accueil
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
     `;
-
-    updateProgress(100);
-}
-
-function quitterAventure() {
-    const adventureDemo = document.getElementById('adventureDemo');
-    if (adventureDemo) {
-        adventureDemo.innerHTML = `
-            <div class="demo-placeholder">
-                <p>Sélectionnez une activité dans la section ci-dessus pour démarrer votre aventure</p>
-                <button class="btn btn-primary" onclick="document.getElementById('activites').scrollIntoView({behavior: 'smooth'})">
-                    Choisir une activité
-                </button>
-            </div>
-        `;
-    }
-    window.currentAdventure = null;
-}
-
-function updateProgress(percent = null) {
-    if (!window.currentAdventure) return;
-
-    const { activite, etapeIndex } = window.currentAdventure;
-    const totalEtapes = activite.aventure.scenarios.length + 2;
-    const progression = percent || ((etapeIndex + 2) / totalEtapes * 100);
-
-    const progressFill = document.querySelector('.progress-fill');
-    const progressText = document.querySelector('.progress-text');
-
-    if (progressFill) {
-        progressFill.style.width = `${progression}%`;
-    }
-
-    if (progressText && !percent) {
-        progressText.textContent = `Étape ${etapeIndex + 2}/${totalEtapes}`;
-    }
-}
-
-// ===================================
-// Statistiques
-// ===================================
-function updateStatActivites() {
-    const statElement = document.getElementById('statActivites');
-    if (statElement && activites.length > 0) {
-        animateNumber(statElement, 0, activites.length, 1500);
-    }
-}
-
-function animateNumber(element, start, end, duration) {
-    const range = end - start;
-    const increment = range / (duration / 16);
-    let current = start;
-
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= end) {
-            current = end;
-            clearInterval(timer);
-        }
-        element.textContent = Math.floor(current);
-    }, 16);
-}
-
-// ===================================
-// Animations au scroll
-// ===================================
-function initAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    // Observer sera appliqué aux éléments au fur et à mesure de leur création
-    document.querySelectorAll('.fade-in-up').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        observer.observe(el);
-    });
-}
-
-// ===================================
-// Styles additionnels pour l'aventure (injectés dynamiquement)
-// ===================================
-const adventureStyles = `
-<style>
-.adventure-interface {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.adventure-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.adventure-header h3 {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-}
-
-.adventure-story {
-    background: var(--bg-tertiary);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    min-height: 300px;
-    max-height: 400px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.story-message {
-    padding: 1rem;
-    border-radius: var(--radius-md);
-    animation: fadeInUp 0.4s ease;
-}
-
-.story-message.narrator {
-    background: var(--bg-secondary);
-    border-left: 3px solid var(--accent-primary);
-}
-
-.story-message.player {
-    background: var(--bg-hover);
-    border-left: 3px solid var(--accent-tertiary);
-    margin-left: 2rem;
-}
-
-.story-message p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-}
-
-.adventure-choices {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-}
-
-.story-question {
-    margin-bottom: 1rem;
-}
-
-.story-question p {
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.choices-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.choice-btn {
-    padding: 1rem 1.5rem;
-    background: var(--bg-card);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-md);
-    color: var(--text-primary);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    text-align: left;
-}
-
-.choice-btn:hover {
-    background: var(--bg-hover);
-    border-color: var(--accent-primary);
-    transform: translateX(0.5rem);
-}
-
-.adventure-progress {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background: var(--bg-tertiary);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--gradient-primary);
-    transition: width 0.5s ease;
-}
-
-.progress-text {
-    color: var(--text-tertiary);
-    font-size: 0.875rem;
-    text-align: center;
-}
-
-.adventure-end {
-    text-align: center;
-    padding: 2rem;
-}
-
-.adventure-end h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.adventure-end p {
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.end-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .story-message.player {
-        margin-left: 1rem;
-    }
-
-    .end-actions {
-        flex-direction: column;
-    }
-}
-</style>
-`;
-
-// Injecter les styles au chargement
-if (!document.getElementById('adventure-styles')) {
-    const styleElement = document.createElement('div');
-    styleElement.id = 'adventure-styles';
-    styleElement.innerHTML = adventureStyles;
-    document.head.appendChild(styleElement);
 }

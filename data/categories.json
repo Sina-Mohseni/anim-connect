@@ -1,0 +1,144 @@
+{
+  "categories": [
+    {
+      "id": "jeux-societe",
+      "nom": "Jeux de société",
+      "icone": "🎲",
+      "description": "Des jeux de plateau, de cartes et de société pour tous les âges",
+      "sousCategories": [
+        {
+          "id": "jeux-strategie",
+          "nom": "Jeux de Stratégie",
+          "description": "Jeux nécessitant réflexion et planification"
+        },
+        {
+          "id": "jeux-ambiance",
+          "nom": "Jeux d'Ambiance",
+          "description": "Jeux pour animer vos soirées"
+        },
+        {
+          "id": "jeux-cartes",
+          "nom": "Jeux de Cartes",
+          "description": "Classiques et modernes jeux de cartes"
+        },
+        {
+          "id": "jeux-cooperatifs",
+          "nom": "Jeux Coopératifs",
+          "description": "Jouez ensemble contre le jeu"
+        }
+      ]
+    },
+    {
+      "id": "activites",
+      "nom": "Activités",
+      "icone": "🎨",
+      "description": "Activités créatives et éducatives pour tous",
+      "sousCategories": [
+        {
+          "id": "activites-manuelles",
+          "nom": "Activités Manuelles",
+          "description": "Bricolage, création et construction"
+        },
+        {
+          "id": "activites-artistiques",
+          "nom": "Activités Artistiques",
+          "description": "Dessin, peinture et arts visuels"
+        },
+        {
+          "id": "activites-sportives",
+          "nom": "Activités Sportives",
+          "description": "Jeux et activités physiques"
+        },
+        {
+          "id": "activites-scientifiques",
+          "nom": "Activités Scientifiques",
+          "description": "Expériences et découvertes"
+        }
+      ]
+    },
+    {
+      "id": "jeux-roles",
+      "nom": "Jeux de Rôles",
+      "icone": "🎭",
+      "description": "Aventures narratives et jeux de rôles immersifs",
+      "sousCategories": [
+        {
+          "id": "jdr-fantastique",
+          "nom": "JDR Fantastique",
+          "description": "Univers de fantasy et magie"
+        },
+        {
+          "id": "jdr-science-fiction",
+          "nom": "JDR Science-Fiction",
+          "description": "Aventures futuristes et spatiales"
+        },
+        {
+          "id": "jdr-contemporain",
+          "nom": "JDR Contemporain",
+          "description": "Histoires dans notre monde moderne"
+        },
+        {
+          "id": "jdr-horreur",
+          "nom": "JDR Horreur",
+          "description": "Ambiances sombres et mystérieuses"
+        }
+      ]
+    },
+    {
+      "id": "ateliers",
+      "nom": "Ateliers",
+      "icone": "🛠️",
+      "description": "Ateliers thématiques et formations",
+      "sousCategories": [
+        {
+          "id": "ateliers-cuisine",
+          "nom": "Ateliers Cuisine",
+          "description": "Découvrir et cuisiner ensemble"
+        },
+        {
+          "id": "ateliers-theatre",
+          "nom": "Ateliers Théâtre",
+          "description": "Expression théâtrale et improvisation"
+        },
+        {
+          "id": "ateliers-musique",
+          "nom": "Ateliers Musique",
+          "description": "Initiation musicale et rythmique"
+        },
+        {
+          "id": "ateliers-ecriture",
+          "nom": "Ateliers Écriture",
+          "description": "Créativité littéraire et storytelling"
+        }
+      ]
+    },
+    {
+      "id": "scenes",
+      "nom": "Scènes",
+      "icone": "🎬",
+      "description": "Contenus multimédias et créations scéniques",
+      "sousCategories": [
+        {
+          "id": "histoires",
+          "nom": "Histoires",
+          "description": "Récits, contes et narrations"
+        },
+        {
+          "id": "videos",
+          "nom": "Vidéos",
+          "description": "Contenus vidéos et courts-métrages"
+        },
+        {
+          "id": "musiques",
+          "nom": "Musiques",
+          "description": "Compositions et créations musicales"
+        },
+        {
+          "id": "audios",
+          "nom": "Audios",
+          "description": "Podcasts et créations sonores"
+        }
+      ]
+    }
+  ]
+}

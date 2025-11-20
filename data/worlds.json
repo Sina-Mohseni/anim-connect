@@ -1,0 +1,54 @@
+{
+  "worlds": [
+    {
+      "id": "legends",
+      "name": "Royaume des Légendes",
+      "icon": "⚔️",
+      "color": "#d4af37",
+      "gradient": "linear-gradient(135deg, #d4af37, #ffd700)",
+      "description": "Un monde de magie ancienne où chevaliers et sorciers affrontent dragons et créatures mythiques",
+      "ambiance": "Médiéval-Fantastique, Épique, Héroïque",
+      "doorIcon": "🚪✨"
+    },
+    {
+      "id": "cyber",
+      "name": "Nexus Cybernétique",
+      "icon": "🌐",
+      "color": "#00d4ff",
+      "gradient": "linear-gradient(135deg, #00d4ff, #0099ff)",
+      "description": "Une mégalopole futuriste où hackers et IA se disputent le contrôle de la réalité virtuelle",
+      "ambiance": "Cyberpunk, Technologique, Dystopique",
+      "doorIcon": "🚪💠"
+    },
+    {
+      "id": "mystery",
+      "name": "Archives des Énigmes",
+      "icon": "🔍",
+      "color": "#9333ea",
+      "gradient": "linear-gradient(135deg, #9333ea, #c084fc)",
+      "description": "Une bibliothèque infinie remplie de mystères, d'enquêtes et de secrets à percer",
+      "ambiance": "Mystère, Investigation, Suspense",
+      "doorIcon": "🚪🔮"
+    },
+    {
+      "id": "exploration",
+      "name": "Terres Inexplorées",
+      "icon": "🗺️",
+      "color": "#10b981",
+      "gradient": "linear-gradient(135deg, #10b981, #34d399)",
+      "description": "Des contrées sauvages à découvrir, entre jungles luxuriantes et montagnes gelées",
+      "ambiance": "Aventure, Découverte, Survie",
+      "doorIcon": "🚪🌿"
+    },
+    {
+      "id": "creation",
+      "name": "Atelier des Créateurs",
+      "icon": "🎨",
+      "color": "#f59e0b",
+      "gradient": "linear-gradient(135deg, #f59e0b, #fbbf24)",
+      "description": "Un espace créatif où l'imagination prend forme à travers l'art, la musique et l'artisanat",
+      "ambiance": "Créatif, Artistique, Innovant",
+      "doorIcon": "🚪🎭"
+    }
+  ]
+}

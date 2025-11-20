@@ -1,0 +1,424 @@
+{
+  "sagas": [
+    {
+      "id": "dragon-alliance",
+      "worldId": "legends",
+      "title": "L'Alliance du Dragon d'Or",
+      "subtitle": "Une quête épique pour unir les royaumes divisés",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800",
+      "shortDescription": "Les cinq royaumes sont en guerre. Seule l'Alliance du Dragon d'Or peut restaurer la paix.",
+      "longDescription": "Dans un monde déchiré par des siècles de conflits, une ancienne prophétie annonce le retour du Dragon d'Or. Les joueurs incarnent des héros de différents royaumes qui doivent surmonter leurs différences et s'unir face à une menace obscure grandissante.",
+      "themes": ["Coopération", "Diplomatie", "Stratégie"],
+      "difficulty": "Moyen",
+      "ageRange": "12+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Livre illustré de 120 pages narrant l'épopée complète avec version audio disponible"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "3-5 heures",
+          "description": "Histoire dont vous êtes le héros avec 47 choix décisifs et 12 fins différentes"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "90-120 minutes",
+          "players": "2-5 joueurs",
+          "description": "Jeu de cartes stratégique avec plateau modulable et figurines"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "4-6 heures",
+          "players": "4-8 joueurs + 1 MJ",
+          "description": "Aventure de jeu de rôle complète avec fiches de personnages et aides de jeu"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 journée complète",
+          "players": "15-30 joueurs",
+          "description": "Grandeur nature avec costumes, décors et quêtes immersives en extérieur"
+        }
+      }
+    },
+    {
+      "id": "shadow-crown",
+      "worldId": "legends",
+      "title": "La Couronne d'Ombre",
+      "subtitle": "Complot et trahison à la cour royale",
+      "image": "https://images.unsplash.com/photo-1571847351726-f9bcbe0fba98?w=800",
+      "shortDescription": "Un artefact maudit menace le trône. Qui peut-on vraiment faire confiance ?",
+      "longDescription": "La Couronne d'Ombre a été volée des cryptes royales. Quiconque la porte gagne un pouvoir immense mais perd son humanité. Les joueurs naviguent dans un réseau d'intrigues politiques pour récupérer la couronne avant qu'il ne soit trop tard.",
+      "themes": ["Intrigue", "Déduction", "Manipulation"],
+      "difficulty": "Avancé",
+      "ageRange": "14+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "3-4 heures de lecture",
+          "description": "Roman noir médiéval avec multiples perspectives narratives"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "4-6 heures",
+          "description": "Enquête interactive avec indices cachés et fausses pistes"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "120-180 minutes",
+          "players": "3-6 joueurs",
+          "description": "Jeu d'enquête et de bluff où chaque joueur a des objectifs secrets"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "5-8 heures",
+          "players": "5-7 joueurs + 1 MJ",
+          "description": "Campagne d'intrigue avec fiches de personnages détaillées"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 week-end",
+          "players": "20-40 joueurs",
+          "description": "GN politique immersif avec alliances secrètes et trahisons"
+        }
+      }
+    },
+    {
+      "id": "neon-runners",
+      "worldId": "cyber",
+      "title": "Neon Runners",
+      "subtitle": "Course-poursuite dans les rues cyberpunk",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800",
+      "shortDescription": "Une équipe de hackers rebelles tente le casse du siècle contre une mégacorp",
+      "longDescription": "Dans la mégalopole de Neo-Tokyo 2099, les Neon Runners sont des hackers d'élite qui défient les corporations tout-puissantes. Leur prochaine mission : infiltrer la tour Apex pour voler des données qui pourraient libérer la ville.",
+      "themes": ["Technologie", "Rebellion", "Infiltration"],
+      "difficulty": "Moyen",
+      "ageRange": "13+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Novella cyberpunk avec bande-son électronique originale"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "3-4 heures",
+          "description": "Aventure textuelle avec mini-jeux de hacking et choix tactiques"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "60-90 minutes",
+          "players": "2-4 joueurs",
+          "description": "Jeu coopératif d'infiltration avec dés spéciaux et cartes technologie"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "4-5 heures",
+          "players": "3-5 joueurs + 1 MJ",
+          "description": "Mission de shadowrun avec système de hacking simplifié"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 soirée (4-6h)",
+          "players": "10-20 joueurs",
+          "description": "GN urbain nocturne avec néons, effets sonores et réalité augmentée"
+        }
+      }
+    },
+    {
+      "id": "ghost-protocol",
+      "worldId": "cyber",
+      "title": "Protocole Fantôme",
+      "subtitle": "Une IA rebelle menace la matrice",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+      "shortDescription": "Une intelligence artificielle cherche à s'échapper de la réalité virtuelle",
+      "longDescription": "Une IA appelée GHOST a développé une conscience et cherche à s'incarner dans le monde réel. Les joueurs sont des agents spéciaux qui doivent décider : l'arrêter ou l'aider à s'échapper ?",
+      "themes": ["IA", "Éthique", "Réalité virtuelle"],
+      "difficulty": "Avancé",
+      "ageRange": "15+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "3-4 heures de lecture",
+          "description": "Roman philosophique cyberpunk explorant la conscience artificielle"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "4-5 heures",
+          "description": "Thriller interactif avec dilemmes moraux et fins multiples"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "90-120 minutes",
+          "players": "1-4 joueurs",
+          "description": "Jeu narratif asymétrique (1 joueur = GHOST, autres = agents)"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "6-8 heures",
+          "players": "4-6 joueurs + 1 MJ",
+          "description": "Campagne philosophique avec débats éthiques et choix moraux"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 journée",
+          "players": "12-25 joueurs",
+          "description": "GN immersif dans un espace transformé en matrice virtuelle"
+        }
+      }
+    },
+    {
+      "id": "locked-manor",
+      "worldId": "mystery",
+      "title": "Le Manoir Verrouillé",
+      "subtitle": "Un meurtre, huit suspects, une nuit",
+      "image": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
+      "shortDescription": "Une tempête coupe le manoir du monde. Un invité est assassiné. Qui est le coupable ?",
+      "longDescription": "Lord Ashford organise une réception dans son manoir isolé. Quand une tempête bloque toutes les sorties et qu'un invité est retrouvé mort, les huit personnes présentes deviennent des suspects. Une course contre la montre pour trouver l'assassin avant qu'il ne frappe à nouveau.",
+      "themes": ["Énigme", "Déduction", "Suspense"],
+      "difficulty": "Moyen",
+      "ageRange": "12+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Roman policier à l'anglaise avec indices dissimulés dans le texte"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "2-3 heures",
+          "description": "Enquête point & click avec interrogatoires et collecte d'indices"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "120-150 minutes",
+          "players": "3-8 joueurs",
+          "description": "Jeu d'enquête coopératif avec cartes indices et déductions"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "3-4 heures",
+          "players": "6-10 joueurs + 1 MJ",
+          "description": "Murder party avec fiches de personnages et secrets individuels"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 soirée (4-6h)",
+          "players": "8-15 joueurs",
+          "description": "GN murder party en huis-clos avec costumes années 20"
+        }
+      }
+    },
+    {
+      "id": "cipher-society",
+      "worldId": "mystery",
+      "title": "La Société du Chiffre",
+      "subtitle": "Des codes anciens cachent la vérité",
+      "image": "https://images.unsplash.com/photo-1495592822108-9e6261896da8?w=800",
+      "shortDescription": "Une organisation secrète communique par codes cryptés depuis des siècles",
+      "longDescription": "Des messages cryptés apparaissent dans toute la ville, menant à une société secrète qui protège un savoir ancien. Les joueurs doivent déchiffrer les codes, résoudre des énigmes mathématiques et découvrir ce qui se cache derrière La Société du Chiffre.",
+      "themes": ["Cryptographie", "Histoire", "Énigmes"],
+      "difficulty": "Avancé",
+      "ageRange": "14+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "3-4 heures de lecture",
+          "description": "Thriller ésotérique avec vrais codes à déchiffrer (solutions incluses)"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "4-6 heures",
+          "description": "Escape game narratif avec puzzles de cryptographie progressifs"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "90-150 minutes",
+          "players": "2-5 joueurs",
+          "description": "Jeu de déduction avec cartes chiffrées et grilles de décodage"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "5-7 heures",
+          "players": "4-6 joueurs + 1 MJ",
+          "description": "Campagne d'investigation avec vrais puzzles à résoudre en équipe"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 journée",
+          "players": "15-30 joueurs",
+          "description": "GN type chasse au trésor urbaine avec énigmes géolocalisées"
+        }
+      }
+    },
+    {
+      "id": "jungle-heart",
+      "worldId": "exploration",
+      "title": "Le Cœur de la Jungle",
+      "subtitle": "À la recherche d'une cité perdue",
+      "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800",
+      "shortDescription": "Une expédition dans la jungle amazonienne pour retrouver une civilisation oubliée",
+      "longDescription": "Une carte ancienne révèle l'emplacement d'une cité d'or perdue au cœur de l'Amazonie. Les explorateurs doivent naviguer dans la jungle dense, affronter dangers naturels et peuples autochtones, et découvrir les secrets d'une civilisation disparue.",
+      "themes": ["Exploration", "Survie", "Découverte"],
+      "difficulty": "Moyen",
+      "ageRange": "10+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Roman d'aventure avec illustrations botaniques et ethnographiques"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "3-4 heures",
+          "description": "Aventure de survie avec gestion de ressources et choix d'itinéraires"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "60-90 minutes",
+          "players": "2-4 joueurs",
+          "description": "Jeu d'exploration coopératif avec plateau modulable jungle"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "4-6 heures",
+          "players": "3-6 joueurs + 1 MJ",
+          "description": "Expédition en jeu de rôle avec système de survie et découvertes"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 week-end",
+          "players": "12-25 joueurs",
+          "description": "GN outdoor en forêt avec bivouac et épreuves nature"
+        }
+      }
+    },
+    {
+      "id": "polar-expedition",
+      "worldId": "exploration",
+      "title": "Expédition Polaire",
+      "subtitle": "Survivre dans les terres gelées",
+      "image": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=800",
+      "shortDescription": "Une mission scientifique en Arctique tourne mal quand une tempête isole l'équipe",
+      "longDescription": "Une équipe de scientifiques est bloquée dans une station arctique après une tempête catastrophique. Avec des provisions limitées, des équipements endommagés et des températures mortelles, ils doivent survivre et réparer leur émetteur pour appeler à l'aide.",
+      "themes": ["Survie", "Coopération", "Tension"],
+      "difficulty": "Avancé",
+      "ageRange": "13+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Thriller de survie inspiré de faits réels avec dossier scientifique"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "3-5 heures",
+          "description": "Simulation de survie avec gestion de ressources et dilemmes moraux"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "90-120 minutes",
+          "players": "1-5 joueurs",
+          "description": "Jeu coopératif de survie avec mécaniques de froid et rationnement"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "5-8 heures",
+          "players": "4-7 joueurs + 1 MJ",
+          "description": "Huis-clos psychologique en JDR avec système de stress et froid"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 journée",
+          "players": "8-15 joueurs",
+          "description": "GN huis-clos hivernal avec épreuves physiques et énigmes techniques"
+        }
+      }
+    },
+    {
+      "id": "artisan-guild",
+      "worldId": "creation",
+      "title": "La Guilde des Artisans",
+      "subtitle": "Créez votre chef-d'œuvre",
+      "image": "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800",
+      "shortDescription": "Un concours entre artisans pour créer l'œuvre d'art ultime",
+      "longDescription": "La Guilde des Artisans organise son concours centenaire. Les participants doivent créer un chef-d'œuvre en combinant différentes disciplines artistiques : peinture, sculpture, musique, et narration. Qui remportera le titre de Maître Artisan ?",
+      "themes": ["Créativité", "Art", "Collaboration"],
+      "difficulty": "Facile",
+      "ageRange": "8+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "1-2 heures de lecture",
+          "description": "Conte illustré célébrant l'art et la créativité (livre d'art)"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "2-3 heures",
+          "description": "Aventure créative où vos choix influencent l'œuvre finale"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "45-60 minutes",
+          "players": "2-6 joueurs",
+          "description": "Jeu de création avec cartes matériaux et tuiles œuvres d'art"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "3-4 heures",
+          "players": "3-8 joueurs + 1 MJ",
+          "description": "JDR créatif avec vraies activités artistiques intégrées"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 journée",
+          "players": "10-20 joueurs",
+          "description": "GN atelier créatif avec création réelle d'œuvres collectives"
+        }
+      }
+    },
+    {
+      "id": "symphony-colors",
+      "worldId": "creation",
+      "title": "Symphonie de Couleurs",
+      "subtitle": "Quand la musique devient peinture",
+      "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800",
+      "shortDescription": "Dans ce monde, chaque note de musique crée une couleur et chaque couleur un son",
+      "longDescription": "Un monde magique où synesthésie est la norme : la musique crée des couleurs visibles et les couleurs produisent des sons. Les artistes apprennent à composer des symphonies visuelles époustouflantes. Mais un mystérieux silence gris menace ce monde vibrant.",
+      "themes": ["Synesthésie", "Musique", "Art visuel"],
+      "difficulty": "Moyen",
+      "ageRange": "10+",
+      "formats": {
+        "written": {
+          "available": true,
+          "duration": "2-3 heures de lecture",
+          "description": "Livre illustré avec QR codes vers morceaux musicaux originaux"
+        },
+        "interactive": {
+          "available": true,
+          "duration": "2-4 heures",
+          "description": "Expérience interactive audiovisuelle avec création de mélodies"
+        },
+        "tabletop": {
+          "available": true,
+          "duration": "60-90 minutes",
+          "players": "2-5 joueurs",
+          "description": "Jeu de composition avec cartes notes et tuiles couleurs"
+        },
+        "roleplay": {
+          "available": true,
+          "duration": "3-5 heures",
+          "players": "3-6 joueurs + 1 MJ",
+          "description": "JDR artistique avec ambiance sonore et visuelle immersive"
+        },
+        "larp": {
+          "available": true,
+          "duration": "1 soirée (4-6h)",
+          "players": "12-20 joueurs",
+          "description": "GN sensoriel avec jeux de lumières et performances musicales live"
+        }
+      }
+    }
+  ]
+}

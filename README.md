@@ -1,185 +1,182 @@
-# ANIM'CONNECT - Hourglass Tower 🏛️⏳
+# HOURGLASS GATE 🌌⏳
 
-Portfolio interactif d'animation ludique avec un concept narratif immersif.
+Site web futuriste avec design cyberpunk inspiré des portails temporels et des voyages interdimensionnels.
 
-## 🌟 Concept
+## 🎨 Design Concept
 
-**La Hourglass Tower** (Tour du Sablier) est un hub mystique - comme un site de streaming pour les univers parallèles - où les voyageurs peuvent explorer différents mondes et vivre des sagas épiques de multiples façons.
+**Hourglass Gate** est un portail temporel futuriste qui combine l'esthétique cyberpunk avec des éléments mystiques. Le site présente un design immersif avec des animations de particules, des effets de glitch, et une interface inspirée des systèmes de surveillance futuristes.
 
-### Le Voyage du Voyageur
+## 🌟 Caractéristiques Principales
 
-1. **Entrez dans la Tour** - Un nexus temporel qui connecte d'innombrables réalités
-2. **Choisissez une Porte** - Chaque porte mène vers un monde unique
-3. **Découvrez les Sagas** - Des aventures riches hébergées dans chaque monde
-4. **Vivez l'Histoire** - Expérimentez chaque saga selon 5 formats différents
-
-## 🌍 Les 5 Mondes
-
-### ⚔️ Royaume des Légendes
-Magie ancienne, chevaliers valeureux, et dragons légendaires
-
-### 🌐 Nexus Cybernétique
-Mégalopole futuriste, hackers rebelles, et intelligence artificielle
-
-### 🔍 Archives des Énigmes
-Mystères captivants, enquêtes complexes, et secrets millénaires
-
-### 🗺️ Terres Inexplorées
-Contrées sauvages, expéditions périlleuses, et découvertes extraordinaires
-
-### 🎨 Atelier des Créateurs
-Espace créatif où l'imagination prend forme à travers l'art
-
-## 📚 10 Sagas Complètes
-
-Chaque monde contient 2 sagas riches et détaillées :
-
-**Royaume des Légendes**
-- L'Alliance du Dragon d'Or
-- La Couronne d'Ombre
-
-**Nexus Cybernétique**
-- Neon Runners
-- Protocole Fantôme
-
-**Archives des Énigmes**
-- Le Manoir Verrouillé
-- La Société du Chiffre
-
-**Terres Inexplorées**
-- Le Cœur de la Jungle
-- Expédition Polaire
-
-**Atelier des Créateurs**
-- La Guilde des Artisans
-- Symphonie de Couleurs
-
-## 🎭 5 Formats d'Expérience
-
-Chaque saga peut être vécue de 5 manières différentes :
-
-### 📖 Scénario Écrit / Livre Audio
-Lisez ou écoutez l'histoire de manière classique
-- Durée : 1-4 heures
-- Expérience : Narrative passive
-- Idéal pour : Découvrir l'univers
-
-### 🎮 Histoire Interactive
-Livre dont vous êtes le héros avec choix multiples
-- Durée : 2-6 heures
-- Expérience : Narrative avec embranchements
-- Idéal pour : Influencer l'histoire
-
-### 🎲 Jeu sur Table
-Jeux de société, cartes, ou plateau
-- Durée : 45-180 minutes
-- Joueurs : 1-8 selon le jeu
-- Idéal pour : Soirées entre amis
-
-### 🎭 Jeu de Rôle
-Incarnez un personnage avec un Maître de Jeu
-- Durée : 3-8 heures
-- Joueurs : 3-8 + 1 MJ
-- Idéal pour : Immersion narrative
-
-### ⚔️ Grandeur Nature (GN)
-Immersion totale avec costumes et décors
-- Durée : 4 heures à 1 week-end
-- Joueurs : 8-40
-- Idéal pour : Vivre réellement l'aventure
-
-## 🎨 Design
-
-Le design s'inspire des images cyberpunk fournies :
+### Design Visuel
+- **Theme Cyberpunk/Futuriste** avec couleurs néon cyan et or
+- **Camera Log Interface** - Interface de surveillance en temps réel
+- **Particules Animées** - Background dynamique avec particules connectées
+- **Effets de Glitch** - Animations de glitch sur les titres
+- **Cartes 3D** - Cartes de portails avec effet de tilt 3D au survol
+- **Animations Fluides** - Transitions et animations CSS personnalisées
 
 ### Palette de Couleurs
-- **Or** : `#d4af37` (circuits principaux)
-- **Bleu Cyan** : `#00d4ff` (accents technologiques)
-- **Violet** : `#9333ea` (mystère et magie)
-- **Fond Sombre** : Gradients de noir/bleu profond
+- **Cyan Primaire**: `#00d9ff` - Accents technologiques et bordures néon
+- **Or Primaire**: `#ffa500` - Éléments mystiques et accents dorés
+- **Fond Sombre**: `#0a0e27` - Background principal
+- **Fond Plus Sombre**: `#050816` - Sections alternées
 
-### Éléments Visuels
-- Fond avec circuits dorés animés
-- Effets de glow sur les bordures
-- Animations fluides et élégantes
-- Polices : Cinzel (titres épiques), Orbitron (tech), Inter (corps)
+### Sections du Site
 
-## 📱 Responsive Design
+#### 🏠 Hero Section
+- Titre avec effet de glitch
+- Statistiques animées avec compteurs
+- Bouton CTA avec effets lumineux
+- Image de l'hourglass en background
 
-Le site est **100% responsive** et s'adapte à toutes les orientations :
+#### 🌀 Portails Temporels
+Trois portails principaux:
+1. **Nexus Technologique** - Portail vers les dimensions tech avancées
+2. **Sceau du Dragon** - Porte ancestrale vers les royaumes mystiques
+3. **Porte Arcanique** - Convergence des circuits et de la magie
 
-### Portrait (Mobile)
-- Navigation simplifiée
-- Grilles en une colonne
-- Textes optimisés
+Chaque portail inclut:
+- Image immersive avec overlay
+- Statistiques de stabilité
+- Bouton d'activation interactif
+- Effet 3D tilt au survol
 
-### Carré (Tablette)
-- Grilles 2 colonnes
-- Layout équilibré
-- Espacement adapté
+#### 📜 Archives Temporelles
+Timeline verticale avec événements chronologiques:
+- 06.19.2085 - Activation du Portail Principal
+- 08.24.2084 - Découverte du Sceau du Dragon
+- 12.01.2083 - Initialisation du Projet Hourglass
 
-### Paysage (Desktop)
-- Grilles multi-colonnes
-- Expérience complète
-- Animations riches
+#### 📡 Contact
+- Formulaire de contact futuriste
+- Informations de connexion (fréquence, réseau, sécurité)
+- Effets de glow au focus
 
-## 🚀 Technologies
+## 🚀 Technologies Utilisées
 
-- **HTML5** - Structure sémantique
-- **CSS3** - Design moderne avec variables CSS, Grid, Flexbox
-- **JavaScript Vanilla** - SPA (Single Page Application)
-- **JSON** - Base de données pour les mondes et sagas
+- **HTML5** - Structure sémantique moderne
+- **CSS3** - Design avancé avec:
+  - Variables CSS pour la cohérence
+  - Animations et keyframes personnalisées
+  - Grid et Flexbox pour le layout
+  - Design 100% responsive
+- **JavaScript Vanilla** - Interactivité riche:
+  - Système de particules Canvas
+  - Animations de scroll
+  - Compteurs animés
+  - Effets de notification
+  - Navigation fluide
 
 ## 📁 Structure du Projet
 
 ```
 anim-connect/
-├── index.html          # Point d'entrée HTML
-├── styles.css          # Tous les styles (responsive inclus)
-├── tower.js            # Logique JavaScript (navigation, rendu)
-├── data/
-│   ├── worlds.json     # Configuration des 5 mondes
-│   └── sagas.json      # Détails des 10 sagas
-└── README.md           # Documentation
+├── index.html              # Page principale
+├── styles.css              # Tous les styles (responsive)
+├── app.js                  # Logique et animations JavaScript
+├── assets/
+│   └── images/            # Images du site
+│       ├── hourglass.jpg  # Image principale de l'hourglass
+│       ├── tech-cube.jpg  # Portail technologique
+│       ├── dragon-seal.jpg # Portail mystique
+│       ├── arcane-card.jpg # Portail arcanique
+│       └── README.md      # Guide d'intégration des images
+└── README.md              # Ce fichier
 ```
+
+## 🖼️ Intégration des Images
+
+Pour finaliser le design, placez les images suivantes dans le dossier `assets/images/`:
+
+1. **hourglass.jpg** - L'hourglass futuriste (background hero)
+2. **tech-cube.jpg** - Le cube technologique (carte portail 1)
+3. **dragon-seal.jpg** - Le médaillon dragon (carte portail 2)
+4. **arcane-card.jpg** - La carte mystique "A" (carte portail 3)
+
+Voir `assets/images/README.md` pour plus de détails.
+
+## ✨ Fonctionnalités Interactives
+
+### Animations
+- Particules dynamiques en background
+- Effet de glitch sur le titre principal
+- Compteurs animés pour les statistiques
+- Rotation de l'hourglass
+- Effets de glow et néon
+
+### Interactions Utilisateur
+- Cartes 3D avec effet tilt au survol
+- Boutons avec animations de glow
+- Formulaire avec validation
+- Navigation smooth scroll
+- Système de notifications
+
+### Raccourcis Clavier
+- **H** - Accueil
+- **P** - Portails
+- **A** - Archives
+- **C** - Contact
+
+### Camera Log
+- Horloge en temps réel
+- Date du jour
+- Numéro de fichier animé
+- Indicateur d'enregistrement
+
+## 📱 Responsive Design
+
+Le site est entièrement responsive avec des breakpoints optimisés:
+
+- **Desktop** (>1024px) - Expérience complète avec tous les effets
+- **Tablet** (768px-1024px) - Layout adapté avec grilles simplifiées
+- **Mobile** (<768px) - Version mobile optimisée
+
+Tous les éléments s'adaptent automatiquement:
+- Navigation
+- Grilles de cartes
+- Timeline
+- Formulaire de contact
 
 ## 🎯 Utilisation
 
-1. **Ouvrir le site** - Ouvrez `index.html` dans un navigateur moderne
-2. **Explorer la Tour** - Page d'accueil présentant le concept
-3. **Choisir un Monde** - Cliquez sur une porte pour explorer un monde
-4. **Découvrir les Sagas** - Parcourez les aventures disponibles
-5. **Sélectionner un Format** - Consultez les détails de chaque format
+1. Ouvrir `index.html` dans un navigateur moderne
+2. Explorer les différentes sections via la navigation
+3. Interagir avec les cartes de portails
+4. Utiliser les raccourcis clavier pour une navigation rapide
+5. Remplir le formulaire de contact
 
-## 🌐 Navigation
+## ⚡ Performance
 
-- **🏛️ La Tour** - Page d'accueil avec présentation du concept
-- **🌍 Mondes** - Vue d'ensemble des 5 mondes disponibles
-- **📚 Sagas** - Liste complète des 10 sagas groupées par monde
-- **ℹ️ À propos** - Explication détaillée du projet et de la philosophie
+- Aucune dépendance externe (bibliothèques)
+- JavaScript vanilla optimisé
+- CSS optimisé avec variables
+- Animations GPU-accelerated
+- Images optimisées pour le web
 
-## ✨ Fonctionnalités Clés
+## 🔮 Effets Spéciaux
 
-- ✅ Design inspiré cyberpunk/circuits dorés
-- ✅ 5 mondes thématiques uniques
-- ✅ 10 sagas complètes et détaillées
-- ✅ 5 formats d'expérience par saga
-- ✅ Navigation fluide SPA
-- ✅ Animations et effets visuels
-- ✅ 100% Responsive (portrait, carré, paysage)
-- ✅ Scrollbar personnalisée
-- ✅ Aucune dépendance externe
+### Effets de Glitch
+Animation de glitch sur le titre principal avec décalage de couleurs et déformation.
 
-## 🎓 Philosophie
+### Système de Particules
+Canvas avec particules connectées qui se déplacent de manière fluide avec effet de connexion par distance.
 
-> "Les histoires sont plus riches quand elles peuvent être vécues de multiples façons."
+### Activation de Portail
+Effet de pulse et notification lors de l'activation d'un portail.
 
-ANIM'CONNECT croit en l'accessibilité et la flexibilité des expériences narratives. Une même saga peut être :
-- Une lecture tranquille le soir
-- Un jeu familial le week-end
-- Une aventure épique grandeur nature
+### Effets 3D
+Rotation 3D des cartes au survol de la souris basée sur la position du curseur.
 
-La **Hourglass Tower** symbolise cette flexibilité temporelle : le temps s'écoule différemment dans chaque monde, et chaque format offre une perspective unique.
+## 🌐 Compatibilité Navigateurs
+
+- Chrome (recommandé)
+- Firefox
+- Safari
+- Edge
+- Opera
+
+Tous les navigateurs modernes supportant ES6+ sont compatibles.
 
 ## 📝 Licence
 
@@ -187,4 +184,8 @@ Portfolio personnel - Tous droits réservés
 
 ## 👤 Auteur
 
-Portfolio créé pour **ANIM'CONNECT**
+Portfolio créé pour le projet **HOURGLASS GATE**
+
+---
+
+**Note**: Ce site est une refonte complète avec un design futuriste/cyberpunk inspiré des images fournies. Le thème "Hourglass Gate" représente un portail temporel permettant de voyager entre différentes dimensions et réalités.

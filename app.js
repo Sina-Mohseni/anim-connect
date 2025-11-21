@@ -1,722 +1,539 @@
 // ==========================================
-// ANIM'CONNECT - Application SPA
+// HOURGLASS GATE - JavaScript Interactions
 // ==========================================
 
-// �tat global de l'application
-const AppState = {
-    categories: [],
-    projects: [],
-    personas: {},
-    demoTypes: [],
-    currentPage: 'home',
-    currentProject: null,
-    currentPersona: null,
-    currentDemoType: null,
-    chatMessages: [],
-    settings: {
-        primaryColor: localStorage.getItem('primaryColor') || '#00d4ff'
-    }
-};
-
-// ==========================================
-// INITIALISATION
-// ==========================================
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadData();
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    initParticles();
+    initCameraLog();
     initNavigation();
-    applyTheme();
-    navigateTo('home');
+    initAnimations();
+    initStatCounters();
+    initFormHandler();
+    initScrollEffects();
 });
 
 // ==========================================
-// CHARGEMENT DES DONN�ES
+// Particles Background
 // ==========================================
-async function loadData() {
-    try {
-        // Charger les cat�gories
-        const categoriesResponse = await fetch('data/categories.json');
-        const categoriesData = await categoriesResponse.json();
-        AppState.categories = categoriesData.categories;
+function initParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
 
-        // Charger les projets
-        const projectsResponse = await fetch('data/projects.json');
-        const projectsData = await projectsResponse.json();
-        AppState.projects = projectsData.projects;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-        // Charger les types de d�mo
-        const demoTypesResponse = await fetch('data/demo-types.json');
-        const demoTypesData = await demoTypesResponse.json();
-        AppState.demoTypes = demoTypesData.demoTypes;
+    const particles = [];
+    const particleCount = 100;
+    const connectionDistance = 150;
 
-        // Charger tous les personas (10 personas)
-        const personaIds = [
-            'strategiste', 'conteur', 'guide', 'explorateur', 'mysterieux',
-            'educateur', 'enthousiaste', 'artiste', 'scientifique', 'aventurier'
-        ];
-
-        for (const id of personaIds) {
-            const response = await fetch(`data/personas/${id}.json`);
-            AppState.personas[id] = await response.json();
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+            this.color = Math.random() > 0.5 ? '#00d9ff' : '#ffa500';
         }
 
-    } catch (error) {
-        console.error('Erreur lors du chargement des donn�es:', error);
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+
+            // Add glow effect
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+        }
     }
+
+    // Create particles
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+
+    // Draw connections
+    function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < connectionDistance) {
+                    const opacity = 1 - (distance / connectionDistance);
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(0, 217, 255, ${opacity * 0.3})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawConnections();
+
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 }
 
 // ==========================================
-// NAVIGATION
+// Camera Log - Time & Date
+// ==========================================
+function initCameraLog() {
+    const timeElement = document.getElementById('currentTime');
+    const dateElement = document.getElementById('currentDate');
+    const fileElement = document.getElementById('fileNumber');
+
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+
+        timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const year = now.getFullYear();
+
+        dateElement.textContent = `${month}.${day}.${year}`;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // Random file number updates
+    setInterval(() => {
+        const randomFile = Math.floor(Math.random() * 9999);
+        fileElement.textContent = String(randomFile).padStart(4, '0') + '-B';
+    }, 10000);
+}
+
+// ==========================================
+// Navigation
 // ==========================================
 function initNavigation() {
-    // Navigation par boutons de menu
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const page = item.dataset.page;
-            navigateTo(page);
-        });
-    });
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    // Navigation par logo
-    const logo = document.querySelector('.logo');
-    if (logo) {
-        logo.addEventListener('click', () => navigateTo('home'));
-    }
-}
-
-function navigateTo(page, params = {}) {
-    AppState.currentPage = page;
-
-    // Mettre � jour l'�tat actif du menu
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.toggle('active', item.dataset.page === page);
-    });
-
-    // Rendre la page appropri�e
-    const app = document.getElementById('app');
-
-    switch(page) {
-        case 'home':
-            app.innerHTML = renderHomePage();
-            break;
-        case 'centre':
-            app.innerHTML = renderCentrePage();
-            break;
-        case 'projets':
-            app.innerHTML = renderProjetsPage();
-            break;
-        case 'parametres':
-            app.innerHTML = renderParametresPage();
-            initParametresHandlers();
-            break;
-        case 'fiche':
-            app.innerHTML = renderFichePage(params.projectId);
-            initFicheHandlers();
-            break;
-        case 'demo':
-            app.innerHTML = renderDemoPage(params.projectId);
-            initDemoHandlers(params.projectId);
-            break;
-        case 'chat':
-            app.innerHTML = renderChatPage();
-            initChatHandlers();
-            break;
-        default:
-            app.innerHTML = renderHomePage();
-    }
-
-    // Scroll en haut de la page
-    window.scrollTo(0, 0);
-}
-
-// ==========================================
-// RENDU DES PAGES
-// ==========================================
-
-// PAGE HOME
-function renderHomePage() {
-    return `
-        <div class="home-page fade-in">
-            <div class="hero-section">
-                <h1 class="hero-title">Anim'Connect</h1>
-                <p class="hero-subtitle">Explorez un univers de jeux, d'activit�s et d'aventures interactives</p>
-            </div>
-
-            <div class="categories-grid">
-                ${AppState.categories.map(cat => `
-                    <div class="category-card" onclick="navigateTo('projets')">
-                        <div class="category-icon">${cat.icon}</div>
-                        <h3 class="category-name">${cat.name}</h3>
-                        <p class="category-description">${cat.description}</p>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-}
-
-// PAGE PROJETS
-function renderProjetsPage() {
-    let html = '<div class="projets-page"><h1 class="page-title">Tous nos Projets</h1>';
-
-    AppState.categories.forEach(category => {
-        const categoryProjects = AppState.projects.filter(p => p.categoryId === category.id);
-
-        if (categoryProjects.length > 0) {
-            html += `
-                <div class="category-section">
-                    <div class="section-header">
-                        <span class="section-icon">${category.icon}</span>
-                        <h2 class="section-title">${category.name}</h2>
-                    </div>
-                    <div class="subcategories">
-            `;
-
-            category.subcategories.forEach(subcat => {
-                const subcatProjects = categoryProjects.filter(p => p.subcategoryId === subcat.id);
-
-                if (subcatProjects.length > 0) {
-                    html += `
-                        <div class="subcategory">
-                            <h3 class="subcategory-title">${subcat.name}</h3>
-                            <div class="projects-grid">
-                                ${subcatProjects.map(project => `
-                                    <div class="project-card">
-                                        <img src="${project.image}" alt="${project.title}" class="project-image">
-                                        <div class="project-content">
-                                            <h4 class="project-title">${project.title}</h4>
-                                            <p class="project-description">${project.shortDescription}</p>
-                                            <div class="project-actions">
-                                                <button class="btn" onclick="navigateTo('fiche', {projectId: '${project.id}'})">
-                                                    =� Fiche
-                                                </button>
-                                                <button class="btn btn-primary" onclick="navigateTo('demo', {projectId: '${project.id}'})">
-                                                    <� D�mo
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }
-            });
-
-            html += '</div></div>';
-        }
-    });
-
-    html += '</div>';
-    return html;
-}
-
-// PAGE FICHE
-function renderFichePage(projectId) {
-    const project = AppState.projects.find(p => p.id === projectId);
-    if (!project) return '<div class="error">Projet non trouv�</div>';
-
-    const fiche = project.fiche;
-
-    return `
-        <div class="fiche-page">
-            <button class="back-button" onclick="navigateTo('projets')">
-                � Retour aux projets
-            </button>
-
-            <div class="fiche-header">
-                <h1 class="fiche-titre">${fiche.titre}</h1>
-                <p class="fiche-sous-titre">${fiche.sousTitre}</p>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� Pr�sentation</h3>
-                <p>${fiche.presentation}</p>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� Informations</h3>
-                <div class="fiche-meta">
-                    <div class="meta-item">
-                        <div class="meta-label">�ge</div>
-                        <div class="meta-value">${fiche.age}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Joueurs</div>
-                        <div class="meta-value">${fiche.joueurs}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Dur�e</div>
-                        <div class="meta-value">${fiche.duree}</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label">Difficult�</div>
-                        <div class="meta-value">${fiche.difficulte}</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� R�gles</h3>
-                <p>${fiche.regle}</p>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� Apports</h3>
-                <ul>
-                    ${fiche.apports.map(apport => `<li>${apport}</li>`).join('')}
-                </ul>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� Fr�quence</h3>
-                <p>${fiche.frequence}</p>
-            </div>
-
-            <div class="fiche-section">
-                <h3>=� Remarques</h3>
-                <p>${fiche.remarques}</p>
-            </div>
-
-            <div class="fiche-section">
-                <h3> Auteur</h3>
-                <p>${fiche.auteur}</p>
-            </div>
-
-            <button class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 2rem;" onclick="navigateTo('demo', {projectId: '${projectId}'})">
-                <� Lancer une D�mo Interactive
-            </button>
-        </div>
-    `;
-}
-
-// PAGE DEMO (s�lection persona et type)
-function renderDemoPage(projectId) {
-    const project = AppState.projects.find(p => p.id === projectId);
-    if (!project) return '<div class="error">Projet non trouv�</div>';
-
-    return `
-        <div class="demo-page">
-            <button class="back-button" onclick="navigateTo('fiche', {projectId: '${projectId}'})">
-                � Retour � la fiche
-            </button>
-
-            <h1 class="page-title">Configurer votre D�mo</h1>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
-                Projet : <strong style="color: var(--primary-color);">${project.title}</strong>
-            </p>
-
-            <div class="demo-selection">
-                <div class="selection-section">
-                    <h2 class="selection-title">1. Choisissez votre Persona</h2>
-                    <div class="personas-grid" id="personas-grid">
-                        ${Object.values(AppState.personas).map(persona => `
-                            <div class="persona-card" data-persona-id="${persona.id}">
-                                <div class="persona-avatar">${persona.avatar}</div>
-                                <div class="persona-name">${persona.name}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div class="selection-section">
-                    <h2 class="selection-title">2. Choisissez le Type de D�mo</h2>
-                    <div class="demo-types-grid" id="demo-types-grid">
-                        ${AppState.demoTypes.map(type => `
-                            <div class="demo-type-card" data-type-id="${type.id}">
-                                <div class="demo-type-header">
-                                    <span class="demo-type-icon">${type.icon}</span>
-                                    <span class="demo-type-name">${type.name}</span>
-                                </div>
-                                <p class="demo-type-description">${type.description}</p>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <button class="start-demo-button" id="start-demo-btn" disabled>
-                    D�marrer la D�mo
-                </button>
-            </div>
-        </div>
-    `;
-}
-
-// PAGE CHAT
-function renderChatPage() {
-    const project = AppState.currentProject;
-    const persona = AppState.currentPersona;
-    const demoType = AppState.currentDemoType;
-
-    return `
-        <div class="chat-page">
-            <div class="chat-header">
-                <button class="back-button" onclick="navigateTo('demo', {projectId: '${project.id}'})">
-                    � Retour
-                </button>
-                <div class="chat-persona-info">
-                    <div class="chat-persona-avatar" style="border-color: ${persona.color};">
-                        ${persona.avatar}
-                    </div>
-                    <div class="chat-persona-details">
-                        <h3>${persona.name}</h3>
-                        <p>${project.title} - ${demoType.name}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chat-messages" id="chat-messages">
-                <!-- Les messages seront ajout�s ici dynamiquement -->
-            </div>
-
-            <div class="chat-input-area">
-                <textarea
-                    class="chat-input"
-                    id="chat-input"
-                    placeholder="Tapez votre message..."
-                    rows="1"
-                ></textarea>
-                <button class="send-button" id="send-button">
-                    Envoyer
-                </button>
-            </div>
-        </div>
-    `;
-}
-
-// PAGE CENTRE
-function renderCentrePage() {
-    return `
-        <div class="centre-page fade-in">
-            <h1 class="page-title">Centre d'Information</h1>
-
-            <div class="info-card">
-                <h2>� propos d'Anim'Connect</h2>
-                <p>
-                    Anim'Connect est une plateforme interactive d�di�e � l'animation ludique et cr�ative.
-                    Nous proposons une large gamme de jeux, activit�s, ateliers et contenus cr�atifs pour tous les �ges.
-                </p>
-
-                <h3>Notre Mission</h3>
-                <p>
-                    Rendre l'animation accessible, interactive et passionnante gr�ce � des outils modernes
-                    et des exp�riences personnalis�es avec nos personas IA.
-                </p>
-
-                <h3>Nos Cat�gories</h3>
-                <ul>
-                    <li><strong>Jeux de soci�t�</strong> : Des jeux de plateau, de cartes et de strat�gie</li>
-                    <li><strong>Activit�s</strong> : Activit�s artistiques, sportives et �ducatives</li>
-                    <li><strong>Jeux de R�les</strong> : Aventures immersives dans divers univers</li>
-                    <li><strong>Ateliers</strong> : Formations et cr�ations collectives</li>
-                    <li><strong>Sc�nes</strong> : Contenus multim�dias (histoires, vid�os, musiques, audios)</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h2>Comment utiliser le site ?</h2>
-
-                <h3>1. Explorer les Projets</h3>
-                <p>
-                    Parcourez nos projets class�s par cat�gories et sous-cat�gories.
-                    Chaque projet dispose d'une fiche compl�te (SPAADRAFRA) d�taillant toutes les informations.
-                </p>
-
-                <h3>2. Consulter les Fiches</h3>
-                <p>
-                    Cliquez sur "Fiche" pour acc�der aux d�tails complets : r�gles, dur�e, �ge, apports p�dagogiques, etc.
-                </p>
-
-                <h3>3. Lancer une D�mo Interactive</h3>
-                <p>
-                    Choisissez un persona IA qui vous guidera selon sa personnalit� unique.
-                    S�lectionnez ensuite le type de d�mo souhait� parmi 6 options diff�rentes.
-                </p>
-
-                <h3>4. Interagir avec les Personas</h3>
-                <p>
-                    Nos 11 personas ont chacun leur style : Le Strat�ge, Le Conteur, Le Guide,
-                    L'Explorateur, Le Myst�rieux, L'�ducateur, L'Enthousiaste, L'Artiste,
-                    Le Scientifique, L'Aventurier et Le Cr�ateur.
-                </p>
-            </div>
-
-            <div class="info-card">
-                <h2>Les Types de D�mo</h2>
-                <ul>
-                    <li><strong>Rappel complet</strong> : R�sum� structur� de la fiche</li>
-                    <li><strong>En savoir plus</strong> : Informations suppl�mentaires au-del� de la fiche</li>
-                    <li><strong>Histoire</strong> : Vivre le projet comme un r�cit narratif</li>
-                    <li><strong>Histoire interactive</strong> : Participer avec vos propres choix</li>
-                    <li><strong>Variante</strong> : Explorer d'autres versions du projet</li>
-                    <li><strong>Personnalis�</strong> : Cr�er votre version sur mesure</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h2>Personnalisation</h2>
-                <p>
-                    Rendez-vous dans les Param�tres pour personnaliser l'apparence du site
-                    en choisissant votre couleur dominante pr�f�r�e.
-                </p>
-            </div>
-        </div>
-    `;
-}
-
-// PAGE PARAM�TRES
-function renderParametresPage() {
-    const colorPresets = [
-        { name: 'Cyan', color: '#00d4ff', dark: '#0099cc', light: '#33ddff' },
-        { name: 'Violet', color: '#a855f7', dark: '#7c3aed', light: '#c084fc' },
-        { name: 'Vert', color: '#10b981', dark: '#059669', light: '#34d399' },
-        { name: 'Rose', color: '#ec4899', dark: '#db2777', light: '#f472b6' },
-        { name: 'Orange', color: '#f59e0b', dark: '#d97706', light: '#fbbf24' },
-        { name: 'Rouge', color: '#ef4444', dark: '#dc2626', light: '#f87171' },
-        { name: 'Bleu', color: '#3b82f6', dark: '#2563eb', light: '#60a5fa' },
-        { name: 'Jaune', color: '#eab308', dark: '#ca8a04', light: '#facc15' }
-    ];
-
-    return `
-        <div class="parametres-page fade-in">
-            <h1 class="page-title">Param�tres</h1>
-
-            <div class="settings-section">
-                <h2>Couleur Dominante</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    Choisissez la couleur principale du site selon vos pr�f�rences
-                </p>
-
-                <div class="color-presets">
-                    ${colorPresets.map(preset => `
-                        <div class="color-preset ${preset.color === AppState.settings.primaryColor ? 'active' : ''}"
-                             data-color="${preset.color}"
-                             data-dark="${preset.dark}"
-                             data-light="${preset.light}">
-                            <div class="color-circle" style="background: ${preset.color};"></div>
-                            <div class="color-name">${preset.name}</div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <h2>� propos</h2>
-                <p style="color: var(--text-secondary);">
-                    Anim'Connect - Version 2.0<br>
-                    Plateforme interactive d'animation ludique<br>
-                    � 2024 Tous droits r�serv�s
-                </p>
-            </div>
-        </div>
-    `;
-}
-
-// ==========================================
-// GESTIONNAIRES D'�V�NEMENTS
-// ==========================================
-
-function initFicheHandlers() {
-    // D�j� g�r� par onclick dans le HTML
-}
-
-function initDemoHandlers(projectId) {
-    const project = AppState.projects.find(p => p.id === projectId);
-    const startBtn = document.getElementById('start-demo-btn');
-
-    let selectedPersona = null;
-    let selectedDemoType = null;
-
-    // Gestion de la s�lection des personas
-    document.querySelectorAll('.persona-card').forEach(card => {
-        card.addEventListener('click', () => {
-            document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            selectedPersona = card.dataset.personaId;
-            updateStartButton();
-        });
-    });
-
-    // Gestion de la s�lection du type de d�mo
-    document.querySelectorAll('.demo-type-card').forEach(card => {
-        card.addEventListener('click', () => {
-            document.querySelectorAll('.demo-type-card').forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            selectedDemoType = card.dataset.typeId;
-            updateStartButton();
-        });
-    });
-
-    function updateStartButton() {
-        if (selectedPersona && selectedDemoType) {
-            startBtn.disabled = false;
-            startBtn.onclick = () => startDemo(projectId, selectedPersona, selectedDemoType);
-        }
-    }
-}
-
-function startDemo(projectId, personaId, demoTypeId) {
-    AppState.currentProject = AppState.projects.find(p => p.id === projectId);
-    AppState.currentPersona = AppState.personas[personaId];
-    AppState.currentDemoType = AppState.demoTypes.find(t => t.id === demoTypeId);
-    AppState.chatMessages = [];
-
-    navigateTo('chat');
-}
-
-function initChatHandlers() {
-    const messagesContainer = document.getElementById('chat-messages');
-    const chatInput = document.getElementById('chat-input');
-    const sendButton = document.getElementById('send-button');
-
-    // Afficher le message de bienvenue du persona
-    const greeting = AppState.currentPersona.greeting[AppState.currentDemoType.id];
-    addMessage('persona', greeting);
-
-    // Gestion de l'envoi de messages
-    const sendMessage = () => {
-        const message = chatInput.value.trim();
-        if (message) {
-            addMessage('user', message);
-            chatInput.value = '';
-            chatInput.style.height = 'auto';
-
-            // Simuler une r�ponse du persona (d�lai pour effet r�aliste)
-            setTimeout(() => {
-                const response = generatePersonaResponse(message);
-                addMessage('persona', response);
-            }, 1000 + Math.random() * 1000);
-        }
-    };
-
-    sendButton.addEventListener('click', sendMessage);
-
-    chatInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            sendMessage();
-        }
+
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+
+            // Add active class to clicked link
+            this.classList.add('active');
+
+            // Scroll to section
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 
-    // Auto-resize du textarea
-    chatInput.addEventListener('input', () => {
-        chatInput.style.height = 'auto';
-        chatInput.style.height = chatInput.scrollHeight + 'px';
-    });
-}
+    // Update active nav on scroll
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        let current = '';
 
-function addMessage(type, text) {
-    const messagesContainer = document.getElementById('chat-messages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chat-message ${type}`;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
 
-    const avatar = type === 'user' ? '=d' : AppState.currentPersona.avatar;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
 
-    messageDiv.innerHTML = `
-        <div class="message-avatar">${avatar}</div>
-        <div class="message-bubble">${text}</div>
-    `;
-
-    messagesContainer.appendChild(messageDiv);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-    AppState.chatMessages.push({ type, text, timestamp: Date.now() });
-}
-
-function generatePersonaResponse(userMessage) {
-    // Simulation simplifi�e de r�ponse IA bas�e sur le persona et le projet
-    const persona = AppState.currentPersona;
-    const project = AppState.currentProject;
-    const demoType = AppState.currentDemoType;
-
-    // R�ponses contextuelles bas�es sur les mots-cl�s
-    const lowerMessage = userMessage.toLowerCase();
-
-    if (lowerMessage.includes('r�gle') || lowerMessage.includes('comment')) {
-        return `${persona.name === 'Le Guide' ? 'Avec plaisir !' : 'Bien s�r !'} Les r�gles de ${project.title} sont : ${project.fiche.regle}`;
-    }
-
-    if (lowerMessage.includes('dur�e') || lowerMessage.includes('temps')) {
-        return `La dur�e de ${project.title} est de ${project.fiche.duree}. ${persona.name === 'L\'Enthousiaste' ? 'C\'est parfait pour passer un bon moment !' : 'C\'est une dur�e id�ale pour ce type d\'activit�.'}`;
-    }
-
-    if (lowerMessage.includes('joueur')) {
-        return `${project.title} se joue � ${project.fiche.joueurs}. ${persona.name === 'Le Strat�ge' ? 'Un nombre optimal pour une bonne dynamique de jeu.' : ''}`;
-    }
-
-    if (lowerMessage.includes('merci')) {
-        return `${persona.name === 'L\'Enthousiaste' ? 'De rien ! C\'est un plaisir !' : 'Je vous en prie ! N\'h�sitez pas si vous avez d\'autres questions.'}`;
-    }
-
-    // R�ponses par d�faut selon le type de d�mo
-    if (demoType.id === 'recap') {
-        return `Voici un �l�ment cl� de ${project.title} : ${project.fiche.apports[0]}. ${persona.name === 'L\'�ducateur' ? 'C\'est un apport p�dagogique important.' : ''}`;
-    }
-
-    if (demoType.id === 'story') {
-        return `Laissez-moi vous raconter... ${project.fiche.presentation} ${persona.name === 'Le Conteur' ? 'Et ce n\'est que le d�but de l\'aventure !' : ''}`;
-    }
-
-    // R�ponse g�n�rique adapt�e au persona
-    const genericResponses = {
-        'strategiste': `Analysons cela ensemble. Concernant ${project.title}, je dirais que c'est une excellente question qui m�rite une r�ponse structur�e.`,
-        'conteur': `Ah, quelle merveilleuse question ! Laissez-moi vous conter comment ${project.title} peut transformer votre exp�rience...`,
-        'guide': `Je vais vous aider avec �a ! Pour ${project.title}, voici ce que je vous recommande de savoir...`,
-        'explorateur': `Excellente curiosit� ! Explorons ensemble les facettes de ${project.title} !`,
-        'mysterieux': `Int�ressant... Vous touchez l� � quelque chose d'important concernant ${project.title}...`,
-        'educateur': `Bonne question ! Cela nous permet d'approfondir notre compr�hension de ${project.title}.`,
-        'enthousiaste': `Wow ! Super question ! ${project.title} est vraiment incroyable pour �a !`,
-        'artiste': `Quelle belle interrogation... ${project.title} est comme une Suvre d'art � d�couvrir...`,
-        'scientifique': `Int�ressant. Analysons factuellement les caract�ristiques de ${project.title}.`,
-        'aventurier': `En avant ! D�couvrons ensemble les secrets de ${project.title} !`,
-        'createur': `Bonne id�e ! ${project.title} offre plein de possibilit�s cr�atives � explorer.`
-    };
-
-    return genericResponses[persona.id] || `Merci pour votre message � propos de ${project.title}. Comment puis-je vous aider davantage ?`;
-}
-
-function initParametresHandlers() {
-    document.querySelectorAll('.color-preset').forEach(preset => {
-        preset.addEventListener('click', () => {
-            const color = preset.dataset.color;
-            const dark = preset.dataset.dark;
-            const light = preset.dataset.light;
-
-            // Mettre � jour les variables CSS
-            document.documentElement.style.setProperty('--primary-color', color);
-            document.documentElement.style.setProperty('--primary-dark', dark);
-            document.documentElement.style.setProperty('--primary-light', light);
-
-            // Sauvegarder dans localStorage
-            localStorage.setItem('primaryColor', color);
-            localStorage.setItem('primaryDark', dark);
-            localStorage.setItem('primaryLight', light);
-
-            AppState.settings.primaryColor = color;
-
-            // Mettre � jour l'UI
-            document.querySelectorAll('.color-preset').forEach(p => p.classList.remove('active'));
-            preset.classList.add('active');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
         });
     });
 }
 
 // ==========================================
-// TH�ME
+// Scroll Animations
 // ==========================================
-function applyTheme() {
-    const primaryColor = localStorage.getItem('primaryColor');
-    const primaryDark = localStorage.getItem('primaryDark');
-    const primaryLight = localStorage.getItem('primaryLight');
+function initAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
 
-    if (primaryColor) {
-        document.documentElement.style.setProperty('--primary-color', primaryColor);
-        document.documentElement.style.setProperty('--primary-dark', primaryDark);
-        document.documentElement.style.setProperty('--primary-light', primaryLight);
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all cards and timeline items
+    const animatedElements = document.querySelectorAll('.portal-card, .timeline-item, .info-item');
+
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(50px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+}
+
+// ==========================================
+// Stat Counters Animation
+// ==========================================
+function initStatCounters() {
+    const statValues = document.querySelectorAll('.stat-value');
+    let animated = false;
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                animateCounters();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.hero-stats'));
+
+    function animateCounters() {
+        statValues.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60 FPS
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    stat.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current);
+                }
+            }, 16);
+        });
     }
 }
 
 // ==========================================
-// EXPOSITION GLOBALE
+// Portal Card Interactions
 // ==========================================
-window.navigateTo = navigateTo;
-window.AppState = AppState;
+const portalCards = document.querySelectorAll('.portal-card');
+
+portalCards.forEach(card => {
+    const button = card.querySelector('.card-button');
+
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+
+        const portalType = card.getAttribute('data-portal');
+
+        // Create activation effect
+        createActivationEffect(card);
+
+        // Show activation message
+        setTimeout(() => {
+            showNotification(`Portail ${portalType.toUpperCase()} activé avec succès!`);
+        }, 500);
+    });
+
+    // 3D tilt effect on mouse move
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+    });
+
+    card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+    });
+});
+
+// ==========================================
+// Activation Effect
+// ==========================================
+function createActivationEffect(element) {
+    const rect = element.getBoundingClientRect();
+    const ripple = document.createElement('div');
+
+    ripple.style.position = 'fixed';
+    ripple.style.left = rect.left + 'px';
+    ripple.style.top = rect.top + 'px';
+    ripple.style.width = rect.width + 'px';
+    ripple.style.height = rect.height + 'px';
+    ripple.style.border = '2px solid #00d9ff';
+    ripple.style.borderRadius = '0';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.zIndex = '9999';
+    ripple.style.animation = 'pulse-border 0.6s ease-out';
+
+    document.body.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Add pulse animation to CSS dynamically
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes pulse-border {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.1);
+            opacity: 0;
+        }
+    }
+
+    .notification {
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        background: rgba(5, 8, 22, 0.95);
+        border: 2px solid #00d9ff;
+        padding: 20px 30px;
+        color: #00d9ff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s;
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// ==========================================
+// Notification System
+// ==========================================
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// ==========================================
+// Form Handler
+// ==========================================
+function initFormHandler() {
+    const form = document.querySelector('.contact-form');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            console.log('Form submitted:', data);
+
+            // Show success message
+            showNotification('Transmission envoyée avec succès!');
+
+            // Reset form
+            form.reset();
+
+            // Add glitch effect to form
+            form.style.animation = 'glitch 0.3s';
+            setTimeout(() => {
+                form.style.animation = '';
+            }, 300);
+        });
+    }
+}
+
+// ==========================================
+// Scroll Effects
+// ==========================================
+function initScrollEffects() {
+    let lastScroll = 0;
+    const nav = document.querySelector('.main-nav');
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+            nav.style.boxShadow = '0 5px 30px rgba(0, 217, 255, 0.5)';
+        } else {
+            nav.style.boxShadow = '0 5px 30px rgba(0, 217, 255, 0.2)';
+        }
+
+        lastScroll = currentScroll;
+    });
+}
+
+// ==========================================
+// CTA Button Effect
+// ==========================================
+const ctaButton = document.querySelector('.cta-button');
+
+if (ctaButton) {
+    ctaButton.addEventListener('click', function() {
+        // Create expanding circle effect
+        const circle = document.createElement('div');
+        circle.style.position = 'fixed';
+        circle.style.left = '50%';
+        circle.style.top = '50%';
+        circle.style.transform = 'translate(-50%, -50%)';
+        circle.style.width = '0';
+        circle.style.height = '0';
+        circle.style.borderRadius = '50%';
+        circle.style.background = 'rgba(0, 217, 255, 0.3)';
+        circle.style.pointerEvents = 'none';
+        circle.style.zIndex = '9999';
+        circle.style.transition = 'all 0.6s ease-out';
+
+        document.body.appendChild(circle);
+
+        setTimeout(() => {
+            circle.style.width = '2000px';
+            circle.style.height = '2000px';
+            circle.style.opacity = '0';
+        }, 10);
+
+        setTimeout(() => {
+            circle.remove();
+        }, 600);
+
+        // Show initialization message
+        showNotification('Séquence d\'initialisation démarrée...');
+
+        // Scroll to portals section
+        setTimeout(() => {
+            document.querySelector('#portals').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }, 1000);
+    });
+}
+
+// ==========================================
+// Random Glitch Effect on Hero Title
+// ==========================================
+const heroTitle = document.querySelector('.hero-title');
+
+if (heroTitle) {
+    setInterval(() => {
+        if (Math.random() > 0.7) {
+            heroTitle.style.animation = 'none';
+            setTimeout(() => {
+                heroTitle.style.animation = 'glitch 3s infinite';
+            }, 10);
+        }
+    }, 5000);
+}
+
+// ==========================================
+// Keyboard Shortcuts
+// ==========================================
+document.addEventListener('keydown', function(e) {
+    // Press 'H' to go home
+    if (e.key === 'h' || e.key === 'H') {
+        document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Press 'P' to go to portals
+    if (e.key === 'p' || e.key === 'P') {
+        document.querySelector('#portals').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Press 'A' to go to archives
+    if (e.key === 'a' || e.key === 'A') {
+        document.querySelector('#archives').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Press 'C' to go to contact
+    if (e.key === 'c' || e.key === 'C') {
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// ==========================================
+// Console Easter Egg
+// ==========================================
+console.log('%c HOURGLASS GATE ', 'background: #00d9ff; color: #000; font-size: 20px; font-weight: bold; padding: 10px;');
+console.log('%c Bienvenue dans le portail temporel ', 'color: #00d9ff; font-size: 14px;');
+console.log('%c Utilisez H, P, A, C pour naviguer ', 'color: #ffa500; font-size: 12px;');

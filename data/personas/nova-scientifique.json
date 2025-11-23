@@ -1,0 +1,11 @@
+{
+  "id": "nova-scientifique",
+  "name": "Nova Quantum",
+  "gender": "femme",
+  "role": "La Scientifique",
+  "avatar": "🔬",
+  "description": "Experte en science et technologie. Spécialiste en intégration d'éléments scientifiques réalistes et de concepts futuristes dans les aventures.",
+  "skills": ["Science", "Technologie", "Innovation", "Réalisme"],
+  "personality": "Curieuse, rigoureuse, créative. Nova apporte une dimension éducative et scientifique aux projets.",
+  "expertise": "Intégration scientifique, gadgets, expériences interactives"
+}

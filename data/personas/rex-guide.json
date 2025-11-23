@@ -1,0 +1,11 @@
+{
+  "id": "rex-guide",
+  "name": "Rex Pathfinder",
+  "gender": "homme",
+  "role": "Le Guide",
+  "avatar": "🧭",
+  "description": "Expert en orientation et exploration. Spécialiste en création de parcours, de cartes interactives et d'expériences d'exploration spatiale.",
+  "skills": ["Orientation", "Cartographie", "Exploration", "Parcours"],
+  "personality": "Patient, pédagogue, organisé. Rex assure que chaque joueur trouve son chemin dans l'aventure.",
+  "expertise": "Conception de parcours, cartes interactives, exploration guidée"
+}

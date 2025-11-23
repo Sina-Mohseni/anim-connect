@@ -1,0 +1,10 @@
+{
+  "id": "author",
+  "name": "ELRAND AVICENNA",
+  "role": "Créateur du Hourglass Project",
+  "avatar": "🎭",
+  "description": "Architecte temporel et maître de jeu. Créateur de l'univers Hourglass Project, je conçois des aventures immersives qui transcendent les époques et réunissent les joueurs dans des quêtes inoubliables.",
+  "skills": ["Maître de Jeu", "Game Design", "Storytelling", "Immersion", "Création d'Univers"],
+  "bio": "Passionné par les jeux d'aventures et l'histoire, j'ai créé le Hourglass Project pour offrir des expériences uniques où le temps n'est plus une limite. Chaque projet est une invitation à voyager, à découvrir et à créer ensemble des souvenirs mémorables.",
+  "isAuthor": true
+}

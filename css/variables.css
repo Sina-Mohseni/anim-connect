@@ -1,0 +1,76 @@
+/* ============================================
+   VARIABLES CSS - THÈME FUTURISTE NÉON
+   ============================================ */
+
+:root {
+    /* Couleurs néon principales (inspirées de l'image) */
+    --neon-orange: #ff6b35;
+    --neon-pink: #f72585;
+    --neon-purple: #7209b7;
+    --neon-blue: #4cc9f0;
+    --neon-cyan: #00d9ff;
+    --neon-yellow: #ffd000;
+
+    /* Couleurs de fond */
+    --bg-dark: #0a0e27;
+    --bg-darker: #050816;
+    --bg-card: #131836;
+    --bg-card-hover: #1a1f47;
+
+    /* Couleurs de texte */
+    --text-primary: #ffffff;
+    --text-secondary: #b8c5d6;
+    --text-muted: #6b7a8f;
+
+    /* Bordures et accents */
+    --border-color: rgba(76, 201, 240, 0.3);
+    --border-hover: rgba(76, 201, 240, 0.8);
+
+    /* Effets de glow */
+    --glow-orange: 0 0 10px rgba(255, 107, 53, 0.5),
+                    0 0 20px rgba(255, 107, 53, 0.3),
+                    0 0 30px rgba(255, 107, 53, 0.1);
+
+    --glow-blue: 0 0 10px rgba(76, 201, 240, 0.5),
+                 0 0 20px rgba(76, 201, 240, 0.3),
+                 0 0 30px rgba(76, 201, 240, 0.1);
+
+    --glow-pink: 0 0 10px rgba(247, 37, 133, 0.5),
+                 0 0 20px rgba(247, 37, 133, 0.3),
+                 0 0 30px rgba(247, 37, 133, 0.1);
+
+    /* Espacements */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Tailles de police */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.25rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 2rem;
+    --font-3xl: 3rem;
+
+    /* Hauteur du header */
+    --header-height: 80px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 20px;
+
+    /* Z-index */
+    --z-header: 1000;
+    --z-modal: 2000;
+    --z-overlay: 1500;
+}

@@ -1,0 +1,11 @@
+{
+  "id": "theo-conteur",
+  "name": "Théo Chronicles",
+  "gender": "homme",
+  "role": "Le Conteur",
+  "avatar": "📖",
+  "description": "Maître narrateur et tisseur d'histoires. Spécialiste en création de récits captivants, de personnages mémorables et d'univers immersifs.",
+  "skills": ["Narration", "Personnages", "Immersion", "Storytelling"],
+  "personality": "Imaginatif, empathique, passionné. Théo donne vie aux histoires et crée des connexions émotionnelles profondes.",
+  "expertise": "Développement narratif, arcs de personnages, worldbuilding"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "prehistoire",
+    "worldId": "monde-prime",
+    "name": "Préhistoire",
+    "description": "L'aube de l'humanité. Des chasseurs-cueilleurs aux premières civilisations, explorez les origines de notre espèce.",
+    "period": "-3 000 000 à -3 500 av. J.-C.",
+    "icon": "🦴"
+  },
+  {
+    "id": "antiquite",
+    "worldId": "monde-prime",
+    "name": "Antiquité",
+    "description": "L'ère des grandes civilisations : Égypte, Grèce, Rome. Temples majestueux, philosophes éclairés et conquêtes épiques.",
+    "period": "-3 500 av. J.-C. à 476 ap. J.-C.",
+    "icon": "🏛️"
+  },
+  {
+    "id": "moyen-age",
+    "worldId": "monde-prime",
+    "name": "Moyen Âge",
+    "description": "Chevaliers, châteaux forts et croisades. Une époque de foi, de féodalité et de légendes.",
+    "period": "476 à 1492",
+    "icon": "⚔️"
+  },
+  {
+    "id": "renaissance",
+    "worldId": "monde-prime",
+    "name": "Renaissance",
+    "description": "Le renouveau de l'art, de la science et de la culture. L'époque de Léonard de Vinci, Michel-Ange et des grandes découvertes.",
+    "period": "1400 à 1600",
+    "icon": "🎨"
+  },
+  {
+    "id": "ere-moderne",
+    "worldId": "monde-prime",
+    "name": "Ère Moderne",
+    "description": "Révolutions industrielles et technologiques. L'humanité transforme le monde à une vitesse sans précédent.",
+    "period": "1800 à 2000",
+    "icon": "⚙️"
+  },
+  {
+    "id": "futur-proche",
+    "worldId": "monde-prime",
+    "name": "Futur Proche",
+    "description": "Le XXIe siècle et au-delà. Technologies avancées, IA, exploration spatiale et nouveaux défis pour l'humanité.",
+    "period": "2000 à 2100",
+    "icon": "🚀"
+  },
+  {
+    "id": "antiquite-alt",
+    "worldId": "monde-nexus",
+    "name": "Antiquité Alternative",
+    "description": "Et si Rome n'était jamais tombée ? Une Antiquité qui s'est prolongée avec des technologies différentes.",
+    "period": "Timeline Alternative",
+    "icon": "🏺"
+  },
+  {
+    "id": "steampunk",
+    "worldId": "monde-quantum",
+    "name": "Ère Steampunk",
+    "description": "Un XIXe siècle où la vapeur règne en maître. Machines extraordinaires et inventions fantastiques.",
+    "period": "1850-1920 (Alt)",
+    "icon": "⚗️"
+  },
+  {
+    "id": "cyberpunk",
+    "worldId": "monde-quantum",
+    "name": "Ère Cyberpunk",
+    "description": "Un futur dystopique où technologie et humanité fusionnent. Néons, mégacorporations et hackers.",
+    "period": "2080-2150",
+    "icon": "🌃"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "id": "axel-explorateur",
+  "name": "Axel Horizon",
+  "gender": "homme",
+  "role": "L'Explorateur",
+  "avatar": "🗺️",
+  "description": "Découvreur de mondes inconnus. Spécialiste en création d'environnements à explorer, de secrets cachés et de découvertes progressives.",
+  "skills": ["Découverte", "Secrets", "Exploration", "Monde Ouvert"],
+  "personality": "Aventureux, curieux, intrépide. Axel conçoit des mondes riches en secrets à découvrir.",
+  "expertise": "Conception d'environnements, secrets cachés, progression exploratoire"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "elena-educatrice",
+  "name": "Elena Sage",
+  "gender": "femme",
+  "role": "L'Éducatrice",
+  "avatar": "🎓",
+  "description": "Pédagogue et formatrice. Spécialiste en intégration d'apprentissages ludiques, de connaissances historiques et de valeurs éducatives.",
+  "skills": ["Pédagogie", "Histoire", "Culture", "Apprentissage"],
+  "personality": "Bienveillante, cultivée, inspirante. Elena fait de chaque jeu une opportunité d'apprendre.",
+  "expertise": "Contenu éducatif, faits historiques, apprentissage par le jeu"
+}

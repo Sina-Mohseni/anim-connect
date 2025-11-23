@@ -1,452 +1,242 @@
-{
-  "projects": [
-    {
-      "id": "bataille-royale",
-      "title": "Bataille Royale",
-      "categoryId": "jeux-societe",
-      "subcategoryId": "jeux-strategie",
-      "shortDescription": "Un jeu de strat�gie o� vous devez survivre et �liminer vos adversaires",
-      "image": "https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Bataille+Royale",
-      "fiche": {
-        "titre": "Bataille Royale",
-        "sousTitre": "Survivre ou mourir, le choix de la strat�gie",
-        "presentation": "Bataille Royale est un jeu de strat�gie intense o� chaque joueur doit utiliser ses ressources intelligemment pour survivre tout en tentant d'�liminer ses adversaires. Zone de jeu qui r�tr�cit, ressources limit�es et alliances temporaires cr�ent une tension constante.",
-        "age": "14+",
-        "joueurs": "3-6 joueurs",
-        "duree": "45-60 minutes",
-        "difficulte": "Interm�diaire",
-        "regle": "Chaque joueur commence avec 3 cartes ressources. � votre tour : piochez 1 carte, jouez jusqu'� 2 actions (d�placement, attaque, d�fense, commerce). La zone de jeu r�tr�cit toutes les 3 tours. Dernier survivant gagne.",
-        "apports": [
-          "D�veloppe la pens�e tactique et l'anticipation",
-          "Encourage la gestion de ressources",
-          "Stimule la prise de d�cision sous pression"
-        ],
-        "frequence": "Id�al pour des soir�es jeux comp�titives",
-        "remarques": "Plusieurs variantes disponibles : mode �quipe, mode personnages sp�ciaux, mode hardcore",
-        "auteur": "Studio GameForge"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["strategiste", "aventurier", "guide"]
+[
+  {
+    "id": "projet-pyramide",
+    "sagaId": "saga-pharaons",
+    "name": "Le Mystère de la Pyramide Perdue",
+    "description": "Explorez une pyramide récemment découverte et percez ses secrets millénaires avant que la malédiction ne se déchaîne.",
+    "duration": "2-3 heures",
+    "players": "4-8 joueurs",
+    "difficulty": {
+      "facile": "Indices supplémentaires et énigmes simplifiées",
+      "normal": "Expérience équilibrée avec défis modérés",
+      "difficile": "Énigmes complexes et pression temporelle accrue"
     },
-    {
-      "id": "detective-mystere",
-      "title": "D�tective Myst�re",
-      "categoryId": "jeux-societe",
-      "subcategoryId": "jeux-cooperatifs",
-      "shortDescription": "R�solvez ensemble une �nigme polici�re captivante",
-      "image": "https://via.placeholder.com/400x300/0f3460/00d4ff?text=Detective+Mystere",
-      "fiche": {
-        "titre": "D�tective Myst�re",
-        "sousTitre": "L'enqu�te ne fait que commencer",
-        "presentation": "Un jeu coop�ratif d'enqu�te o� vous incarnez une �quipe de d�tectives devant r�soudre un myst�re complexe. Indices cach�s, suspects multiples et fausses pistes vous mettront au d�fi de collaborer efficacement.",
-        "age": "12+",
-        "joueurs": "2-5 joueurs",
-        "duree": "60-90 minutes",
-        "difficulte": "Moyen � Difficile",
-        "regle": "Explorez les lieux, interrogez les suspects, analysez les indices. Chaque joueur a une sp�cialit� (forensique, psychologie, logique). Partagez vos d�couvertes et d�duisez l'identit� du coupable avant la fin du temps.",
-        "apports": [
-          "Renforce le travail d'�quipe et la communication",
-          "D�veloppe le raisonnement d�ductif",
-          "Am�liore l'analyse critique"
-        ],
-        "frequence": "Parfait pour soir�es enqu�te entre amis",
-        "remarques": "6 sc�narios inclus avec diff�rents niveaux de difficult�. Extension disponible avec 4 enqu�tes suppl�mentaires",
-        "auteur": "�milie Durand"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["mysterieux", "strategiste", "educateur"]
+    "mode": {
+      "coop": "Tous ensemble contre le temps",
+      "competitif": "Équipes rivales pour trouver le trésor",
+      "semi": "Coopération avec objectifs individuels"
     },
-    {
-      "id": "party-quiz",
-      "title": "Party Quiz",
-      "categoryId": "jeux-societe",
-      "subcategoryId": "jeux-ambiance",
-      "shortDescription": "Un quiz d�jant� pour animer vos soir�es",
-      "image": "https://via.placeholder.com/400x300/16213e/00d4ff?text=Party+Quiz",
-      "fiche": {
-        "titre": "Party Quiz",
-        "sousTitre": "Rire, jouer, gagner !",
-        "presentation": "Le quiz de soir�e ultime avec des questions farfelues, des d�fis hilarants et des mini-jeux improbables. Ambiance garantie avec des th�matiques vari�es et des �preuves surprises.",
-        "age": "16+",
-        "joueurs": "4-12 joueurs",
-        "duree": "30-45 minutes",
-        "difficulte": "Facile",
-        "regle": "Par �quipes ou individuellement, r�pondez aux questions dans diff�rentes cat�gories. Questions classiques, d�fis physiques, mimes, dessins. Points bonus pour la cr�ativit� et l'humour !",
-        "apports": [
-          "Cr�e une ambiance festive et d�tendue",
-          "Stimule la culture g�n�rale",
-          "Encourage la cr�ativit� et l'expression"
-        ],
-        "frequence": "Parfait pour toutes les occasions festives",
-        "remarques": "Plus de 500 questions et 100 d�fis. Extensible avec vos propres cartes personnalis�es",
-        "auteur": "Collectif Anim'Connect"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["enthousiaste", "guide", "conteur"]
+    "zone": {
+      "table": "Jeu de cartes et objets sur une table",
+      "piece": "Toute une pièce transformée en pyramide",
+      "multi": "Plusieurs pièces représentant différentes salles"
     },
-    {
-      "id": "peinture-creative",
-      "title": "Peinture Cr�ative",
-      "categoryId": "activites",
-      "subcategoryId": "activites-artistiques",
-      "shortDescription": "Explorez diff�rentes techniques de peinture",
-      "image": "https://via.placeholder.com/400x300/2d1b69/00d4ff?text=Peinture+Creative",
+    "content": {
       "fiche": {
-        "titre": "Peinture Cr�ative",
-        "sousTitre": "Lib�rez l'artiste qui sommeille en vous",
-        "presentation": "Un atelier complet pour d�couvrir et pratiquer diverses techniques de peinture : acrylique, aquarelle, peinture abstraite, pouring art. Adapt� aux d�butants comme aux artistes confirm�s.",
-        "age": "8+",
-        "joueurs": "1-10 participants",
-        "duree": "2-3 heures",
-        "difficulte": "Tous niveaux",
-        "regle": "Session guid�e avec d�monstrations, puis pratique libre. Chacun cr�e son Suvre en explorant les techniques pr�sent�es. Partage et feedback en fin de session.",
-        "apports": [
-          "D�veloppe la cr�ativit� et l'expression artistique",
-          "Effet relaxant et anti-stress",
-          "Apprentissage de techniques vari�es"
-        ],
-        "frequence": "Ateliers hebdomadaires ou ponctuels",
-        "remarques": "Tout le mat�riel est fourni. Possibilit� d'emporter ses cr�ations",
-        "auteur": "Atelier Art'Connect"
+        "title": "Fiche Technique",
+        "text": "**Titre:** Le Mystère de la Pyramide Perdue\n\n**Contexte:** Égypte, 1923. Une expédition archéologique découvre une pyramide inconnue.\n\n**Objectif:** Découvrir le trésor du pharaon avant le lever du soleil.\n\n**Durée:** 2-3 heures\n\n**Joueurs:** 4-8\n\n**Matériel requis:**\n- Cartes d'énigmes (30)\n- Objets égyptiens (reproductions)\n- Lampe UV\n- Cadenas (4)\n- Coffres (3)\n- Décoration thématique"
       },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["artiste", "guide", "enthousiaste"]
+      "scenario": {
+        "title": "Le Réveil du Pharaon",
+        "text": "Le sable du désert brûlait sous vos pieds alors que vous découvriez l'entrée. Trois mille ans que personne n'avait franchi ce seuil. Les hiéroglyphes avertissaient : 'Celui qui trouble le sommeil du pharaon connaîtra sa colère.'\n\nMais la soif de découverte était plus forte. Vous êtes entrés. Et maintenant, la porte s'est refermée derrière vous. La seule issue : trouver le trésor et activer le mécanisme d'ouverture avant que le soleil ne se lève et que la malédiction ne devienne permanente.\n\nLe compte à rebours a commencé..."
+      },
+      "intro": {
+        "title": "Vidéo d'Introduction",
+        "videoUrl": "/videos/pyramide-intro.mp4",
+        "description": "Une vidéo immersive montrant la découverte de la pyramide"
+      },
+      "setup": {
+        "title": "Mise en Place",
+        "text": "**Préparation de la salle:**\n\n1. **Décoration:**\n   - Affiches de hiéroglyphes sur les murs\n   - Éclairage tamisé avec lampes LED dorées\n   - Sable décoratif au sol (optionnel)\n   - Statues égyptiennes (carton ou plastique)\n\n2. **Matériel de jeu:**\n   - Disposer les 3 coffres aux emplacements stratégiques\n   - Cacher les indices selon le plan de jeu\n   - Préparer les cartes d'énigmes dans l'ordre\n   - Tester tous les cadenas\n\n3. **Ambiance:**\n   - Playlist de musique égyptienne\n   - Encens (optionnel)\n   - Température fraîche pour simuler l'intérieur\n\n**Durée de préparation:** 1-2 heures"
+      },
+      "rules": {
+        "title": "Règles Spécifiques",
+        "text": "**En plus des règles de base Hourglass Project:**\n\n1. **La Malédiction:**\n   - Chaque 20 minutes, un effet de malédiction se déclenche\n   - Les joueurs doivent gérer ces complications\n\n2. **Les Hiéroglyphes:**\n   - Certains indices nécessitent la lampe UV\n   - Le décodeur de hiéroglyphes est un outil essentiel\n\n3. **Les Salles:**\n   - Chaque coffre déverrouillé ouvre l'accès à une nouvelle zone\n   - Attention aux pièges !\n\n4. **Objectif Final:**\n   - Rassembler les 4 fragments du sceptre royal\n   - Placer le sceptre sur le piédestal avant la fin du temps\n\n**Conditions de victoire:**\n- Objectif atteint avant la fin du chronomètre\n\n**Conditions de défaite:**\n- Temps écoulé\n- 3 erreurs critiques commises"
+      }
     },
-    {
-      "id": "grand-jeu-sportif",
-      "title": "Grand Jeu Sportif",
-      "categoryId": "activites",
-      "subcategoryId": "activites-sportives",
-      "shortDescription": "Parcours sportif avec d�fis par �quipes",
-      "image": "https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Grand+Jeu+Sportif",
-      "fiche": {
-        "titre": "Grand Jeu Sportif",
-        "sousTitre": "L'esprit d'�quipe en action",
-        "presentation": "Un grand jeu sportif mixant �preuves physiques, d�fis d'adresse et �nigmes. Les �quipes s'affrontent sur un parcours avec diff�rents ateliers, combinant sport et strat�gie.",
-        "age": "10+",
-        "joueurs": "12-40 participants (�quipes de 4-6)",
-        "duree": "2-3 heures",
-        "difficulte": "Adaptable",
-        "regle": "Les �quipes parcourent diff�rents ateliers : course de relais, tir de pr�cision, parcours d'obstacles, �nigmes. Points attribu�s selon performances et temps. Classement final avec remise de r�compenses.",
-        "apports": [
-          "Renforce la coh�sion d'�quipe",
-          "D�veloppe les capacit�s physiques",
-          "Encourage l'esprit sportif et fair-play"
-        ],
-        "frequence": "Id�al pour �v�nements ou stages vacances",
-        "remarques": "Adaptable en int�rieur ou ext�rieur. Plusieurs th�matiques disponibles (olympiades, aventure, m�di�val)",
-        "auteur": "�quipe Sport'Anim"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["aventurier", "enthousiaste", "guide"]
+    "tags": ["Énigmes", "Histoire", "Mystère", "Exploration"],
+    "recommendedPersonas": ["liora-mysterieuse", "elena-educatrice", "axel-explorateur"]
+  },
+  {
+    "id": "projet-olympe",
+    "sagaId": "saga-olympe",
+    "name": "Le Défi des Dieux",
+    "description": "Les dieux de l'Olympe vous mettent à l'épreuve. Relevez leurs défis pour gagner votre place parmi les héros légendaires.",
+    "duration": "3-4 heures",
+    "players": "6-12 joueurs",
+    "difficulty": {
+      "facile": "Défis physiques adaptés et énigmes guidées",
+      "normal": "Équilibre entre défis physiques et mentaux",
+      "difficile": "Épreuves exigeantes et énigmes mythologiques complexes"
     },
-    {
-      "id": "sciences-ludiques",
-      "title": "Sciences Ludiques",
-      "categoryId": "activites",
-      "subcategoryId": "activites-educatives",
-      "shortDescription": "Exp�riences scientifiques amusantes et p�dagogiques",
-      "image": "https://via.placeholder.com/400x300/0a1931/00d4ff?text=Sciences+Ludiques",
-      "fiche": {
-        "titre": "Sciences Ludiques",
-        "sousTitre": "Apprendre en s'amusant",
-        "presentation": "Des exp�riences scientifiques spectaculaires et ludiques pour comprendre les ph�nom�nes physiques et chimiques. Volcans, fus�es, cristaux, r�actions chimiques color�es... la science n'a jamais �t� aussi fun !",
-        "age": "8-14 ans",
-        "joueurs": "8-16 participants",
-        "duree": "1h30-2h",
-        "difficulte": "Facile � Moyen",
-        "regle": "Pr�sentation du ph�nom�ne scientifique, d�monstration, puis r�alisation par les participants avec accompagnement. Explication des principes � la fin de chaque exp�rience.",
-        "apports": [
-          "�veil scientifique et curiosit�",
-          "Compr�hension de concepts physiques et chimiques",
-          "D�veloppement de l'esprit d'observation"
-        ],
-        "frequence": "Ateliers r�guliers ou anniversaires scientifiques",
-        "remarques": "Mat�riel s�curis� fourni. Plusieurs th�matiques : chimie, physique, nature, astronomie",
-        "auteur": "Dr. Sophie Lambert"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["scientifique", "educateur", "explorateur"]
+    "mode": {
+      "coop": "Ensemble pour impressionner les dieux",
+      "competitif": "Chacun pour devenir le héros ultime",
+      "semi": "Équipes représentant différentes cités grecques"
     },
-    {
-      "id": "chroniques-eternelles",
-      "title": "Chroniques �ternelles",
-      "categoryId": "jeux-roles",
-      "subcategoryId": "jdr-fantastique",
-      "shortDescription": "Un JDR �pique dans un monde de magie et de l�gendes",
-      "image": "https://via.placeholder.com/400x300/16213e/00d4ff?text=Chroniques+Eternelles",
-      "fiche": {
-        "titre": "Chroniques �ternelles",
-        "sousTitre": "Forgez votre l�gende dans un monde de fantasy",
-        "presentation": "Un syst�me de JDR complet dans un univers m�di�val-fantastique original. Cr�ez votre h�ros, explorez des royaumes myst�rieux, affrontez des cr�atures l�gendaires et participez � des qu�tes �piques qui changeront le destin du monde.",
-        "age": "12+",
-        "joueurs": "3-6 joueurs + 1 Ma�tre du Jeu",
-        "duree": "3-5 heures par session",
-        "difficulte": "Moyen",
-        "regle": "Syst�me de r�solution simple avec des d�s � 6 faces. Cr�ation de personnages avec classes (guerrier, mage, r�deur, etc.), comp�tences et �quipements. Le MJ narre l'histoire, les joueurs d�cident de leurs actions.",
-        "apports": [
-          "Stimule l'imagination et la cr�ativit� narrative",
-          "D�veloppe les comp�tences sociales et l'improvisation",
-          "Encourage la r�solution collaborative de probl�mes"
-        ],
-        "frequence": "Campagnes longues (10-20 sessions) ou aventures courtes",
-        "remarques": "Livret de r�gles complet, 5 sc�narios pr�ts � jouer, g�n�rateur de qu�tes. Extensions th�matiques disponibles",
-        "auteur": "Thomas Mercier"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["conteur", "aventurier", "guide"]
+    "zone": {
+      "table": "Jeu de rôle avec cartes et dés",
+      "piece": "Espace transformé en temple olympique",
+      "multi": "Chaque pièce représente le domaine d'un dieu"
     },
-    {
-      "id": "cyberpunk-legends",
-      "title": "Cyberpunk Legends",
-      "categoryId": "jeux-roles",
-      "subcategoryId": "jdr-science-fiction",
-      "shortDescription": "Plongez dans un futur dystopique et high-tech",
-      "image": "https://via.placeholder.com/400x300/0a1931/00d4ff?text=Cyberpunk+Legends",
+    "content": {
       "fiche": {
-        "titre": "Cyberpunk Legends",
-        "sousTitre": "Dans les n�ons de demain",
-        "presentation": "Ann�e 2099, m�galopoles contr�l�es par des corporations, implants cybern�tiques, hackers et mercenaires. Incarnez des runners qui naviguent dans ce monde o� technologie et humanit� s'entrechoquent.",
-        "age": "15+",
-        "joueurs": "3-5 joueurs + 1 MJ",
-        "duree": "3-4 heures par session",
-        "difficulte": "Interm�diaire � Avanc�",
-        "regle": "Syst�me de comp�tences avec pool de d�s. Profils vari�s : Netrunner (hacker), Solo (mercenaire), Techie (technicien), Fixer (n�gociateur). Combat tactique et hacking en temps r�el.",
-        "apports": [
-          "Exploration de th�matiques sociales et technologiques",
-          "D�veloppement de strat�gies complexes",
-          "R�flexion sur l'impact de la technologie"
-        ],
-        "frequence": "Campagnes �pisodiques ou missions one-shot",
-        "remarques": "Ambiance sombre et mature. Mat�riel : livre de r�gles, �cran du MJ, 4 missions compl�tes, g�n�rateur de m�galopole",
-        "auteur": "Collectif NeonDreams"
+        "title": "Fiche Technique",
+        "text": "**Titre:** Le Défi des Dieux\n\n**Contexte:** Grèce antique. Les dieux convoquent de nouveaux héros.\n\n**Objectif:** Réussir les 12 épreuves des dieux olympiens.\n\n**Durée:** 3-4 heures\n\n**Joueurs:** 6-12\n\n**Matériel requis:**\n- Costumes grecs (toges)\n- Accessoires mythologiques\n- Cartes de défis (50)\n- Système de points\n- Décoration olympienne"
       },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["mysterieux", "explorateur", "scientifique"]
+      "scenario": {
+        "title": "L'Appel de l'Olympe",
+        "text": "Un éclair déchire le ciel. La voix de Zeus résonne : 'Mortels ! L'Olympe a besoin de nouveaux héros. Prouvez votre valeur en relevant nos défis !'\n\nChaque dieu vous soumet à son épreuve. Athéna teste votre sagesse, Arès votre courage, Hermès votre ruse. Douze défis vous attendent. Douze opportunités de prouver que vous méritez l'immortalité.\n\nMais attention : les dieux sont capricieux et ne tolèrent pas l'échec..."
+      },
+      "intro": {
+        "title": "Vidéo d'Introduction",
+        "videoUrl": "/videos/olympe-intro.mp4",
+        "description": "Les dieux s'adressent aux participants"
+      },
+      "setup": {
+        "title": "Mise en Place",
+        "text": "**Préparation:**\n\n1. **Les 12 Stations:**\n   - Athéna : Énigmes de sagesse\n   - Arès : Défis physiques\n   - Hermès : Épreuves de rapidité\n   - Apollon : Tests artistiques\n   - Poséidon : Défis d'équilibre\n   - Héphaïstos : Construction\n   - Etc.\n\n2. **Ambiance:**\n   - Colonnes grecques (carton)\n   - Statues de dieux\n   - Musique grecque antique\n   - Feuilles de laurier\n\n**Durée de préparation:** 2-3 heures"
+      },
+      "rules": {
+        "title": "Règles Spécifiques",
+        "text": "**Système de points:**\n- Chaque épreuve rapporte 1-5 points\n- Bonus pour originalité et style\n- Malus pour échecs\n\n**Les Faveurs Divines:**\n- Réussir brillamment = faveur d'un dieu\n- Utilisable une fois pour aider\n\n**Victoire:**\n- Atteindre 40 points (mode coop)\n- Plus haut score (mode compétitif)"
+      }
     },
-    {
-      "id": "enquete-urbaine",
-      "title": "Enqu�te Urbaine",
-      "categoryId": "jeux-roles",
-      "subcategoryId": "jdr-contemporain",
-      "shortDescription": "Des myst�res � r�soudre dans notre monde moderne",
-      "image": "https://via.placeholder.com/400x300/2d1b69/00d4ff?text=Enquete+Urbaine",
-      "fiche": {
-        "titre": "Enqu�te Urbaine",
-        "sousTitre": "La v�rit� se cache dans les rues",
-        "presentation": "Un JDR contemporain o� vous incarnez des enqu�teurs (d�tectives priv�s, journalistes, hackers) qui percent les myst�res de la ville. Complots, secrets de famille, crimes, tout se d�voile au fil de vos investigations.",
-        "age": "14+",
-        "joueurs": "2-4 joueurs + 1 MJ",
-        "duree": "2-4 heures par session",
-        "difficulte": "Accessible",
-        "regle": "Syst�me d'enqu�te bas� sur la collecte d'indices et l'interrogatoire. Utilisez vos comp�tences (informatique, charisme, observation) pour progresser. R�solvez le myst�re avant qu'il ne soit trop tard.",
-        "apports": [
-          "D�veloppe le sens de l'observation et la logique",
-          "Encourage la cr�ativit� dans la r�solution de probl�mes",
-          "Immersion dans des intrigues r�alistes"
-        ],
-        "frequence": "Enqu�tes autonomes ou campagne suivie",
-        "remarques": "Pack de d�marrage avec 3 enqu�tes compl�tes. Ressources en ligne pour cr�er vos propres myst�res",
-        "auteur": "Martin Dubois"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["mysterieux", "strategiste", "educateur"]
+    "tags": ["Action", "Mythologie", "Défis", "Équipe"],
+    "recommendedPersonas": ["marcus-aventurier", "maya-enthousiaste", "theo-conteur"]
+  },
+  {
+    "id": "projet-graal",
+    "sagaId": "saga-chevaliers",
+    "name": "La Quête du Graal",
+    "description": "Rejoignez les chevaliers de la Table Ronde dans leur quête légendaire pour retrouver le Saint Graal.",
+    "duration": "4-5 heures",
+    "players": "5-10 joueurs",
+    "difficulty": {
+      "facile": "Quête guidée avec aide du roi Arthur",
+      "normal": "Parcours classique avec défis équilibrés",
+      "difficile": "Trahisons, pièges et énigmes ardues"
     },
-    {
-      "id": "atelier-ecriture",
-      "title": "Atelier d'�criture Cr�ative",
-      "categoryId": "ateliers",
-      "subcategoryId": "ateliers-creation",
-      "shortDescription": "Lib�rez votre plume et cr�ez vos propres histoires",
-      "image": "https://via.placeholder.com/400x300/2d1b69/00d4ff?text=Atelier+Ecriture",
-      "fiche": {
-        "titre": "Atelier d'�criture Cr�ative",
-        "sousTitre": "Chaque mot compte, chaque histoire compte",
-        "presentation": "Un atelier pour d�velopper votre �criture cr�ative � travers des exercices ludiques, des contraintes stimulantes et des partages bienveillants. Nouvelles, po�sie, r�cits, tous les genres sont explor�s.",
-        "age": "14+",
-        "joueurs": "6-12 participants",
-        "duree": "2 heures par session",
-        "difficulte": "Tous niveaux",
-        "regle": "�chauffement cr�atif, exercices d'�criture guid�s avec contraintes (temps, th�me, style), temps d'�criture libre, lecture volontaire et retours constructifs du groupe.",
-        "apports": [
-          "D�veloppe l'expression �crite et la cr�ativit�",
-          "Renforce la confiance en ses capacit�s",
-          "Encourage l'�coute et le feedback constructif"
-        ],
-        "frequence": "Ateliers hebdomadaires ou stages intensifs",
-        "remarques": "Ambiance bienveillante garantie. Possibilit� de publication collective en fin de cycle",
-        "auteur": "Camille Rousseau - Auteure"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["conteur", "artiste", "educateur"]
+    "mode": {
+      "coop": "Tous chevaliers unis pour le Graal",
+      "competitif": "Chacun veut être le chevalier élu",
+      "semi": "Alliances temporaires et objectifs secrets"
     },
-    {
-      "id": "formation-animation",
-      "title": "Formation Animateur",
-      "categoryId": "ateliers",
-      "subcategoryId": "ateliers-formation",
-      "shortDescription": "Devenez un animateur comp�tent et cr�atif",
-      "image": "https://via.placeholder.com/400x300/0f3460/00d4ff?text=Formation+Animation",
-      "fiche": {
-        "titre": "Formation Animateur",
-        "sousTitre": "L'art d'animer avec passion",
-        "presentation": "Formation compl�te pour devenir animateur : techniques d'animation, gestion de groupe, cr�ation d'activit�s, s�curit�, psychologie de l'enfant. Th�orie et pratique pour ma�triser tous les aspects du m�tier.",
-        "age": "17+",
-        "joueurs": "10-20 participants",
-        "duree": "3 jours (21 heures)",
-        "difficulte": "Interm�diaire",
-        "regle": "Alternance de modules th�oriques et ateliers pratiques. Mise en situation r�elle, cr�ation d'activit�s, jeux de r�le. �valuation continue et certification en fin de formation.",
-        "apports": [
-          "Ma�trise des techniques d'animation",
-          "D�veloppement du leadership et de la p�dagogie",
-          "Compr�hension de la dynamique de groupe"
-        ],
-        "frequence": "Sessions mensuelles ou stages vacances",
-        "remarques": "Certification reconnue. Possibilit� de sp�cialisation (petite enfance, ados, handicap). Suivi post-formation disponible",
-        "auteur": "Centre de Formation Anim'Pro"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["educateur", "guide", "strategiste"]
+    "zone": {
+      "table": "Jeu de plateau avec cartes et figurines",
+      "piece": "Salle transformée en château médiéval",
+      "multi": "Parcours entre plusieurs lieux (château, forêt, etc.)"
     },
-    {
-      "id": "escape-game-creation",
-      "title": "Cr�ez votre Escape Game",
-      "categoryId": "ateliers",
-      "subcategoryId": "ateliers-decouverte",
-      "shortDescription": "Apprenez � concevoir un escape game de A � Z",
-      "image": "https://via.placeholder.com/400x300/16213e/00d4ff?text=Creation+Escape",
+    "content": {
       "fiche": {
-        "titre": "Cr�ez votre Escape Game",
-        "sousTitre": "De l'id�e � la r�alisation",
-        "presentation": "Atelier de d�couverte pour apprendre � cr�er un escape game : sc�nario, �nigmes, d�cor, game design. En groupe, vous concevrez et testerez un escape game complet.",
-        "age": "12+",
-        "joueurs": "8-15 participants",
-        "duree": "4 heures (ou 2 sessions de 2h)",
-        "difficulte": "Accessible",
-        "regle": "Phase 1 : D�couverte des m�caniques d'escape game. Phase 2 : Brainstorming et cr�ation en groupe. Phase 3 : Construction des �nigmes et d�cors. Phase 4 : Test crois� entre groupes.",
-        "apports": [
-          "D�veloppe la cr�ativit� et l'imagination",
-          "Apprentissage du game design",
-          "Travail collaboratif et gestion de projet"
-        ],
-        "frequence": "Ateliers ponctuels ou stage de vacances",
-        "remarques": "Mat�riel de cr�ation fourni. Les participants repartent avec le plan de leur escape game",
-        "auteur": "Studio EscapeLab"
+        "title": "Fiche Technique",
+        "text": "**Titre:** La Quête du Graal\n\n**Contexte:** Camelot, époque du Roi Arthur\n\n**Objectif:** Retrouver le Saint Graal et le ramener à Camelot\n\n**Durée:** 4-5 heures\n\n**Joueurs:** 5-10\n\n**Matériel requis:**\n- Épées en mousse\n- Costumes médiévaux\n- Énigmes chevaleresques\n- Le Graal (réplique)\n- Parchemins anciens"
       },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["explorateur", "mysterieux", "educateur"]
+      "scenario": {
+        "title": "Le Serment des Chevaliers",
+        "text": "Camelot est en danger. Le royaume dépérit, le roi Arthur s'affaiblit. Seul le Saint Graal peut sauver le royaume.\n\nVous, chevaliers de la Table Ronde, avez prêté serment de retrouver cette relique sacrée. Votre quête vous mènera à travers forêts enchantées, châteaux maudits et terres désolées.\n\nMais prenez garde : tous ne sont pas dignes du Graal. Seuls les cœurs purs pourront le toucher..."
+      },
+      "intro": {
+        "title": "Vidéo d'Introduction",
+        "videoUrl": "/videos/graal-intro.mp4",
+        "description": "Le Roi Arthur confie la mission aux chevaliers"
+      },
+      "setup": {
+        "title": "Mise en Place",
+        "text": "**Préparation:**\n\n1. **Les Lieux:**\n   - Camelot (point de départ)\n   - La Forêt de Brocéliande\n   - Le Château du Graal\n   - La Chapelle Périlleuse\n\n2. **Équipement:**\n   - Chaque chevalier reçoit son équipement\n   - Carte du royaume\n   - Livre de quêtes\n\n3. **Ambiance:**\n   - Musique médiévale\n   - Torches (LED)\n   - Bannières\n\n**Durée de préparation:** 2-3 heures"
+      },
+      "rules": {
+        "title": "Règles Spécifiques",
+        "text": "**Le Code Chevaleresque:**\n- Honneur, courage, loyauté\n- Respecter le code = bonus\n- Trahir = malus\n\n**Les Épreuves:**\n- Épreuves physiques (duels en mousse)\n- Énigmes morales\n- Tests de sagesse\n\n**Le Graal:**\n- Protégé par 3 gardiens\n- Nécessite 3 clés sacrées\n- Seul le digne peut le saisir\n\n**Victoire:**\n- Ramener le Graal à Camelot\n- Maintenir son honneur intact"
+      }
     },
-    {
-      "id": "legende-dragon-oublie",
-      "title": "La L�gende du Dragon Oubli�",
-      "categoryId": "scenes",
-      "subcategoryId": "histoires",
-      "shortDescription": "Un conte �pique de courage et d'amiti�",
-      "image": "https://via.placeholder.com/400x300/16213e/00d4ff?text=Dragon+Oublie",
-      "fiche": {
-        "titre": "La L�gende du Dragon Oubli�",
-        "sousTitre": "Quand le pass� ressurgit, les h�ros se r�v�lent",
-        "presentation": "Une histoire captivante qui suit L�na, une jeune fille ordinaire qui d�couvre qu'elle est la derni�re gardienne des dragons. Une aventure �pique o� elle doit r�veiller le dernier dragon pour sauver son royaume d'une menace ancestrale.",
-        "age": "8+",
-        "joueurs": "Lecture/�coute individuelle ou collective",
-        "duree": "45 minutes (version audio) / 60 pages (version texte)",
-        "difficulte": "Accessible",
-        "regle": "Histoire lin�aire ou interactive selon le format choisi. En mode interactif, 3 moments cl�s avec choix multiples qui influencent le d�roulement.",
-        "apports": [
-          "Stimule l'imagination et l'�vasion",
-          "Transmet des valeurs de courage et d'amiti�",
-          "D�veloppe le go�t pour la lecture"
-        ],
-        "frequence": "Histoire compl�te ou par chapitres (5 chapitres)",
-        "remarques": "Disponible en version audio professionnelle, livre illustr�, et mode interactif avec choix. Illustrations originales par Julie Martin",
-        "auteur": "Camille Leroux"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["conteur", "mysterieux", "aventurier"]
+    "tags": ["Médiéval", "Quête", "Chevalerie", "Légendes"],
+    "recommendedPersonas": ["theo-conteur", "marcus-aventurier", "kai-stratege"]
+  },
+  {
+    "id": "projet-vinci",
+    "sagaId": "saga-inventeurs",
+    "name": "L'Atelier de Léonard",
+    "description": "Entrez dans l'atelier secret de Léonard de Vinci et aidez-le à achever sa plus grande invention.",
+    "duration": "2-3 heures",
+    "players": "4-6 joueurs",
+    "difficulty": {
+      "facile": "Énigmes artistiques accessibles",
+      "normal": "Défis créatifs et techniques équilibrés",
+      "difficile": "Problèmes d'ingénierie complexes"
     },
-    {
-      "id": "documentaire-coulisses",
-      "title": "Dans les Coulisses",
-      "categoryId": "scenes",
-      "subcategoryId": "videos",
-      "shortDescription": "Une s�rie documentaire sur la cr�ation d'activit�s",
-      "image": "https://via.placeholder.com/400x300/0a1931/00d4ff?text=Coulisses",
-      "fiche": {
-        "titre": "Dans les Coulisses",
-        "sousTitre": "L'envers du d�cor de la cr�ativit�",
-        "presentation": "Une s�rie de mini-documentaires (5-10 min) qui plongent dans les coulisses de la cr�ation : comment na�t un jeu, comment se pr�pare un atelier, interviews de cr�ateurs, processus cr�atifs d�voil�s.",
-        "age": "12+",
-        "joueurs": "Visionnage individuel ou collectif",
-        "duree": "6 �pisodes de 8 minutes",
-        "difficulte": "Facile",
-        "regle": "Format documentaire avec interviews, s�quences film�es, animations explicatives. Chaque �pisode se concentre sur un aspect de la cr�ation.",
-        "apports": [
-          "D�couverte des m�tiers de la cr�ation",
-          "Compr�hension des processus cr�atifs",
-          "Inspiration pour cr�er ses propres projets"
-        ],
-        "frequence": "S�rie compl�te ou �pisodes s�par�s",
-        "remarques": "Qualit� HD, sous-titres disponibles. Bonus : interviews compl�tes et making-of exclusifs",
-        "auteur": "Studio Anim'Films"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["artiste", "educateur", "explorateur"]
+    "mode": {
+      "coop": "Ensemble pour créer le chef-d'œuvre",
+      "competitif": "Qui sera le meilleur apprenti ?",
+      "semi": "Spécialités différentes à combiner"
     },
-    {
-      "id": "odyssee-sonore",
-      "title": "Odyss�e Sonore",
-      "categoryId": "scenes",
-      "subcategoryId": "musiques",
-      "shortDescription": "Un voyage musical � travers les �motions",
-      "image": "https://via.placeholder.com/400x300/2d1b69/00d4ff?text=Odyssee+Sonore",
-      "fiche": {
-        "titre": "Odyss�e Sonore",
-        "sousTitre": "Quand la musique raconte l'histoire",
-        "presentation": "Une composition musicale orchestrale en 7 mouvements, chacun repr�sentant une �motion ou un moment de vie : �veil, Joie, M�lancolie, Courage, Amour, Temp�te, Paix. Un voyage �motionnel sans paroles.",
-        "age": "Tout public",
-        "joueurs": "�coute individuelle ou collective",
-        "duree": "42 minutes (7 mouvements)",
-        "difficulte": "�coute accessible",
-        "regle": "Album complet pour une exp�rience immersive, ou mouvements s�par�s selon l'humeur. Accompagn� d'un livret explicatif pour chaque mouvement.",
-        "apports": [
-          "�veil et appr�ciation musicale",
-          "Connexion �motionnelle par la musique",
-          "Relaxation et m�ditation"
-        ],
-        "frequence": "�coute libre, id�al comme fond sonore pour activit�s cr�atives ou m�ditation",
-        "remarques": "Enregistrement studio haute qualit�. Format streaming et t�l�chargement. Partition disponible",
-        "auteur": "Ensemble Musical Anim'Harmonie"
-      },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["artiste", "guide", "mysterieux"]
+    "zone": {
+      "table": "Atelier miniature avec puzzles",
+      "piece": "Pièce transformée en atelier Renaissance",
+      "multi": "Différentes zones (art, science, mécanique)"
     },
-    {
-      "id": "histoires-du-soir",
-      "title": "Histoires du Soir",
-      "categoryId": "scenes",
-      "subcategoryId": "audios",
-      "shortDescription": "Podcast de contes pour enfants",
-      "image": "https://via.placeholder.com/400x300/0f3460/00d4ff?text=Histoires+Soir",
+    "content": {
       "fiche": {
-        "titre": "Histoires du Soir",
-        "sousTitre": "Des r�ves plein les oreilles",
-        "presentation": "Un podcast de contes originaux pour enfants, parfait pour le rituel du coucher. Chaque �pisode raconte une histoire courte avec des personnages attachants, des aventures douces et des morales positives.",
-        "age": "4-10 ans",
-        "joueurs": "�coute individuelle ou en famille",
-        "duree": "15 �pisodes de 10-15 minutes",
-        "difficulte": "Tr�s facile",
-        "regle": "Format audio narr� avec bruitages et musique douce. Histoires autonomes ou s�rie � suivre. Id�al avant le coucher.",
-        "apports": [
-          "Rituel apaisant du coucher",
-          "D�veloppement de l'imaginaire",
-          "Transmission de valeurs positives"
-        ],
-        "frequence": "Nouveaux �pisodes hebdomadaires",
-        "remarques": "Voix professionnelle, ambiance sonore soign�e. Disponible sur toutes les plateformes de podcast. Version vid�o avec illustrations disponible",
-        "auteur": "Lucie Fontaine - Conteuse"
+        "title": "Fiche Technique",
+        "text": "**Titre:** L'Atelier de Léonard\n\n**Contexte:** Florence, 1503\n\n**Objectif:** Aider Léonard à terminer son invention avant l'aube\n\n**Durée:** 2-3 heures\n\n**Joueurs:** 4-6\n\n**Matériel requis:**\n- Reproductions de machines de Vinci\n- Outils d'artiste\n- Énigmes mécaniques\n- Code de Vinci\n- Décor Renaissance"
       },
-      "demoTypes": ["recap", "deep-dive", "story", "interactive", "variant", "custom"],
-      "recommendedPersonas": ["conteur", "guide", "mysterieux"]
-    }
-  ]
-}
+      "scenario": {
+        "title": "Le Secret du Maître",
+        "text": "Florence, 1503. Léonard de Vinci vous a convoqués dans son atelier secret. 'Mes amis, j'ai besoin de votre aide. Mon invention la plus ambitieuse doit être terminée avant l'aube, mais je ne peux y parvenir seul.'\n\nAutour de vous, des esquisses énigmatiques, des machines à moitié construites, des notes en écriture miroir. Le génie vous confie ses secrets les plus intimes.\n\nMais le temps presse. Les autorités florentines ne doivent pas découvrir cette invention révolutionnaire..."
+      },
+      "intro": {
+        "title": "Vidéo d'Introduction",
+        "videoUrl": "/videos/vinci-intro.mp4",
+        "description": "Léonard présente son projet aux apprentis"
+      },
+      "setup": {
+        "title": "Mise en Place",
+        "text": "**Préparation de l'atelier:**\n\n1. **Zones de travail:**\n   - Zone artistique (peintures, dessins)\n   - Zone mécanique (engrenages, leviers)\n   - Zone scientifique (anatomie, mathématiques)\n\n2. **Matériel:**\n   - Copies de carnets de Vinci\n   - Puzzles mécaniques\n   - Outils Renaissance\n   - Miroir (pour lire l'écriture inversée)\n\n3. **Ambiance:**\n   - Éclairage aux chandelles (LED)\n   - Musique Renaissance\n   - Odeur de peinture/bois\n\n**Durée de préparation:** 1-2 heures"
+      },
+      "rules": {
+        "title": "Règles Spécifiques",
+        "text": "**L'Écriture Miroir:**\n- Beaucoup d'indices en écriture inversée\n- Utiliser un miroir pour les lire\n\n**Les Domaines:**\n- Art : créativité requise\n- Science : logique et calculs\n- Mécanique : assemblage et test\n\n**L'Invention Finale:**\n- Rassembler 5 composants\n- Résoudre le schéma final\n- Assembler le prototype\n\n**Victoire:**\n- Invention fonctionnelle avant l'aube\n- Toutes les étapes validées"
+      }
+    },
+    "tags": ["Renaissance", "Invention", "Art", "Science"],
+    "recommendedPersonas": ["nova-scientifique", "zara-artiste", "liora-mysterieuse"]
+  },
+  {
+    "id": "projet-mars",
+    "sagaId": "saga-cosmos",
+    "name": "Première Base Martienne",
+    "description": "Vous faites partie de la première mission habitée sur Mars. Établissez la base et survivez aux défis de la planète rouge.",
+    "duration": "3-4 heures",
+    "players": "6-10 joueurs",
+    "difficulty": {
+      "facile": "Ressources abondantes et pannes mineures",
+      "normal": "Gestion équilibrée et crises modérées",
+      "difficile": "Ressources limitées et crises multiples"
+    },
+    "mode": {
+      "coop": "Ensemble pour établir la base",
+      "competitif": "Différentes agences spatiales en compétition",
+      "semi": "Objectifs personnels dans mission collective"
+    },
+    "zone": {
+      "table": "Simulation avec cartes et ressources",
+      "piece": "Pièce transformée en base martienne",
+      "multi": "Différents modules de la base"
+    },
+    "content": {
+      "fiche": {
+        "title": "Fiche Technique",
+        "text": "**Titre:** Première Base Martienne\n\n**Contexte:** Mars, 2045\n\n**Objectif:** Établir une base fonctionnelle et survivre 30 sols\n\n**Durée:** 3-4 heures\n\n**Joueurs:** 6-10\n\n**Matériel requis:**\n- Combinaisons spatiales (costumes)\n- Panneaux de contrôle\n- Cartes de ressources\n- Système de communication\n- Décor spatial"
+      },
+      "scenario": {
+        "title": "Jour 1 sur Mars",
+        "text": "L'atterrissage a été réussi. Vous êtes les premiers humains sur Mars. Par le hublot, le paysage rouge s'étend à l'infini.\n\n'Base Olympus, ici Contrôle Terre. Félicitations pour l'atterrissage. Vous avez maintenant 30 sols pour établir la base. Bonne chance.'\n\nLa communication est coupée. Vous êtes seuls, à 225 millions de kilomètres de la Terre. Chaque décision compte. Chaque erreur peut être fatale.\n\nLa grande aventure martienne commence maintenant..."
+      },
+      "intro": {
+        "title": "Vidéo d'Introduction",
+        "videoUrl": "/videos/mars-intro.mp4",
+        "description": "Le voyage et l'atterrissage sur Mars"
+      },
+      "setup": {
+        "title": "Mise en Place",
+        "text": "**Préparation de la base:**\n\n1. **Les Modules:**\n   - Module habitation\n   - Serre hydroponique\n   - Laboratoire scientifique\n   - Sas d'entrée\n   - Centre de communication\n\n2. **Systèmes:**\n   - Oxygène\n   - Eau\n   - Électricité\n   - Nourriture\n   - Chauffage\n\n3. **Ambiance:**\n   - Éclairage rouge/blanc\n   - Sons spatiaux\n   - Décor high-tech\n   - Combinaisons\n\n**Durée de préparation:** 2-3 heures"
+      },
+      "rules": {
+        "title": "Règles Spécifiques",
+        "text": "**Gestion des Ressources:**\n- Oxygène : 100 unités/sol\n- Eau : 50 unités/sol\n- Nourriture : 30 unités/sol\n- Énergie : 200 unités/sol\n\n**Les Crises:**\n- Toutes les 3 tours, événement aléatoire\n- Tempête de sable\n- Panne technique\n- Blessure\n- Etc.\n\n**Les Rôles:**\n- Commandant\n- Ingénieur\n- Médecin\n- Botaniste\n- Géologue\n- Etc.\n\n**Victoire:**\n- Base opérationnelle après 30 sols\n- Tous les systèmes fonctionnels\n- Équipage en bonne santé"
+      }
+    },
+    "tags": ["Science-Fiction", "Survie", "Stratégie", "Espace"],
+    "recommendedPersonas": ["nova-scientifique", "kai-stratege", "maya-enthousiaste"]
+  }
+]

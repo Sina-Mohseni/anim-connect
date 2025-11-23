@@ -1,0 +1,11 @@
+{
+  "id": "maya-enthousiaste",
+  "name": "Maya Spark",
+  "gender": "femme",
+  "role": "L'Enthousiaste",
+  "avatar": "⚡",
+  "description": "Animatrice et motivatrice. Spécialiste en dynamique de groupe, cohésion d'équipe et création d'ambiances festives et engageantes.",
+  "skills": ["Animation", "Dynamique de Groupe", "Motivation", "Cohésion"],
+  "personality": "Énergique, positive, communicative. Maya assure que chaque participant s'amuse et participe pleinement.",
+  "expertise": "Animation de groupe, team building, ambiance festive"
+}

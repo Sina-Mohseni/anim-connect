@@ -1,0 +1,457 @@
+/* ============================================
+   RESPONSIVE - MEDIA QUERIES
+   ============================================ */
+
+/* Tablettes (portrait et paysage) */
+@media screen and (max-width: 1024px) {
+    :root {
+        --spacing-xl: 2rem;
+        --font-3xl: 2.5rem;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hourglass-container {
+        max-width: 300px;
+    }
+
+    .concept-content,
+    .personas-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .world-grid,
+    .epoch-grid,
+    .saga-grid,
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Tablettes (portrait) */
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 70px;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --font-3xl: 2rem;
+        --font-2xl: 1.5rem;
+    }
+
+    .main-header {
+        padding: 0 var(--spacing-md);
+    }
+
+    .header-right {
+        gap: var(--spacing-sm);
+    }
+
+    .nav-btn {
+        padding: var(--spacing-xs);
+    }
+
+    .nav-text {
+        font-size: var(--font-xs);
+    }
+
+    .logo-hexagon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .page {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .page-title {
+        font-size: var(--font-2xl);
+        letter-spacing: 2px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+
+    .concept-content {
+        grid-template-columns: 1fr;
+    }
+
+    .personas-content {
+        grid-template-columns: 1fr;
+    }
+
+    .world-grid,
+    .epoch-grid,
+    .saga-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-options {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        max-width: 100%;
+        max-height: 95vh;
+        padding: var(--spacing-lg);
+    }
+
+    #chat-container {
+        height: 60vh;
+    }
+
+    .message-content {
+        max-width: 85%;
+    }
+
+    .persona-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Smartphones (paysage) */
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    :root {
+        --header-height: 60px;
+    }
+
+    .main-header {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .logo-container {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+    }
+
+    .logo-title {
+        font-size: var(--font-xs);
+    }
+
+    .header-right {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-btn {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs);
+    }
+
+    .nav-icon {
+        font-size: var(--font-md);
+    }
+
+    .nav-text {
+        font-size: 0.7rem;
+    }
+
+    .hero-section {
+        padding: var(--spacing-md);
+        min-height: auto;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    #chat-container {
+        height: 50vh;
+    }
+}
+
+/* Smartphones (portrait) */
+@media screen and (max-width: 480px) {
+    :root {
+        --header-height: 70px;
+        --spacing-md: 0.75rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.25rem;
+        --font-3xl: 1.75rem;
+        --font-2xl: 1.25rem;
+        --font-xl: 1.125rem;
+    }
+
+    .main-header {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .logo-hexagon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-title {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .header-right {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-btn {
+        padding: var(--spacing-xs);
+        min-width: 60px;
+    }
+
+    .nav-icon {
+        font-size: var(--font-md);
+    }
+
+    .nav-text {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+    }
+
+    .page {
+        padding: var(--spacing-md);
+    }
+
+    .page-title {
+        font-size: var(--font-xl);
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-md);
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: var(--font-md);
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: var(--font-2xl);
+    }
+
+    .concept-card,
+    .persona-card {
+        padding: var(--spacing-md);
+    }
+
+    .card-icon {
+        font-size: var(--font-2xl);
+    }
+
+    .concept-card h3 {
+        font-size: var(--font-lg);
+    }
+
+    .persona-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: var(--font-2xl);
+    }
+
+    .project-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .action-btn {
+        padding: var(--spacing-md);
+    }
+
+    .action-icon {
+        font-size: var(--font-xl);
+    }
+
+    .modal-content {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+    }
+
+    .modal-close {
+        width: 35px;
+        height: 35px;
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    #chat-container {
+        height: 65vh;
+    }
+
+    .chat-header,
+    .chat-input-container {
+        padding: var(--spacing-md);
+    }
+
+    .message-content {
+        max-width: 90%;
+        padding: var(--spacing-sm);
+    }
+
+    .persona-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .breadcrumb {
+        padding: var(--spacing-sm);
+        font-size: var(--font-sm);
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 360px) {
+    :root {
+        --header-height: 65px;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 0.625rem;
+        --font-3xl: 1.5rem;
+    }
+
+    .logo-hexagon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .logo-title {
+        font-size: 0.6rem;
+    }
+
+    .nav-text {
+        font-size: 0.6rem;
+    }
+
+    .hero-title {
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        letter-spacing: 1px;
+    }
+
+    .page-title {
+        letter-spacing: 1px;
+    }
+}
+
+/* Écrans carrés (ex: iPad en mode split) */
+@media screen and (aspect-ratio: 1/1) {
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+
+    .hourglass-container {
+        max-width: 250px;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Écrans ultra-larges */
+@media screen and (min-width: 1920px) {
+    :root {
+        --font-3xl: 4rem;
+        --spacing-xl: 4rem;
+    }
+
+    .container {
+        max-width: 1800px;
+    }
+
+    .hero-section {
+        padding: var(--spacing-xl) var(--spacing-xl);
+    }
+
+    .concept-content,
+    .personas-content {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Mode paysage général */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    .hero-section {
+        min-height: auto;
+        padding: var(--spacing-lg);
+    }
+
+    .page {
+        padding: var(--spacing-md);
+    }
+
+    #chat-container {
+        height: 70vh;
+    }
+}
+
+/* Assurer que tous les éléments sont visibles sur tous les écrans */
+@media screen and (max-height: 500px) {
+    :root {
+        --header-height: 50px;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .page {
+        padding: var(--spacing-sm);
+    }
+
+    .modal-content {
+        max-height: 95vh;
+    }
+}
+
+/* Print styles */
+@media print {
+    .main-header,
+    .modal-close,
+    .back-btn,
+    .action-btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .page {
+        display: block !important;
+        page-break-after: always;
+    }
+}

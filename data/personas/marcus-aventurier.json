@@ -1,0 +1,11 @@
+{
+  "id": "marcus-aventurier",
+  "name": "Marcus Storm",
+  "gender": "homme",
+  "role": "L'Aventurier",
+  "avatar": "⚔️",
+  "description": "Spécialiste de l'action et du suspense. Expert en création de défis physiques et d'épreuves dynamiques pour des aventures palpitantes.",
+  "skills": ["Action", "Défis Physiques", "Suspense", "Énigmes Actives"],
+  "personality": "Énergique, audacieux, toujours prêt à relever un défi. Marcus apporte l'adrénaline et l'excitation dans chaque projet.",
+  "expertise": "Conception d'épreuves d'action, parcours d'obstacles, défis temporels"
+}

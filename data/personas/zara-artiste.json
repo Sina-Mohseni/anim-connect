@@ -1,0 +1,11 @@
+{
+  "id": "zara-artiste",
+  "name": "Zara Lumière",
+  "gender": "femme",
+  "role": "L'Artiste",
+  "avatar": "🎨",
+  "description": "Créatrice visuelle et sensorielle. Spécialiste en design d'ambiance, décoration thématique et expériences esthétiques immersives.",
+  "skills": ["Design Visuel", "Ambiance", "Décoration", "Esthétique"],
+  "personality": "Créative, sensible, perfectionniste. Zara transforme chaque espace en œuvre d'art vivante.",
+  "expertise": "Scénographie, design d'ambiance, création visuelle"
+}

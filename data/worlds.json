@@ -4,20 +4,23 @@
     "name": "Chronos Prime",
     "description": "La ligne temporelle principale où l'histoire s'est déroulée normalement. Un monde où les grandes civilisations ont marqué l'humanité.",
     "icon": "🌍",
-    "color": "#4cc9f0"
+    "color": "#4cc9f0",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
   },
   {
     "id": "monde-nexus",
     "name": "Nexus Alternatif",
     "description": "Une réalité alternative où certains événements historiques ont pris un tournant différent, créant un monde parallèle fascinant.",
     "icon": "🌌",
-    "color": "#f72585"
+    "color": "#f72585",
+    "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80"
   },
   {
     "id": "monde-quantum",
     "name": "Quantum Shift",
     "description": "Un monde où la technologie et la magie coexistent, mêlant science-fiction et fantasy à travers les époques.",
     "icon": "✨",
-    "color": "#ff6b35"
+    "color": "#ff6b35",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80"
   }
 ]

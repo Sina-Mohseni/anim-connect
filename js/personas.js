@@ -58,6 +58,15 @@ const Personas = {
         const card = document.createElement('div');
         card.className = `persona-card${isAuthor ? ' author' : ''}`;
 
+        // Ajouter l'image de fond si disponible
+        if (persona.image) {
+            if (isAuthor) {
+                card.style.background = `linear-gradient(rgba(255, 107, 53, 0.15), rgba(76, 201, 240, 0.15)), linear-gradient(rgba(10, 14, 39, 0.85), rgba(5, 8, 22, 0.9)), url('${persona.image}') center/cover`;
+            } else {
+                card.style.background = `linear-gradient(rgba(10, 14, 39, 0.88), rgba(5, 8, 22, 0.92)), url('${persona.image}') center/cover`;
+            }
+        }
+
         const avatar = document.createElement('div');
         avatar.className = 'persona-avatar';
         avatar.textContent = persona.avatar;

@@ -4,6 +4,7 @@
   "gender": "homme",
   "role": "Le Guide",
   "avatar": "🧭",
+  "image": "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=400&q=80",
   "description": "Expert en orientation et exploration. Spécialiste en création de parcours, de cartes interactives et d'expériences d'exploration spatiale.",
   "skills": ["Orientation", "Cartographie", "Exploration", "Parcours"],
   "personality": "Patient, pédagogue, organisé. Rex assure que chaque joueur trouve son chemin dans l'aventure.",

@@ -3,11 +3,11 @@
    ============================================ */
 
 body {
-    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80') center/cover fixed;
     position: relative;
 }
 
-/* Effet de grille cyberpunk en arrière-plan */
+/* Overlay sombre pour la lisibilité */
 body::before {
     content: '';
     position: fixed;
@@ -15,9 +15,22 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.92) 0%, rgba(5, 8, 22, 0.95) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Effet de grille cyberpunk en arrière-plan */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image:
-        linear-gradient(rgba(76, 201, 240, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(76, 201, 240, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(76, 201, 240, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(76, 201, 240, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
     z-index: 0;
@@ -105,13 +118,15 @@ body::before {
 
 /* Cartes */
 .card {
-    background: var(--bg-card);
+    background: linear-gradient(rgba(10, 14, 39, 0.85), rgba(5, 8, 22, 0.9)),
+                url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&q=80') center/cover;
     border: 2px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .card::before {
@@ -124,20 +139,26 @@ body::before {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(76, 201, 240, 0.1),
+        rgba(76, 201, 240, 0.2),
         transparent
     );
     transition: left 0.5s ease;
+    z-index: 0;
 }
 
 .card:hover {
     border-color: var(--border-hover);
-    transform: translateY(-5px);
-    box-shadow: var(--glow-blue);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 40px rgba(76, 201, 240, 0.4);
 }
 
 .card:hover::before {
     left: 100%;
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Boutons */

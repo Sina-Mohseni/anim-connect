@@ -42,6 +42,11 @@ const Projects = {
         const card = document.createElement('div');
         card.className = 'world-card';
 
+        // Ajouter l'image de fond si disponible
+        if (world.image) {
+            card.style.background = `linear-gradient(rgba(10, 14, 39, 0.80), rgba(5, 8, 22, 0.88)), url('${world.image}') center/cover`;
+        }
+
         const icon = document.createElement('div');
         icon.style.fontSize = '3rem';
         icon.style.textAlign = 'center';

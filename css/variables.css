@@ -1,43 +1,47 @@
 /* ============================================
-   VARIABLES CSS - THÈME FUTURISTE NÉON
+   VARIABLES CSS - THÈME SCI-FI MODERNE SOMBRE
    ============================================ */
 
 :root {
-    /* Couleurs néon principales (inspirées de l'image) */
-    --neon-orange: #ff6b35;
-    --neon-pink: #f72585;
-    --neon-purple: #7209b7;
-    --neon-blue: #4cc9f0;
-    --neon-cyan: #00d9ff;
-    --neon-yellow: #ffd000;
+    /* Couleurs principales - Palette sombre moderne */
+    --primary: #00d9ff;
+    --primary-dark: #0099cc;
+    --secondary: #8b5cf6;
+    --accent: #06b6d4;
+    --accent-soft: #38bdf8;
 
-    /* Couleurs de fond */
-    --bg-dark: #0a0e27;
-    --bg-darker: #050816;
-    --bg-card: #131836;
-    --bg-card-hover: #1a1f47;
+    /* Couleurs de fond - Très sombres */
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #111111;
+    --bg-card: rgba(17, 17, 17, 0.8);
+    --bg-card-hover: rgba(25, 25, 25, 0.9);
+    --bg-glass: rgba(255, 255, 255, 0.03);
 
     /* Couleurs de texte */
-    --text-primary: #ffffff;
-    --text-secondary: #b8c5d6;
-    --text-muted: #6b7a8f;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666666;
+    --text-dimmed: #404040;
 
-    /* Bordures et accents */
-    --border-color: rgba(76, 201, 240, 0.3);
-    --border-hover: rgba(76, 201, 240, 0.8);
+    /* Bordures et séparateurs */
+    --border-primary: rgba(255, 255, 255, 0.08);
+    --border-secondary: rgba(255, 255, 255, 0.05);
+    --border-accent: rgba(0, 217, 255, 0.3);
+    --border-hover: rgba(0, 217, 255, 0.5);
 
-    /* Effets de glow */
-    --glow-orange: 0 0 10px rgba(255, 107, 53, 0.5),
-                    0 0 20px rgba(255, 107, 53, 0.3),
-                    0 0 30px rgba(255, 107, 53, 0.1);
+    /* Ombres modernes */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.7);
 
-    --glow-blue: 0 0 10px rgba(76, 201, 240, 0.5),
-                 0 0 20px rgba(76, 201, 240, 0.3),
-                 0 0 30px rgba(76, 201, 240, 0.1);
+    /* Effets de glow subtils */
+    --glow-primary: 0 0 20px rgba(0, 217, 255, 0.15),
+                     0 0 40px rgba(0, 217, 255, 0.1);
 
-    --glow-pink: 0 0 10px rgba(247, 37, 133, 0.5),
-                 0 0 20px rgba(247, 37, 133, 0.3),
-                 0 0 30px rgba(247, 37, 133, 0.1);
+    --glow-accent: 0 0 20px rgba(139, 92, 246, 0.15),
+                    0 0 40px rgba(139, 92, 246, 0.1);
 
     /* Espacements */
     --spacing-xs: 0.5rem;
@@ -45,32 +49,40 @@
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
 
     /* Tailles de police */
     --font-xs: 0.75rem;
     --font-sm: 0.875rem;
     --font-md: 1rem;
-    --font-lg: 1.25rem;
+    --font-lg: 1.125rem;
     --font-xl: 1.5rem;
     --font-2xl: 2rem;
-    --font-3xl: 3rem;
+    --font-3xl: 2.5rem;
+    --font-4xl: 3rem;
 
     /* Hauteur du header */
-    --header-height: 80px;
+    --header-height: 70px;
 
     /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Border radius */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
-    --radius-xl: 20px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
 
     /* Z-index */
     --z-header: 1000;
     --z-modal: 2000;
     --z-overlay: 1500;
+
+    /* Backdrop blur */
+    --blur-sm: 10px;
+    --blur-md: 20px;
+    --blur-lg: 30px;
 }
